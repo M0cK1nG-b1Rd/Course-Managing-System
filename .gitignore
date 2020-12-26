@@ -1,5 +1,10 @@
 # 不push npm包
-node_modules/
+frontend/node_modules/
 
 # 不push数据库配置文件
-application.yml
+backend/src/main/resources/application.yml
+
+backend/.idea/
+backend/log/
+
+frontend/.idea/
