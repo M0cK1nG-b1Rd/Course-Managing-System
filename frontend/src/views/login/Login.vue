@@ -17,25 +17,7 @@
             </a-input>
           </a-form-item>
         </a-tab-pane>
-        <a-tab-pane tab="手机号登录" key="2">
-          <a-form-item>
-            <a-input size="large">
-              <a-icon slot="prefix" type="mobile"></a-icon>
-            </a-input>
-          </a-form-item>
-          <a-form-item>
-            <a-row :gutter="8" style="margin: 0 -4px">
-              <a-col :span="16">
-                <a-input size="large">
-                  <a-icon slot="prefix" type="mail"></a-icon>
-                </a-input>
-              </a-col>
-              <a-col :span="8" style="padding-left: 4px">
-                <a-button style="width: 100%" class="captcha-button" size="large" @click="getCaptcha">获取验证码</a-button>
-              </a-col>
-            </a-row>
-          </a-form-item>
-        </a-tab-pane>
+
       </a-tabs>
       <a-form-item>
         <a-button :loading="loading" style="width: 100%; margin-top: 4px" size="large" htmlType="submit" type="primary">
@@ -105,10 +87,6 @@ export default {
             })
           }
         })
-      }
-      if (this.activeKey === '2') {
-        // 手机验证码登录
-        this.$message.warning('暂未开发')
       }
     },
     regist () {
