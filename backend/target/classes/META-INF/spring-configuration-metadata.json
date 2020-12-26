@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "febs",
+      "type": "cc.mrbird.febs.common.properties.FebsProperties",
+      "sourceType": "cc.mrbird.febs.common.properties.FebsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "febs.open-aop-log",
+      "type": "java.lang.Boolean",
+      "sourceType": "cc.mrbird.febs.common.properties.FebsProperties",
+      "defaultValue": true
+    },
+    {
+      "name": "febs.shiro",
+      "type": "cc.mrbird.febs.common.properties.ShiroProperties",
+      "sourceType": "cc.mrbird.febs.common.properties.FebsProperties"
+    },
+    {
+      "name": "febs.swagger",
+      "type": "cc.mrbird.febs.common.properties.SwaggerProperties",
+      "sourceType": "cc.mrbird.febs.common.properties.FebsProperties"
+    }
+  ],
+  "hints": []
+}

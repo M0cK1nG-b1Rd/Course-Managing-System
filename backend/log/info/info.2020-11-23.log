@@ -1,0 +1,835 @@
+2020-11-23 19:19:05.530 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on DESKTOP-PGNP2U7 with PID 12020 (C:\Users\shinelon\Desktop\FEBS-Vue-Fix-master\backend\target\classes started by MS08-067 in C:\Users\shinelon\Desktop\FEBS-Vue-Fix-master\backend)
+2020-11-23 19:19:05.534 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2020-11-23 19:19:09.621 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-23 19:19:09.625 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-23 19:19:09.797 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 124ms. Found 0 repository interfaces.
+2020-11-23 19:19:10.535 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$5e928100] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:10.831 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:11.284 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$38e1cca4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:11.300 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:11.304 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:11.320 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cf535bd3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:11.348 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$3ad35d7c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.583 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$339814d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.627 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.635 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.779 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.795 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$20dab7e2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.803 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [cc.mrbird.febs.common.interceptor.PaginationInterceptorImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.831 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$d1bc86d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.851 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.855 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:13.859 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2020-11-23 19:19:13.891 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2020-11-23 19:19:17.206 febs [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-23 19:19:40.743 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on DESKTOP-PGNP2U7 with PID 11928 (C:\Users\shinelon\Desktop\FEBS-Vue-Fix-master\backend\target\classes started by MS08-067 in C:\Users\shinelon\Desktop\FEBS-Vue-Fix-master\backend)
+2020-11-23 19:19:40.751 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2020-11-23 19:19:42.841 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-23 19:19:42.845 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-23 19:19:42.969 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 100ms. Found 0 repository interfaces.
+2020-11-23 19:19:43.486 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$8f6f763a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:43.690 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:43.846 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$69bec1de] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:43.858 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:43.862 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:43.878 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$30510d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:43.906 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$6bb052b6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.615 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$64750a0a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.653 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.661 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.780 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.800 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$51b7ad1c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.812 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [cc.mrbird.febs.common.interceptor.PaginationInterceptorImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.852 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$3df8bda7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.880 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.880 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:19:45.884 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2020-11-23 19:19:45.900 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2020-11-23 19:19:49.101 febs [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-11-23 19:20:43.564 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on DESKTOP-PGNP2U7 with PID 5684 (C:\Users\shinelon\Desktop\FEBS-Vue-Fix-master\backend\target\classes started by MS08-067 in C:\Users\shinelon\Desktop\FEBS-Vue-Fix-master\backend)
+2020-11-23 19:20:43.572 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2020-11-23 19:20:45.497 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-11-23 19:20:45.497 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-11-23 19:20:45.613 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 96ms. Found 0 repository interfaces.
+2020-11-23 19:20:46.122 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$a957069f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:46.319 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:46.467 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$83a65243] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:46.479 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:46.483 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:46.499 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1a17e172] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:46.523 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$8597e31b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.070 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$7e5c9a6f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.101 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.109 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.213 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.225 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$6b9f3d81] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.233 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [cc.mrbird.febs.common.interceptor.PaginationInterceptorImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.261 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$57e04e0c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.277 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.281 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.285 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2020-11-23 19:20:48.293 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2020-11-23 19:20:48.933 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Start completed.
+2020-11-23 19:20:48.933 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - load a datasource named [primary] success
+2020-11-23 19:20:48.933 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [primary]
+2020-11-23 19:20:48.933 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.953 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:48.965 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.821 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.833 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.837 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.841 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [com.sun.proxy.$Proxy112] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.893 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.893 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [com.sun.proxy.$Proxy114] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.908 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.908 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [com.sun.proxy.$Proxy115] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:49.912 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleService' of type [cc.mrbird.febs.system.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.056 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuService' of type [cc.mrbird.febs.system.service.impl.RoleMenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.096 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleService' of type [cc.mrbird.febs.system.service.impl.RoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.140 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.144 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [com.sun.proxy.$Proxy119] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.148 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuService' of type [cc.mrbird.febs.system.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.192 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.192 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy121] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.240 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.244 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [com.sun.proxy.$Proxy122] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.248 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigService' of type [cc.mrbird.febs.system.service.impl.UserConfigServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.284 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [cc.mrbird.febs.system.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.336 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'febsProperties' of type [cc.mrbird.febs.common.properties.FebsProperties$$EnhancerBySpringCGLIB$$84df00ee] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.340 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'febsConfig' of type [cc.mrbird.febs.common.config.FebsConfig$$EnhancerBySpringCGLIB$$76fa2c0e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.348 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration$$EnhancerBySpringCGLIB$$27f8231c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.352 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$$EnhancerBySpringCGLIB$$e30f090b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.392 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties' of type [org.springframework.boot.autoconfigure.jackson.JacksonProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.396 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'standardJacksonObjectMapperBuilderCustomizer' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$StandardJackson2ObjectMapperBuilderCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.404 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration$$EnhancerBySpringCGLIB$$9da8039] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.436 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'parameterNamesModule' of type [com.fasterxml.jackson.module.paramnames.ParameterNamesModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.440 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$$EnhancerBySpringCGLIB$$57b6fe92] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.456 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jsonComponentModule' of type [org.springframework.boot.jackson.JsonComponentModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.456 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.data.web.config.SpringDataJacksonConfiguration' of type [org.springframework.data.web.config.SpringDataJacksonConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.496 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonGeoModule' of type [org.springframework.data.geo.GeoModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.504 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapperBuilder' of type [org.springframework.http.converter.json.Jackson2ObjectMapperBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.556 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapper' of type [com.fasterxml.jackson.databind.ObjectMapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.580 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheService' of type [cc.mrbird.febs.common.service.impl.CacheServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.592 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userManager' of type [cc.mrbird.febs.system.manager.UserManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.592 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [cc.mrbird.febs.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.616 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:50.640 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-23 19:20:51.449 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9527 (http)
+2020-11-23 19:20:51.478 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9527"]
+2020-11-23 19:20:51.490 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-11-23 19:20:51.490 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-11-23 19:20:51.697 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-11-23 19:20:51.697 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 7969 ms
+2020-11-23 19:20:53.169 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-11-23 19:20:53.185 febs [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-11-23 19:20:53.185 febs [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+2020-11-23 19:20:53.257 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - Using db table-based data access locking (synchronization).
+2020-11-23 19:20:53.257 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - JobStoreCMT initialized.
+2020-11-23 19:20:53.261 febs [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'MyScheduler' with instanceId 'DESKTOP-PGNP2U71606130453169'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2020-11-23 19:20:53.261 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'MyScheduler' initialized from an externally provided properties instance.
+2020-11-23 19:20:53.261 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+2020-11-23 19:20:53.261 febs [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@63262071
+2020-11-23 19:20:53.405 febs [main] INFO  p6spy - 2020-11-23 19:20:53 | 耗时 50 ms | SQL 语句：
+select job_id jobId, bean_name beanName, method_name methodName, params, cron_expression cronExpression, status, remark, create_time createTime from t_job order by job_id;
+2020-11-23 19:20:57.322 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-11-23 19:20:57.564 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2020-11-23 19:20:57.612 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-11-23 19:20:59.489 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2020-11-23 19:20:59.629 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2020-11-23 19:20:59.682 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-11-23 19:20:59.763 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2020-11-23 19:21:00.087 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_1
+2020-11-23 19:21:00.111 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_2
+2020-11-23 19:21:00.111 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateDictUsingPUT_1
+2020-11-23 19:21:00.131 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_3
+2020-11-23 19:21:00.147 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_4
+2020-11-23 19:21:00.159 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_5
+2020-11-23 19:21:00.179 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_6
+2020-11-23 19:21:00.223 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_7
+2020-11-23 19:21:00.235 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_8
+2020-11-23 19:21:00.239 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: generateImportTemplateUsingPOST_1
+2020-11-23 19:21:00.239 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: importExcelsUsingPOST_1
+2020-11-23 19:21:00.263 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_9
+2020-11-23 19:21:00.302 febs [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [MyScheduler] in 1 seconds
+2020-11-23 19:21:00.330 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9527"]
+2020-11-23 19:21:00.350 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2020-11-23 19:21:00.370 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9527 (http) with context path ''
+2020-11-23 19:21:00.374 febs [main] INFO  cc.mrbird.febs.FebsApplication - Started FebsApplication in 17.594 seconds (JVM running for 19.832)
+2020-11-23 19:21:00.394 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - Redis连接中 ······
+2020-11-23 19:21:00.397 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存初始化 ······
+2020-11-23 19:21:00.397 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存用户数据 ······
+2020-11-23 19:21:00.459 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 12 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user;
+2020-11-23 19:21:00.485 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 5 ms | SQL 语句：
+SELECT d.dept_id deptId, GROUP_CONCAT(u.user_id) userIds FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id or u.dept_id = d.parent_id ) where u.dept_id != '' GROUP BY deptId;
+2020-11-23 19:21:00.616 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 7 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird';
+2020-11-23 19:21:00.652 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 14 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'mrbird' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.668 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 4 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='1' ;
+2020-11-23 19:21:00.676 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'scott';
+2020-11-23 19:21:00.680 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'scott' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.684 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='2' ;
+2020-11-23 19:21:00.688 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'jack';
+2020-11-23 19:21:00.692 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'jack' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.696 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='12' ;
+2020-11-23 19:21:00.696 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'xiaoduan';
+2020-11-23 19:21:00.700 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'xiaoduan' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.704 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='13' ;
+2020-11-23 19:21:00.708 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test';
+2020-11-23 19:21:00.712 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.712 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='16' ;
+2020-11-23 19:21:00.716 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'ddmtest14';
+2020-11-23 19:21:00.720 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'ddmtest14' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.724 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='33' ;
+2020-11-23 19:21:00.728 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test1';
+2020-11-23 19:21:00.728 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test1' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.732 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='34' ;
+2020-11-23 19:21:00.736 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin';
+2020-11-23 19:21:00.740 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'admin' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.748 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='35' ;
+2020-11-23 19:21:00.752 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test33333';
+2020-11-23 19:21:00.756 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test33333' and m.perms is not null and m.perms <> '';
+2020-11-23 19:21:00.760 febs [main] INFO  p6spy - 2020-11-23 19:21:00 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='36' ;
+2020-11-23 19:21:00.760 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -  __    ___   _      ___   _     ____ _____  ____ 
+2020-11-23 19:21:00.760 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - / /`  / / \ | |\/| | |_) | |   | |_   | |  | |_  
+2020-11-23 19:21:00.760 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - \_\_, \_\_/ |_|  | |_|   |_|__ |_|__  |_|  |_|__ 
+2020-11-23 19:21:00.760 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -                                                       
+2020-11-23 19:21:00.760 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - FEBS 启动完毕，时间：2020-11-23T19:21:00.760
+2020-11-23 19:21:01.304 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2020-11-23 19:21:01.336 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: detected 1 failed or restarted instances.
+2020-11-23 19:21:01.336 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: Scanning for instance "DESKTOP-PGNP2U71605954489851"'s failed in-progress jobs.
+2020-11-23 19:21:01.440 febs [Quartz Scheduler [MyScheduler]] INFO  p6spy - 
+2020-11-23 19:21:01.444 febs [Quartz Scheduler [MyScheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_DESKTOP-PGNP2U71606130453169 started.
+2020-11-23 19:21:01.449 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:21:01.451 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:21:04.180 febs [RMI TCP Connection(5)-192.168.133.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-23 19:21:04.180 febs [RMI TCP Connection(6)-192.168.133.1] INFO  p6spy - 2020-11-23 19:21:04 | 耗时 0 ms | SQL 语句：
+select 1;
+2020-11-23 19:21:04.180 febs [RMI TCP Connection(5)-192.168.133.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-11-23 19:21:04.203 febs [RMI TCP Connection(5)-192.168.133.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 23 ms
+2020-11-23 19:21:13.448 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:21:16.457 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:21:16.458 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:21:25.448 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:21:28.956 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:21:31.474 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:21:31.475 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:21:32.627 febs [http-nio-9527-exec-5] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 1 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2020-11-23 19:21:32.889 febs [http-nio-9527-exec-5] INFO  p6spy - 2020-11-23 19:21:32 | 耗时 1 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2020-11-23T19:21:32.854+0800' WHERE (username = 'mrbird');
+2020-11-23 19:21:32.892 febs [http-nio-9527-exec-5] INFO  p6spy - 2020-11-23 19:21:32 | 耗时 1 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'mrbird' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2020-11-23 19:21:33.061 febs [http-nio-9527-exec-5] INFO  p6spy - 
+2020-11-23 19:21:33.110 febs [http-nio-9527-exec-5] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 27 ms | SQL 语句：
+INSERT INTO t_login_log ( login_time, ip, location, username ) VALUES ( '2020-11-23T19:21:33.069+0800', '127.0.0.1', '内网IP|0|0|内网IP|内网IP', 'mrbird' );
+2020-11-23 19:21:33.193 febs [http-nio-9527-exec-5] INFO  p6spy - 
+2020-11-23 19:21:33.356 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:33.357 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:33.394 febs [http-nio-9527-exec-8] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 1 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird') order by m.order_num;
+2020-11-23 19:21:33.412 febs [http-nio-9527-exec-7] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 4 ms | SQL 语句：
+SELECT DICT_ID,valuee,field_name,keyy,other_keyy,table_name FROM t_dict;
+2020-11-23 19:21:33.807 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:33.820 febs [http-nio-9527-exec-10] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log;
+2020-11-23 19:21:33.823 febs [http-nio-9527-exec-10] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2020-11-23 19:21:33.826 febs [http-nio-9527-exec-10] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 0 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2020-11-23 19:21:33.829 febs [http-nio-9527-exec-10] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 1 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2020-11-23 19:21:33.834 febs [http-nio-9527-exec-10] INFO  p6spy - 2020-11-23 19:21:33 | 耗时 1 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'mrbird' group by days;
+2020-11-23 19:21:37.449 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:21:42.684 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:43.378 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:43.522 febs [http-nio-9527-exec-5] INFO  p6spy - 2020-11-23 19:21:43 | 耗时 34 ms | SQL 语句：
+SELECT COUNT(1) FROM t_log;
+2020-11-23 19:21:46.445 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:21:46.445 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:21:49.450 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:21:53.537 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:53.545 febs [http-nio-9527-exec-3] INFO  p6spy - 2020-11-23 19:21:53 | 耗时 1 ms | SQL 语句：
+select count(1) from t_login_log;
+2020-11-23 19:21:53.547 febs [http-nio-9527-exec-3] INFO  p6spy - 2020-11-23 19:21:53 | 耗时 0 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2020-11-23 19:21:53.550 febs [http-nio-9527-exec-3] INFO  p6spy - 2020-11-23 19:21:53 | 耗时 0 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2020-11-23 19:21:53.553 febs [http-nio-9527-exec-3] INFO  p6spy - 2020-11-23 19:21:53 | 耗时 0 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2020-11-23 19:21:53.556 febs [http-nio-9527-exec-3] INFO  p6spy - 2020-11-23 19:21:53 | 耗时 1 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'mrbird' group by days;
+2020-11-23 19:21:57.176 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.199 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.223 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.233 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.239 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.259 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.259 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.261 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.267 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.268 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.275 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.289 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.291 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.296 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.303 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.725 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.731 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.736 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.737 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:57.741 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:58.305 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:21:58.950 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:58.987 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.001 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.005 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.008 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.011 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.019 febs [http-nio-9527-exec-10] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.023 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.025 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.034 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.042 febs [http-nio-9527-exec-5] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:21:59.045 febs [http-nio-9527-exec-4] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:22:01.408 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:22:01.412 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:22:01.415 febs [http-nio-9527-exec-7] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:22:01.417 febs [http-nio-9527-exec-6] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:22:01.433 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:22:01.451 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:22:01.565 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:01.566 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:01.919 febs [http-nio-9527-exec-2] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-11-23 19:22:01.933 febs [http-nio-9527-exec-2] INFO  p6spy - 2020-11-23 19:22:01 | 耗时 4 ms | SQL 语句：
+SELECT COUNT(1) FROM t_log;
+2020-11-23 19:22:13.452 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:22:16.422 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:16.423 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:25.453 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:22:27.602 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:22:31.420 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:31.421 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:37.455 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:22:46.436 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:46.437 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:22:49.455 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:22:51.835 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:23:01.442 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:01.442 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:01.456 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:23:13.455 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:23:16.449 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:16.450 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:17.154 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:23:25.457 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:23:31.424 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:31.425 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:37.457 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:23:42.260 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:23:46.461 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:46.461 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:23:49.456 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:24:01.443 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:01.443 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:01.466 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:24:09.398 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:24:13.467 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:24:16.448 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:16.448 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:25.475 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:24:31.440 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:31.440 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:37.475 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:24:38.064 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:24:46.438 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:46.438 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:24:49.475 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:25:01.457 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:01.457 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:01.475 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:25:05.599 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:25:13.476 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:25:16.450 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:16.451 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:25.477 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:25:30.386 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:25:31.525 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:31.525 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:37.476 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:25:46.482 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:46.482 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:25:49.486 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:25:58.961 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:26:01.449 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:01.450 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:01.486 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:26:13.487 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:26:16.473 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:16.473 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:25.487 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:26:28.646 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:26:31.564 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:31.564 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:37.487 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:26:46.469 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:46.469 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:26:49.488 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:26:56.876 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:27:01.487 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:27:01.543 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:01.544 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:13.490 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:27:16.497 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:16.497 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:20.204 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:27:25.491 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:27:31.483 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:31.484 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:37.491 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:27:43.657 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:27:46.510 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:46.510 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:27:49.491 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:28:01.490 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:28:01.531 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:01.532 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:11.341 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:28:13.508 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:28:16.591 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:16.591 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:25.508 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:28:31.509 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:31.509 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:37.510 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:28:38.015 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:28:46.476 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:46.476 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:28:49.510 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:29:01.510 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:29:01.567 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:01.567 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:03.030 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:29:13.511 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:29:16.507 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:16.507 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:25.511 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:29:27.891 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:29:31.494 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:31.494 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:37.512 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:29:46.529 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:46.529 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:29:49.513 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:29:53.576 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:30:01.514 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:30:01.531 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:01.532 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:13.514 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:30:16.487 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:16.487 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:17.079 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:30:25.515 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:30:31.512 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:31.513 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:37.515 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:30:46.510 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:46.510 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:30:46.989 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:30:49.516 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:31:01.516 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:31:01.566 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:01.566 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:11.288 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:31:13.517 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:31:16.538 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:16.539 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:25.517 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:31:31.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:31.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:37.518 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:31:37.781 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:31:46.521 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:46.521 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:31:49.519 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:32:01.507 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:01.507 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:01.519 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:32:07.714 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:32:13.520 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:32:16.560 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:16.560 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:25.521 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:32:31.590 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:31.591 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:33.216 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:32:37.521 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:32:46.504 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:46.504 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:32:49.522 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:33:01.522 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:33:01.584 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:01.584 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:03.103 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:33:13.523 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:33:16.583 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:16.584 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:25.523 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:33:30.538 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:33:31.592 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:31.592 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:37.525 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:33:46.583 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:46.583 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:33:49.525 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:33:58.278 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:34:01.525 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:34:01.609 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:01.610 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:13.525 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:34:16.538 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:16.538 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:25.262 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:34:25.525 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:34:31.556 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:31.556 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:37.526 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:34:46.574 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:46.574 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:34:49.527 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:34:55.016 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:35:01.527 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:35:01.643 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:01.643 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:13.527 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:35:16.546 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:16.547 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:24.631 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:35:25.528 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:35:31.551 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:31.552 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:37.528 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:35:46.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:46.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:35:47.863 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:35:49.529 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:36:01.530 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:36:01.556 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:01.557 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:11.691 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:36:13.530 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:36:16.540 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:16.541 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:25.531 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:36:31.559 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:31.560 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:36.377 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:36:37.531 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:36:46.713 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:46.713 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:36:49.532 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:37:01.533 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:37:01.767 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:01.767 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:03.232 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:37:13.533 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:37:16.796 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:16.796 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:25.534 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:37:28.655 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:37:31.615 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:31.615 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:37.534 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:37:46.630 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:46.630 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:37:49.535 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:37:51.821 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:38:01.542 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:38:01.628 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:01.629 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:13.542 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:38:16.062 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:38:16.612 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:16.613 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:25.543 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:38:31.635 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:31.635 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:37.544 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:38:40.641 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:38:46.688 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:46.688 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:38:49.544 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:39:01.545 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:39:01.724 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:01.724 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:05.179 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:39:13.546 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:39:16.702 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:16.702 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:25.546 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:39:31.846 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:31.846 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:32.524 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:39:37.546 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:39:46.698 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:46.698 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:39:49.546 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:39:55.889 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:40:01.547 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:40:01.740 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:01.740 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:13.547 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:40:16.695 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:16.696 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:22.635 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:40:25.549 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:40:31.689 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:31.690 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:37.549 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:40:46.396 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:40:46.684 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:46.684 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:40:49.549 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:41:01.549 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:41:01.781 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:01.781 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:13.176 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:41:13.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:41:16.674 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:16.675 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:25.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:41:31.745 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:31.746 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:36.344 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:41:37.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:41:46.759 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:46.759 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:41:49.551 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:42:01.551 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:42:01.692 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:01.692 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:04.330 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:42:13.552 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:42:16.773 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:16.773 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:25.550 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:42:31.861 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:31.862 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:32.301 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:42:37.552 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:42:46.710 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:46.710 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:42:49.553 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:42:57.034 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:43:01.553 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:43:01.695 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:01.695 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:13.553 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:43:17.007 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:17.008 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:25.554 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:43:25.655 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:43:31.683 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:31.684 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:37.603 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:43:46.748 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:46.749 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:43:49.554 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:43:49.687 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:44:01.555 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:44:01.791 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:01.791 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:13.555 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:44:13.705 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:44:16.702 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:16.703 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:25.556 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:44:31.727 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:31.727 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:37.556 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:44:43.497 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:44:46.707 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:46.707 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:44:49.556 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:45:01.557 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:45:01.744 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:01.744 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:07.781 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:45:13.557 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:45:16.744 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:16.744 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:25.558 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:45:31.725 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:31.725 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:31.861 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:45:37.559 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:45:46.718 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:46.718 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:45:49.560 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:45:58.656 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:46:01.561 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:46:01.732 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:01.732 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:13.561 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:46:16.724 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:16.724 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:25.410 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:46:25.560 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:46:31.740 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:31.741 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:37.561 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:46:46.746 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:46.747 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:46:49.562 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:46:55.225 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:47:01.563 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:47:01.748 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:01.748 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:13.562 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:47:16.741 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:16.742 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:21.115 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:47:25.564 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:47:31.775 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:31.776 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:37.563 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:47:46.870 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:46.871 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:47:47.419 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:47:49.565 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:48:01.566 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:48:01.760 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:01.760 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:10.539 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:48:13.566 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:48:16.804 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:16.804 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:25.567 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:48:31.787 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:31.788 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:33.843 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:48:37.567 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:48:46.831 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:46.831 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:48:49.567 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:49:01.567 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:49:01.667 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:49:01.822 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:01.822 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:13.569 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:49:16.800 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:16.801 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:25.569 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:49:26.384 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:49:31.736 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:31.737 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:37.571 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:49:46.743 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:46.743 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:49:49.571 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:49:53.998 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:50:01.571 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:50:01.762 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:01.763 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:13.571 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:50:16.740 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:16.741 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:22.924 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:50:25.574 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:50:31.740 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:31.740 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:37.604 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:50:46.097 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:50:46.816 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:46.816 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:50:49.574 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:51:01.572 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:51:01.897 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:01.897 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:13.573 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:51:13.859 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:51:16.840 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:16.841 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:25.574 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:51:31.867 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:31.868 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:37.576 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:51:37.933 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:51:46.838 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:46.838 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:51:49.575 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:52:01.576 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:52:01.827 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:01.827 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:05.245 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:52:13.577 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:52:16.880 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:16.881 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:25.577 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:52:30.787 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:52:31.829 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:31.829 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:37.577 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:52:46.872 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:46.872 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:52:49.579 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:52:56.739 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:53:01.580 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:53:01.871 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:01.871 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:13.580 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:53:16.831 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:16.831 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:23.774 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:53:25.581 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:53:31.830 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:31.830 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:37.581 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:53:46.817 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:46.817 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:53:49.177 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:53:49.580 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:54:01.582 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:54:01.879 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:54:01.879 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:54:12.481 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-11-23 19:54:13.583 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_MisfireHandler] INFO  p6spy - 
+2020-11-23 19:54:16.861 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 
+2020-11-23 19:54:16.862 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71606130453169_ClusterManager] INFO  p6spy - 

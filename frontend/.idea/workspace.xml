@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9cf1d2af-091c-4a25-89c1-5c8932041948" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1kauEeUmH5kGmNC5y3o91I2dus6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../项目/vueblog-master/vueblog-vue" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\PhpStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9cf1d2af-091c-4a25-89c1-5c8932041948" name="Default Changelist" comment="" />
+      <created>1605950913338</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605950913338</updated>
+      <workItem from="1605950914911" duration="182000" />
+      <workItem from="1606032270525" duration="598000" />
+      <workItem from="1606180560836" duration="626000" />
+      <workItem from="1608515757780" duration="882000" />
+      <workItem from="1608521841240" duration="608000" />
+      <workItem from="1608554545598" duration="1387000" />
+      <workItem from="1608600662998" duration="760000" />
+      <workItem from="1608618645810" duration="600000" />
+      <workItem from="1608702326890" duration="3897000" />
+      <workItem from="1608737784454" duration="1177000" />
+      <workItem from="1608774125154" duration="6319000" />
+      <workItem from="1608802966943" duration="1295000" />
+      <workItem from="1608812485242" duration="4199000" />
+      <workItem from="1608861834403" duration="1845000" />
+      <workItem from="1608878771912" duration="9612000" />
+      <workItem from="1608910719942" duration="1538000" />
+      <workItem from="1608945072566" duration="3340000" />
+      <workItem from="1608967531711" duration="614000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605951092837">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605951092837" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608893927246">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608893927246" />
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1605951097664">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605951097664" />
+    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1605951097664">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605951097664" />
+    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1605951097663">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605951097663" />
+    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1605951097664">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605951097664" />
+    <state x="270" y="57" key="SettingsEditor" timestamp="1608892158668">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608892158668" />
+    <state x="496" y="180" width="731" height="568" key="find.popup" timestamp="1608946253101">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="496" y="180" width="731" height="568" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1608946253101" />
+    <state x="543" y="221" width="594" height="568" key="find.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1608780210160" />
+  </component>
+</project>
