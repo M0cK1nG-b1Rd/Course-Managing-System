@@ -2,9 +2,9 @@
 frontend/node_modules/
 
 # 不push数据库配置文件
-backend/src/main/resources/application.yml
+*application.yml
 
 backend/.idea/
 backend/log/
-
+backend/target/
 frontend/.idea/
