@@ -1,0 +1,5 @@
+# 不push npm包
+node_modules/
+
+# 不push数据库配置文件
+application.yml

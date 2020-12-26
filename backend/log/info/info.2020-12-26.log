@@ -10096,3 +10096,491 @@ select 1;
 2020-12-26 17:31:51.676 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71608974533482_ClusterManager] INFO  p6spy - 
 2020-12-26 17:31:57.318 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
 2020-12-26 17:31:57.654 febs [QuartzScheduler_MyScheduler-DESKTOP-PGNP2U71608974533482_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:54:07.965 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on DESKTOP-73K4U3K with PID 2640 (C:\Users\10512\Desktop\OurProject\Course-Managing-System\backend\target\classes started by 10512 in C:\Users\10512\Desktop\OurProject\Course-Managing-System\backend)
+2020-12-26 20:54:07.969 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2020-12-26 20:54:10.400 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-26 20:54:10.400 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-12-26 20:54:10.591 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 164ms. Found 0 repository interfaces.
+2020-12-26 20:54:11.118 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$d2ccd75e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:11.287 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:11.453 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$ad1c2302] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:11.465 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:11.473 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:11.474 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$438db231] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:11.507 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$af0db3da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.396 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$a7d26b2e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.429 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.438 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.555 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.570 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$95150e40] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.579 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [cc.mrbird.febs.common.interceptor.PaginationInterceptorImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.605 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$81561ecb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.630 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.633 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:54:12.640 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2020-12-26 20:54:12.652 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2020-12-26 20:54:14.021 febs [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-26 20:58:15.718 febs [main] INFO  cc.mrbird.febs.FebsApplication - Starting FebsApplication on DESKTOP-73K4U3K with PID 11896 (C:\Users\10512\Desktop\OurProject\Course-Managing-System\backend\target\classes started by 10512 in C:\Users\10512\Desktop\OurProject\Course-Managing-System\backend)
+2020-12-26 20:58:15.726 febs [main] INFO  cc.mrbird.febs.FebsApplication - No active profile set, falling back to default profiles: default
+2020-12-26 20:58:17.707 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-12-26 20:58:17.707 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-12-26 20:58:17.879 febs [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151ms. Found 0 repository interfaces.
+2020-12-26 20:58:18.305 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'asyncExecutorPoolConfig' of type [cc.mrbird.febs.common.config.AsyncExecutorPoolConfig$$EnhancerBySpringCGLIB$$590097a2] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:18.459 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource.dynamic-com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:18.587 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration' of type [com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration$$EnhancerBySpringCGLIB$$334fe346] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:18.602 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dsProcessor' of type [com.baomidou.dynamic.datasource.processor.DsHeaderProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:18.602 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDatasourceAnnotationAdvisor' of type [com.baomidou.dynamic.datasource.aop.DynamicDataSourceAnnotationAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:18.619 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c9c17275] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:18.637 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [cc.mrbird.febs.common.authentication.ShiroConfig$$EnhancerBySpringCGLIB$$3541741e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.434 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisConfig' of type [cc.mrbird.febs.common.config.RedisConfig$$EnhancerBySpringCGLIB$$2e062b72] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.457 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisPoolFactory' of type [redis.clients.jedis.JedisPool] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.460 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'redisService' of type [cc.mrbird.febs.common.service.impl.RedisServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.534 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.551 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'mybatisPlusConfig' of type [cc.mrbird.febs.common.config.MybatisPlusConfig$$EnhancerBySpringCGLIB$$1b48ce84] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.551 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'paginationInterceptor' of type [cc.mrbird.febs.common.interceptor.PaginationInterceptorImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.566 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$789df0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.584 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceCreator' of type [com.baomidou.dynamic.datasource.DynamicDataSourceCreator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.584 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamicDataSourceProvider' of type [com.baomidou.dynamic.datasource.provider.YmlDynamicDataSourceProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.584 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource detect P6SPY plugin and enabled it
+2020-12-26 20:58:19.600 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Starting...
+2020-12-26 20:58:19.862 febs [main] INFO  com.zaxxer.hikari.HikariDataSource - primary - Start completed.
+2020-12-26 20:58:19.863 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - load a datasource named [primary] success
+2020-12-26 20:58:19.863 febs [main] INFO  c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [primary]
+2020-12-26 20:58:19.863 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dataSource' of type [com.baomidou.dynamic.datasource.DynamicRoutingDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.869 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:19.889 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.509 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.530 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.530 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.530 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMapper' of type [com.sun.proxy.$Proxy113] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.586 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.586 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuMapper' of type [com.sun.proxy.$Proxy115] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.609 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.609 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleMapper' of type [com.sun.proxy.$Proxy116] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.609 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userRoleService' of type [cc.mrbird.febs.system.service.impl.UserRoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.679 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleMenuService' of type [cc.mrbird.febs.system.service.impl.RoleMenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.697 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'roleService' of type [cc.mrbird.febs.system.service.impl.RoleServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.741 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.741 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuMapper' of type [com.sun.proxy.$Proxy120] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.741 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'menuService' of type [cc.mrbird.febs.system.service.impl.MenuServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.804 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.804 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userMapper' of type [com.sun.proxy.$Proxy122] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.862 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.863 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigMapper' of type [com.sun.proxy.$Proxy123] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.863 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userConfigService' of type [cc.mrbird.febs.system.service.impl.UserConfigServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.895 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userService' of type [cc.mrbird.febs.system.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.933 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'febsProperties' of type [cc.mrbird.febs.common.properties.FebsProperties$$EnhancerBySpringCGLIB$$348891f1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.942 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'febsConfig' of type [cc.mrbird.febs.common.config.FebsConfig$$EnhancerBySpringCGLIB$$26a3bd11] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.948 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration$$EnhancerBySpringCGLIB$$d7a1b41f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.952 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$$EnhancerBySpringCGLIB$$92b89a0e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.966 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties' of type [org.springframework.boot.autoconfigure.jackson.JacksonProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.970 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'standardJacksonObjectMapperBuilderCustomizer' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration$StandardJackson2ObjectMapperBuilderCustomizer] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.970 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration$$EnhancerBySpringCGLIB$$b984113c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.980 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'parameterNamesModule' of type [com.fasterxml.jackson.module.paramnames.ParameterNamesModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:20.980 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration' of type [org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$$EnhancerBySpringCGLIB$$7608f95] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.001 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jsonComponentModule' of type [org.springframework.boot.jackson.JsonComponentModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.002 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.data.web.config.SpringDataJacksonConfiguration' of type [org.springframework.data.web.config.SpringDataJacksonConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.008 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonGeoModule' of type [org.springframework.data.geo.GeoModule] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.008 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapperBuilder' of type [org.springframework.http.converter.json.Jackson2ObjectMapperBuilder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.056 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'jacksonObjectMapper' of type [com.fasterxml.jackson.databind.ObjectMapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.077 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'cacheService' of type [cc.mrbird.febs.common.service.impl.CacheServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.094 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'userManager' of type [cc.mrbird.febs.system.manager.UserManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.096 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroRealm' of type [cc.mrbird.febs.common.authentication.ShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.100 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.142 febs [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'authorizationAttributeSourceAdvisor' of type [org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-12-26 20:58:21.616 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 9527 (http)
+2020-12-26 20:58:21.633 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9527"]
+2020-12-26 20:58:21.649 febs [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-26 20:58:21.649 febs [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-12-26 20:58:21.856 febs [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-12-26 20:58:21.856 febs [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5992 ms
+2020-12-26 20:58:22.771 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+2020-12-26 20:58:22.777 febs [main] INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-12-26 20:58:22.777 febs [main] INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+2020-12-26 20:58:22.825 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - Using db table-based data access locking (synchronization).
+2020-12-26 20:58:22.825 febs [main] INFO  o.s.s.quartz.LocalDataSourceJobStore - JobStoreCMT initialized.
+2020-12-26 20:58:22.825 febs [main] INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'MyScheduler' with instanceId 'DESKTOP-73K4U3K1608987502772'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 20 threads.
+  Using job-store 'org.springframework.scheduling.quartz.LocalDataSourceJobStore' - which supports persistence. and is clustered.
+
+2020-12-26 20:58:22.825 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'MyScheduler' initialized from an externally provided properties instance.
+2020-12-26 20:58:22.825 febs [main] INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+2020-12-26 20:58:22.825 febs [main] INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.AdaptableJobFactory@6e948f1c
+2020-12-26 20:58:22.896 febs [main] INFO  p6spy - 2020-12-26 20:58:22 | 耗时 18 ms | SQL 语句：
+select job_id jobId, bean_name beanName, method_name methodName, params, cron_expression cronExpression, status, remark, create_time createTime from t_job order by job_id;
+2020-12-26 20:58:24.199 febs [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-12-26 20:58:24.374 febs [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'taskExecutor'
+2020-12-26 20:58:24.426 febs [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2020-12-26 20:58:25.791 febs [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+2020-12-26 20:58:25.908 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+2020-12-26 20:58:25.932 febs [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-12-26 20:58:25.993 febs [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+2020-12-26 20:58:26.203 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_1
+2020-12-26 20:58:26.218 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_2
+2020-12-26 20:58:26.218 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: updateDictUsingPUT_1
+2020-12-26 20:58:26.234 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_3
+2020-12-26 20:58:26.246 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_4
+2020-12-26 20:58:26.253 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_5
+2020-12-26 20:58:26.262 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_6
+2020-12-26 20:58:26.301 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_7
+2020-12-26 20:58:26.301 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_8
+2020-12-26 20:58:26.301 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: generateImportTemplateUsingPOST_1
+2020-12-26 20:58:26.301 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: importExcelsUsingPOST_1
+2020-12-26 20:58:26.317 febs [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: exportUsingPOST_9
+2020-12-26 20:58:26.349 febs [main] INFO  o.s.s.quartz.SchedulerFactoryBean - Will start Quartz Scheduler [MyScheduler] in 1 seconds
+2020-12-26 20:58:26.365 febs [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9527"]
+2020-12-26 20:58:26.379 febs [scheduling-1] INFO  cc.mrbird.febs.common.task.CacheTask - delete expired user
+2020-12-26 20:58:26.400 febs [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 9527 (http) with context path ''
+2020-12-26 20:58:26.400 febs [main] INFO  cc.mrbird.febs.FebsApplication - Started FebsApplication in 11.656 seconds (JVM running for 13.726)
+2020-12-26 20:58:26.417 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - Redis连接中 ······
+2020-12-26 20:58:26.417 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存初始化 ······
+2020-12-26 20:58:26.417 febs [main] INFO  c.m.f.common.runner.CacheInitRunner - 缓存用户数据 ······
+2020-12-26 20:58:26.462 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 5 ms | SQL 语句：
+SELECT USER_ID,description,password,modify_time,email,ssex,mobile,dept_id,avatar,last_login_time,create_time,status,username FROM t_user;
+2020-12-26 20:58:26.494 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 12 ms | SQL 语句：
+SELECT d.dept_id deptId, GROUP_CONCAT(u.user_id) userIds FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id or u.dept_id = d.parent_id ) where u.dept_id != '' GROUP BY deptId;
+2020-12-26 20:58:26.566 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 7 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'mrbird';
+2020-12-26 20:58:26.585 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 15 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'mrbird' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.601 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 4 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='1' ;
+2020-12-26 20:58:26.601 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'scott';
+2020-12-26 20:58:26.620 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'scott' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.620 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='2' ;
+2020-12-26 20:58:26.620 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'jack';
+2020-12-26 20:58:26.620 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'jack' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.620 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='12' ;
+2020-12-26 20:58:26.636 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'xiaoduan';
+2020-12-26 20:58:26.636 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'xiaoduan' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.636 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='13' ;
+2020-12-26 20:58:26.636 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test';
+2020-12-26 20:58:26.649 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.649 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='16' ;
+2020-12-26 20:58:26.649 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'ddmtest14';
+2020-12-26 20:58:26.649 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'ddmtest14' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.649 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='33' ;
+2020-12-26 20:58:26.664 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test1';
+2020-12-26 20:58:26.664 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test1' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.664 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='34' ;
+2020-12-26 20:58:26.664 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin';
+2020-12-26 20:58:26.664 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'admin' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.680 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='35' ;
+2020-12-26 20:58:26.690 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test33333';
+2020-12-26 20:58:26.690 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test33333' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:26.690 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='36' ;
+2020-12-26 20:58:26.690 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test2';
+2020-12-26 20:58:26.690 febs [main] INFO  p6spy - 2020-12-26 20:58:26 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test2' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.174 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='37' ;
+2020-12-26 20:58:27.181 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test3';
+2020-12-26 20:58:27.185 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test3' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.185 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='41' ;
+2020-12-26 20:58:27.190 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test4';
+2020-12-26 20:58:27.190 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test4' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.190 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='42' ;
+2020-12-26 20:58:27.190 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test5';
+2020-12-26 20:58:27.210 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test5' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.211 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 5 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='43' ;
+2020-12-26 20:58:27.211 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test6';
+2020-12-26 20:58:27.227 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test6' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.227 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='44' ;
+2020-12-26 20:58:27.227 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test7';
+2020-12-26 20:58:27.227 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test7' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.242 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='45' ;
+2020-12-26 20:58:27.243 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test8';
+2020-12-26 20:58:27.243 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test8' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.243 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='46' ;
+2020-12-26 20:58:27.260 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test9';
+2020-12-26 20:58:27.260 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test9' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.260 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='47' ;
+2020-12-26 20:58:27.260 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test11';
+2020-12-26 20:58:27.278 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test11' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.282 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='48' ;
+2020-12-26 20:58:27.287 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test12';
+2020-12-26 20:58:27.289 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test12' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.293 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='49' ;
+2020-12-26 20:58:27.293 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test13';
+2020-12-26 20:58:27.293 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test13' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.308 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='50' ;
+2020-12-26 20:58:27.308 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test14';
+2020-12-26 20:58:27.308 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test14' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.320 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='51' ;
+2020-12-26 20:58:27.324 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test15';
+2020-12-26 20:58:27.324 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test15' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.324 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='52' ;
+2020-12-26 20:58:27.339 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test16';
+2020-12-26 20:58:27.340 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test16' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.340 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='53' ;
+2020-12-26 20:58:27.340 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test17';
+2020-12-26 20:58:27.340 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test17' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.356 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now, after delay of 1 seconds
+2020-12-26 20:58:27.357 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='54' ;
+2020-12-26 20:58:27.358 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test18';
+2020-12-26 20:58:27.358 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test18' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.358 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='55' ;
+2020-12-26 20:58:27.358 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test19';
+2020-12-26 20:58:27.376 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: detected 1 failed or restarted instances.
+2020-12-26 20:58:27.376 febs [Quartz Scheduler [MyScheduler]] INFO  o.s.s.quartz.LocalDataSourceJobStore - ClusterManager: Scanning for instance "DESKTOP-73K4U3K1608980872598"'s failed in-progress jobs.
+2020-12-26 20:58:27.376 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test19' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.376 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='56' ;
+2020-12-26 20:58:27.376 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 0 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'test20';
+2020-12-26 20:58:27.376 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'test20' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.390 febs [Quartz Scheduler [MyScheduler]] INFO  p6spy - 
+2020-12-26 20:58:27.391 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='57' ;
+2020-12-26 20:58:27.392 febs [Quartz Scheduler [MyScheduler]] INFO  org.quartz.core.QuartzScheduler - Scheduler MyScheduler_$_DESKTOP-73K4U3K1608987502772 started.
+2020-12-26 20:58:27.400 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 2 ms | SQL 语句：
+select r.* from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'stephan';
+2020-12-26 20:58:27.402 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:58:27.405 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+select distinct m.perms from t_role r left join t_user_role ur on (r.role_id = ur.role_id) left join t_user u on (u.user_id = ur.user_id) left join t_role_menu rm on (rm.role_id = r.role_id) left join t_menu m on (m.menu_id = rm.menu_id) where u.username = 'stephan' and m.perms is not null and m.perms <> '';
+2020-12-26 20:58:27.409 febs [main] INFO  p6spy - 2020-12-26 20:58:27 | 耗时 1 ms | SQL 语句：
+SELECT USER_ID,layout,color,multi_page,fix_siderbar,fix_header,theme FROM t_user_config WHERE USER_ID='58' ;
+2020-12-26 20:58:27.410 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 20:58:27.410 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -  __    ___   _      ___   _     ____ _____  ____ 
+2020-12-26 20:58:27.410 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - / /`  / / \ | |\/| | |_) | |   | |_   | |  | |_  
+2020-12-26 20:58:27.410 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - \_\_, \_\_/ |_|  | |_|   |_|__ |_|__  |_|  |_|__ 
+2020-12-26 20:58:27.410 febs [main] INFO  c.m.f.common.runner.StartedUpRunner -                                                       
+2020-12-26 20:58:27.411 febs [main] INFO  c.m.f.common.runner.StartedUpRunner - FEBS 启动完毕，时间：2020-12-26T20:58:27.410
+2020-12-26 20:58:28.647 febs [RMI TCP Connection(5)-192.168.32.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-26 20:58:28.648 febs [RMI TCP Connection(5)-192.168.32.1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-26 20:58:28.648 febs [RMI TCP Connection(4)-192.168.32.1] INFO  p6spy - 2020-12-26 20:58:28 | 耗时 1 ms | SQL 语句：
+select 1;
+2020-12-26 20:58:28.675 febs [RMI TCP Connection(5)-192.168.32.1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 27 ms
+2020-12-26 20:58:39.398 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:58:42.370 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:58:42.371 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:58:51.398 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:58:52.363 febs [http-nio-9527-exec-5] INFO  c.m.febs.common.aspect.LimitAspect - IP:127.0.0.1 第 1 次访问key为 [limit_login127.0.0.1]，描述为 [登录接口] 的接口
+2020-12-26 20:58:52.434 febs [http-nio-9527-exec-5] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 2 ms | SQL 语句：
+UPDATE t_user SET last_login_time='2020-12-26T20:58:52.408+0800' WHERE (username = 'admin');
+2020-12-26 20:58:52.436 febs [http-nio-9527-exec-5] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 1 ms | SQL 语句：
+SELECT u.user_id userId, u.username, u.password, u.email, u.mobile, u. STATUS, u.create_time createTime, u.ssex, d.dept_id deptId, d.dept_name deptName, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME lastLoginTime, GROUP_CONCAT(r.role_id) roleId, GROUP_CONCAT(r.ROLE_NAME) roleName FROM t_user u LEFT JOIN t_dept d ON (u.dept_id = d.dept_id) LEFT JOIN t_user_role ur ON (u.user_id = ur.user_id) LEFT JOIN t_role r ON r.role_id = ur.role_id WHERE u.username = 'admin' group by u.username, u.user_id, u.password, u.email, u.mobile, u.STATUS, u.create_time, u.ssex, d.dept_id, d.dept_name, u.AVATAR, u.DESCRIPTION, u.LAST_LOGIN_TIME;
+2020-12-26 20:58:52.443 febs [http-nio-9527-exec-5] INFO  p6spy - 
+2020-12-26 20:58:52.462 febs [http-nio-9527-exec-5] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 4 ms | SQL 语句：
+INSERT INTO t_login_log ( login_time, ip, location, username ) VALUES ( '2020-12-26T20:58:52.448+0800', '127.0.0.1', '内网IP|0|0|内网IP|内网IP', 'admin' );
+2020-12-26 20:58:52.466 febs [http-nio-9527-exec-5] INFO  p6spy - 
+2020-12-26 20:58:52.533 febs [http-nio-9527-exec-9] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-12-26 20:58:52.533 febs [http-nio-9527-exec-8] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-12-26 20:58:52.563 febs [http-nio-9527-exec-9] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 3 ms | SQL 语句：
+select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on (rm.role_id = r.role_id) left join t_user_role ur on (ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.order_num;
+2020-12-26 20:58:52.578 febs [http-nio-9527-exec-8] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 5 ms | SQL 语句：
+SELECT DICT_ID,valuee,field_name,keyy,other_keyy,table_name FROM t_dict;
+2020-12-26 20:58:52.874 febs [http-nio-9527-exec-1] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-12-26 20:58:52.883 febs [http-nio-9527-exec-1] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 2 ms | SQL 语句：
+select count(1) from t_login_log;
+2020-12-26 20:58:52.889 febs [http-nio-9527-exec-1] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 3 ms | SQL 语句：
+select count(1) from t_login_log where datediff(login_time,now())=0;
+2020-12-26 20:58:52.891 febs [http-nio-9527-exec-1] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 1 ms | SQL 语句：
+select count(distinct(ip)) from t_login_log where datediff(login_time,now())=0;
+2020-12-26 20:58:52.897 febs [http-nio-9527-exec-1] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 3 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 group by days;
+2020-12-26 20:58:52.901 febs [http-nio-9527-exec-1] INFO  p6spy - 2020-12-26 20:58:52 | 耗时 1 ms | SQL 语句：
+select date_format(l.login_time, '%m-%d') days, count(1) count from ( select * from t_login_log where date_sub(curdate(), interval 7 day) <= date(login_time) ) as l where 1 = 1 and l.username = 'admin' group by days;
+2020-12-26 20:58:55.899 febs [http-nio-9527-exec-3] INFO  c.m.f.common.authentication.JWTUtil - token is valid
+2020-12-26 20:58:55.916 febs [http-nio-9527-exec-3] INFO  p6spy - 2020-12-26 20:58:55 | 耗时 6 ms | SQL 语句：
+SELECT pid,group_name,start_time,end_time,project_name,group_leader FROM project_info;
+2020-12-26 20:58:56.093 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 20:58:57.371 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:58:57.371 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:03.396 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:59:12.373 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:12.373 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:15.396 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:59:25.536 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 20:59:27.375 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:27.376 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:27.397 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:59:39.396 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:59:42.380 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:42.380 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:50.703 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 20:59:51.396 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 20:59:57.381 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 20:59:57.382 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:03.398 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:00:12.383 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:12.383 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:15.299 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:00:15.398 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:00:27.383 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:27.384 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:27.397 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:00:39.399 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:00:41.632 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:00:42.392 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:42.392 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:51.400 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:00:57.391 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:00:57.392 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:03.401 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:01:10.530 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:01:12.390 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:12.390 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:15.401 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:01:27.392 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:27.393 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:27.400 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:01:39.301 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:01:39.402 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:01:42.395 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:42.395 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:51.403 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:01:57.397 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:01:57.399 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:02.360 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:02:03.402 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:02:12.400 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:12.401 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:15.403 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:02:27.402 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:27.402 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:02:27.404 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:31.415 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:02:39.405 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:02:42.404 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:42.405 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:51.405 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:02:57.408 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:02:57.408 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:00.288 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:03:03.406 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:03:12.411 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:12.412 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:15.406 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:03:27.406 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:03:27.413 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:27.413 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:28.790 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:03:39.406 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:03:42.415 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:42.415 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:51.406 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:03:52.021 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:03:57.419 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:03:57.419 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:03.407 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:04:12.423 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:12.423 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:15.407 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:04:21.558 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:04:27.408 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:04:27.425 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:27.426 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:39.409 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:04:42.426 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:42.427 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:48.345 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:04:51.410 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:04:57.428 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:04:57.428 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:03.415 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:05:12.436 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:12.436 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:13.164 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:05:15.412 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:05:27.412 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:05:27.430 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:27.431 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:39.168 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:05:39.411 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:05:42.431 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:42.431 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:51.412 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:05:57.432 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:05:57.433 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:06:03.412 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:06:08.138 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:06:12.433 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:06:12.434 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:06:15.413 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:06:27.414 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:06:27.437 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:06:27.438 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:06:37.756 febs [MyScheduler_QuartzSchedulerThread] INFO  p6spy - 
+2020-12-26 21:06:39.414 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_MisfireHandler] INFO  p6spy - 
+2020-12-26 21:06:42.438 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 
+2020-12-26 21:06:42.439 febs [QuartzScheduler_MyScheduler-DESKTOP-73K4U3K1608987502772_ClusterManager] INFO  p6spy - 

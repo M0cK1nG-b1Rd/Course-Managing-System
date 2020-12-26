@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.wuwenze:ExcelKit:2.0.72">
     <CLASSES>
-      <root url="jar://D:/Maven_Jars/com/wuwenze/ExcelKit/2.0.72/ExcelKit-2.0.72.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/wuwenze/ExcelKit/2.0.72/ExcelKit-2.0.72.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://D:/Maven_Jars/com/wuwenze/ExcelKit/2.0.72/ExcelKit-2.0.72-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/wuwenze/ExcelKit/2.0.72/ExcelKit-2.0.72-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://D:/Maven_Jars/com/wuwenze/ExcelKit/2.0.72/ExcelKit-2.0.72-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/wuwenze/ExcelKit/2.0.72/ExcelKit-2.0.72-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
