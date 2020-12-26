@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -30,7 +33,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../项目/vueblog-master/vueblog-vue" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -41,6 +46,20 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\PhpStorm 2020.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,45 +87,11 @@
       <workItem from="1608910719942" duration="1538000" />
       <workItem from="1608945072566" duration="3340000" />
       <workItem from="1608967531711" duration="614000" />
+      <workItem from="1608980458181" duration="1955000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605951092837">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1605951092837" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1608893927246">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1608893927246" />
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom" timestamp="1605951097664">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1605951097664" />
-    <state width="1493" height="203" key="GridCell.Tab.0.center" timestamp="1605951097664">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1605951097664" />
-    <state width="1493" height="203" key="GridCell.Tab.0.left" timestamp="1605951097663">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1605951097663" />
-    <state width="1493" height="203" key="GridCell.Tab.0.right" timestamp="1605951097664">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="203" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1605951097664" />
-    <state x="270" y="57" key="SettingsEditor" timestamp="1608892158668">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608892158668" />
-    <state x="496" y="180" width="731" height="568" key="find.popup" timestamp="1608946253101">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="496" y="180" width="731" height="568" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1608946253101" />
-    <state x="543" y="221" width="594" height="568" key="find.popup/0.0.1680.1010@0.0.1680.1010" timestamp="1608780210160" />
   </component>
 </project>
