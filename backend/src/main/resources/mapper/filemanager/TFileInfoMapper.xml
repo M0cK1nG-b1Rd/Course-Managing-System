@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.filemanager.dao.TFileInfoMapper">
+  <resultMap id="BaseResultMap" type="cc.mrbird.febs.filemanager.model.TFileInfo">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="filename" jdbcType="VARCHAR" property="filename" />
+    <result column="identifier" jdbcType="VARCHAR" property="identifier" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="total_size" jdbcType="DECIMAL" property="totalSize" />
+    <result column="location" jdbcType="VARCHAR" property="location" />
+    <result column="del_flag" jdbcType="VARCHAR" property="delFlag" />
+    <result column="ref_project_id" jdbcType="VARCHAR" property="refProjectId" />
+    <result column="upload_by" jdbcType="VARCHAR" property="uploadBy" />
+    <result column="upload_time" jdbcType="TIMESTAMP" property="uploadTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, filename, identifier, type, total_size, location, del_flag, ref_project_id, upload_by,
+    upload_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_file_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_file_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.mrbird.febs.filemanager.model.TFileInfo">
+    insert into t_file_info (id, filename, identifier, 
+      type, total_size, location, 
+      del_flag, ref_project_id, upload_by, 
+      upload_time)
+    values (#{id,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR}, #{identifier,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{totalSize,jdbcType=DECIMAL}, #{location,jdbcType=VARCHAR}, 
+      #{delFlag,jdbcType=VARCHAR}, #{refProjectId,jdbcType=VARCHAR}, #{uploadBy,jdbcType=VARCHAR}, 
+      #{uploadTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cc.mrbird.febs.filemanager.model.TFileInfo">
+    insert into t_file_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="filename != null">
+        filename,
+      </if>
+      <if test="identifier != null">
+        identifier,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="totalSize != null">
+        total_size,
+      </if>
+      <if test="location != null">
+        location,
+      </if>
+      <if test="delFlag != null">
+        del_flag,
+      </if>
+      <if test="refProjectId != null">
+        ref_project_id,
+      </if>
+      <if test="uploadBy != null">
+        upload_by,
+      </if>
+      <if test="uploadTime != null">
+        upload_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null">
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="identifier != null">
+        #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="totalSize != null">
+        #{totalSize,jdbcType=DECIMAL},
+      </if>
+      <if test="location != null">
+        #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null">
+        #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="refProjectId != null">
+        #{refProjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadBy != null">
+        #{uploadBy,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null">
+        #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.mrbird.febs.filemanager.model.TFileInfo">
+    update t_file_info
+    <set>
+      <if test="filename != null">
+        filename = #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="identifier != null">
+        identifier = #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="totalSize != null">
+        total_size = #{totalSize,jdbcType=DECIMAL},
+      </if>
+      <if test="location != null">
+        location = #{location,jdbcType=VARCHAR},
+      </if>
+      <if test="delFlag != null">
+        del_flag = #{delFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="refProjectId != null">
+        ref_project_id = #{refProjectId,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadBy != null">
+        upload_by = #{uploadBy,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null">
+        upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.mrbird.febs.filemanager.model.TFileInfo">
+    update t_file_info
+    set filename = #{filename,jdbcType=VARCHAR},
+      identifier = #{identifier,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      total_size = #{totalSize,jdbcType=DECIMAL},
+      location = #{location,jdbcType=VARCHAR},
+      del_flag = #{delFlag,jdbcType=VARCHAR},
+      ref_project_id = #{refProjectId,jdbcType=VARCHAR},
+      upload_by = #{uploadBy,jdbcType=VARCHAR},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectFileByParams" parameterType="cc.mrbird.febs.filemanager.model.TFileInfo" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_file_info
+    where filename = #{filename,jdbcType=VARCHAR}
+      and identifier = #{identifier,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectFileList" resultMap="BaseResultMap" parameterType="cc.mrbird.febs.filemanager.model.TFileInfo">
+		SELECT
+			id ,
+			total_size,
+			filename ,
+			location,
+			identifier,
+			# upload_time
+		    date_format(upload_time,'%Y-%m-%d %T') AS uploadTimeString
+		FROM T_FILE_INFO
+	    WHERE del_flag = '0'
+		<if test="filename != null">
+        	and filename = #{nameSearch,jdbcType=VARCHAR}
+      	</if>
+		ORDER BY UPLOAD_TIME
+	</select>
+  
+</mapper>

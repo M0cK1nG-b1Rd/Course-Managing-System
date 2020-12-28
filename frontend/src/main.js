@@ -10,7 +10,11 @@ import VueMeta from 'vue-meta'
 import 'ant-design-vue/dist/antd.css'
 import echarts from 'echarts'
 import 'utils/install'
+import './components/common/directives'
+import uploader from "vue-simple-uploader";
+import './plugins/element.js'
 
+Vue.use(uploader)
 Vue.config.productionTip = false
 Vue.use(Antd)
 Vue.use(db)

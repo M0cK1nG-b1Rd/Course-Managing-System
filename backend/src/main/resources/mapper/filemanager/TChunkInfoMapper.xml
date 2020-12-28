@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.filemanager.dao.TChunkInfoMapper">
+  <resultMap id="BaseResultMap" type="cc.mrbird.febs.filemanager.model.TChunkInfo">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="chunk_number" jdbcType="DECIMAL" property="chunkNumber" />
+    <result column="chunk_size" jdbcType="DECIMAL" property="chunkSize" />
+    <result column="current_chunkSize" jdbcType="DECIMAL" property="currentChunkSize" />
+    <result column="identifier" jdbcType="VARCHAR" property="identifier" />
+    <result column="filename" jdbcType="VARCHAR" property="filename" />
+    <result column="relative_path" jdbcType="VARCHAR" property="relativePath" />
+    <result column="total_chunks" jdbcType="DECIMAL" property="totalChunks" />
+    <result column="type" jdbcType="DECIMAL" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, chunk_number, chunk_size, current_chunkSize, identifier, filename, relative_path, 
+    total_chunks, type
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_chunk_info
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from t_chunk_info
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cc.mrbird.febs.filemanager.model.TChunkInfo">
+    insert into t_chunk_info (id, chunk_number, chunk_size, 
+      current_chunkSize, identifier, filename, 
+      relative_path, total_chunks, type
+      )
+    values (#{id,jdbcType=VARCHAR}, #{chunkNumber,jdbcType=DECIMAL}, #{chunkSize,jdbcType=DECIMAL}, 
+      #{currentChunkSize,jdbcType=DECIMAL}, #{identifier,jdbcType=VARCHAR}, #{filename,jdbcType=VARCHAR}, 
+      #{relativePath,jdbcType=VARCHAR}, #{totalChunks,jdbcType=DECIMAL}, #{type,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cc.mrbird.febs.filemanager.model.TChunkInfo">
+    insert into t_chunk_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="chunkNumber != null">
+        chunk_number,
+      </if>
+      <if test="chunkSize != null">
+        chunk_size,
+      </if>
+      <if test="currentChunkSize != null">
+        current_chunkSize,
+      </if>
+      <if test="identifier != null">
+        identifier,
+      </if>
+      <if test="filename != null">
+        filename,
+      </if>
+      <if test="relativePath != null">
+        relative_path,
+      </if>
+      <if test="totalChunks != null">
+        total_chunks,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="chunkNumber != null">
+        #{chunkNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="chunkSize != null">
+        #{chunkSize,jdbcType=DECIMAL},
+      </if>
+      <if test="currentChunkSize != null">
+        #{currentChunkSize,jdbcType=DECIMAL},
+      </if>
+      <if test="identifier != null">
+        #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null">
+        #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="relativePath != null">
+        #{relativePath,jdbcType=VARCHAR},
+      </if>
+      <if test="totalChunks != null">
+        #{totalChunks,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cc.mrbird.febs.filemanager.model.TChunkInfo">
+    update t_chunk_info
+    <set>
+      <if test="chunkNumber != null">
+        chunk_number = #{chunkNumber,jdbcType=DECIMAL},
+      </if>
+      <if test="chunkSize != null">
+        chunk_size = #{chunkSize,jdbcType=DECIMAL},
+      </if>
+      <if test="currentChunkSize != null">
+        current_chunkSize = #{currentChunkSize,jdbcType=DECIMAL},
+      </if>
+      <if test="identifier != null">
+        identifier = #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null">
+        filename = #{filename,jdbcType=VARCHAR},
+      </if>
+      <if test="relativePath != null">
+        relative_path = #{relativePath,jdbcType=VARCHAR},
+      </if>
+      <if test="totalChunks != null">
+        total_chunks = #{totalChunks,jdbcType=DECIMAL},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cc.mrbird.febs.filemanager.model.TChunkInfo">
+    update t_chunk_info
+    set chunk_number = #{chunkNumber,jdbcType=DECIMAL},
+      chunk_size = #{chunkSize,jdbcType=DECIMAL},
+      current_chunkSize = #{currentChunkSize,jdbcType=DECIMAL},
+      identifier = #{identifier,jdbcType=VARCHAR},
+      filename = #{filename,jdbcType=VARCHAR},
+      relative_path = #{relativePath,jdbcType=VARCHAR},
+      total_chunks = #{totalChunks,jdbcType=DECIMAL},
+      type = #{type,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <select id="selectChunkNumbers" parameterType="cc.mrbird.febs.filemanager.model.TChunkInfo" resultType="int">
+    select 
+    chunk_number
+    from t_chunk_info
+    where identifier = #{identifier,jdbcType=VARCHAR} 
+    and filename = #{filename,jdbcType=VARCHAR}
+  </select>
+  
+</mapper>
