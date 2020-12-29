@@ -92,7 +92,7 @@ public class FileController {
     @PostMapping("/mergeFile")
     public String mergeFile(@RequestBody TFileInfoVO fileInfoVO){
 
-        String rlt = "FALURE";
+        String rlt = "FAILURE";
 
         //前端组件参数转换为model对象
         TFileInfo fileInfo = new TFileInfo();

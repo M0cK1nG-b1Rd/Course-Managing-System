@@ -80,6 +80,21 @@ export default {
     第三个参数就是 message 就是服务端响应内容，永远都是字符串；
     第四个参数 chunk 就是 Uploader.Chunk 实例，它就是该文件的最后一个块实例，如果你想得到请求响应码的话，chunk.xhr.status就是
     */
+    // onFileSuccess(rootFile, file, response, chunk) {
+    //   //refProjectId为预留字段，可关联附件所属目标，例如所属档案，所属工程等
+    //   file.refProjectId = "123456789";
+    //   mergeFile(file).then( responseData=> {
+    //     if(responseData.data.code === 415){
+    //       console.log("合并操作未成功，结果码："+responseData.data.code);
+    //     }
+    //   }).catch(function (error){
+    //     console.log("合并后捕获的未知异常："+error);
+    //   });
+    // },
+    // onFileError(rootFile, file, response, chunk) {
+    //   console.log('上传完成后异常信息：'+response);
+    // },
+
     onFileSuccess(rootFile, file, response, chunk) {
       //refProjectId为预留字段，可关联附件所属目标，例如所属档案，所属工程等
       file.refProjectId = "123456789";

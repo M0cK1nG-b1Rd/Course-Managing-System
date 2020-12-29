@@ -11,7 +11,6 @@ const service = axios.create({
 //解决vue项目的浏览器兼容性问题
 //带上token
 service.interceptors.request.use((config) => {
-    console.log("test")
     if (store.state.account.token) {
       config.headers.Authentication = store.state.account.token
     }
@@ -27,7 +26,7 @@ service.interceptors.request.use((config) => {
 service.interceptors.response.use(
   response => {
     if (response.status === 200) {
-      return response.data;
+      return response.data; //可能的点
     } else {
       Promise.reject();
     }
