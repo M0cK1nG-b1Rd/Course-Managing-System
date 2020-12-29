@@ -2,7 +2,7 @@
 require('./check-versions')()
 
 if(!process.env.NODE_ENV){
-  process.env.NODE_ENV = 'production'
+  process.env.NODE_ENV = 'development'
 }
 
 const ora = require('ora')

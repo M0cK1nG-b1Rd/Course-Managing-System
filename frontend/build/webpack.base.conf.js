@@ -11,11 +11,9 @@ function resolve (dir) {
 
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
-  loader: 'eslint-loader',
   enforce: 'pre',
   include: [resolve('src'), resolve('test')],
   options: {
-    formatter: require('eslint-friendly-formatter'),
     emitWarning: !config.dev.showEslintErrorsInOverlay
   }
 })
@@ -97,7 +95,7 @@ module.exports = {
     // Ignore all locale files of moment.js
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     //UglifyJsPlugin用来对js文件进行压缩，减小js文件的大小。其会拖慢webpack的编译速度，建议开发环境时关闭，生产环境再将其打开
-    new webpack.optimize.UglifyJsPlugin({
+    /*new webpack.optimize.UglifyJsPlugin({
       beautify: false,
       comments: false,
       compress: {
@@ -106,6 +104,6 @@ module.exports = {
         collapse_vars: true,
         reduce_vars: true,
       }
-    }),
+    }),*/
   ]
 }
