@@ -10,19 +10,14 @@ import VueMeta from 'vue-meta'
 import 'ant-design-vue/dist/antd.css'
 import echarts from 'echarts'
 import 'utils/install'
-<<<<<<< HEAD
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import './components/common/directives'
+import uploader from 'vue-simple-uploader'
 
 Vue.use(VueAxios, axios)
-=======
-import './components/common/directives'
-import uploader from "vue-simple-uploader";
-import './plugins/element.js'
->>>>>>> upstream/main
-
 Vue.use(uploader)
 Vue.config.productionTip = false
 Vue.use(Antd)
