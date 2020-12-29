@@ -6,12 +6,6 @@
   </el-header>
   <el-main v-bind:style="{minHeight: Height+'px'}"><router-view/>
 
-    <!--  上传按钮及后续搜索栏 -->
-    <div class="handle-box" align="left">
-      <el-button type="primary" icon="el-icon-upload" class="mr10" @click="uploadFiles()">文件上传</el-button>
-<!--      <el-input v-model="query.nameSearch" placeholder="文件名" class="handle-input mr10"></el-input>-->
-<!--      <el-button type="primary" icon="el-icon-search" @click="handleSearch">搜索</el-button>-->
-    </div>
 
 <!--    table主要区域   -->
     <el-table :data="tableData.slice((query.currentPage-1)*query.pageSize, query.currentPage * query.pageSize)" style="width: 100%">

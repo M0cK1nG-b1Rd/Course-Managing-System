@@ -12,23 +12,23 @@ server:
     # Tomcat启动初始化的线程数，默认值25
     min-spare-threads: 30
     max-http-header-size: 10240000
-    
-    
+
+
 spring:
   mvc:
     hiddenmethod:   #过滤器
       filter:
         enabled: true     # 默认为false,在使用@deletemapping时post请求报405错误，改为true
                     # 不管用，将@DeleteMapping换成@RequestMapping(method=post)
-                    
+
   servlet:
     multipart:
       max-file-size: 5GB    #最大支持文件大小
       max-request-size: 10GB    #最大支持请求大小
       enabled: true     #是否支持 multipart 上传文件
       file-size-threshold: 0    #支持文件写入磁盘
-      resolve-lazily: false  #是否支持 multipart 上传文件时懒加载                    
-                    
+      resolve-lazily: false  #是否支持 multipart 上传文件时懒加载
+
   datasource:
     dynamic:
       # 是否开启 SQL日志输出，生产环境建议关闭，有性能损耗
@@ -45,10 +45,10 @@ spring:
       datasource:
         # 数据源-1，名称为 primary
         primary:
-          username: root
-          password: a709046532
+          username: root8
+          password: root8
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://127.0.0.1:3306/ourproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+          url: jdbc:mysql://192.168.12.173:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
         # 数据源-2，名称为 test
 #        test:
 #          username: root
@@ -66,7 +66,7 @@ spring:
     time-zone: GMT+8
     serialization:
       WRITE_DATES_AS_TIMESTAMPS: false
-      
+
     # 服务模块
   devtools:
     restart:
@@ -131,8 +131,8 @@ febs:
 # 最大导出数量
 export:
   maxCount: 10000
-  
-  
+
+
 # 上传文件存储路径
 prop:
   upload-folder: D:/files
