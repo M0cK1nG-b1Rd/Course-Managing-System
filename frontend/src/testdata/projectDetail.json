@@ -1,0 +1,25 @@
+{
+  "code": 200,
+  "data": {
+    "total": 2,
+    "projects":[
+      {
+        "start_time" : 1608564342,
+        "end_time" : 1608564342,
+        "pid" : 1 ,
+        "project_name" : "游戏开发",
+        "group_name" : "张三的小组",
+        "group_leader" : "张三"
+      },
+      {
+        "start_time" : 1608564352,
+        "end_time" : 1608564352,
+        "pid" : 2 ,
+        "project_name" : "购物商城",
+        "group_name" : "李四的小组",
+        "group_leader" : "李四"
+      }]
+  },
+  "message": "获取成功",
+  "status": "success"
+}

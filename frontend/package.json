@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "ant-design-vue": "1.5.2",
-    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "browserslist": "^3.2.8",
     "crypto-js": "^3.1.9-1",
@@ -29,6 +28,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
+    "axios": "^0.18.1",
     "babel-core": "^6.22.1",
     "babel-eslint": "^8.2.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
@@ -49,6 +49,7 @@
     "cross-env": "^5.2.1",
     "cross-spawn": "^5.0.1",
     "css-loader": "^0.28.0",
+    "element-ui": "^2.14.1",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -81,6 +82,7 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
+    "vue-axios": "^3.2.0",
     "vue-jest": "^1.0.2",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
