@@ -1,22 +1,29 @@
 <template>
-  <!-- 上传器 -->
-  <uploader
+  <el-container>
+<!--    页面顶部栏-->
+    <el-header style="text-align: left">    <!--文字居左-->
+      <div class="el-icon-folder" :style="{Height: Height + 'px'}">PM管理系统-文件上传中心</div>
+    </el-header>
+    <!-- 上传器 -->
+    <uploader
       ref="uploader"
       :options="options"
       :autoStart=false
       :file-status-text="fileStatusText"
       @file-added="onFileAdded"
       @file-success="onFileSuccess"
-      @file-progress="onFileProgress"
       @file-error="onFileError"
       class="uploader-ui">
-    <uploader-drop>
-      <div>
-        <uploader-btn id="global-uploader-btn" :attrs="attrs" ref="uploadBtn">选择文件<i class="el-icon-upload el-icon--right"></i></uploader-btn>
-      </div>
-    </uploader-drop>
-    <uploader-list></uploader-list>
-  </uploader>
+      <uploader-drop>
+        <div>
+          <uploader-btn id="global-uploader-btn" :attrs="attrs" ref="uploadBtn">
+            选择文件<i class="el-icon-upload el-icon--right"></i>
+          </uploader-btn>
+        </div>
+      </uploader-drop>
+      <uploader-list></uploader-list>
+    </uploader>
+  </el-container>
 </template>
 
 <script>
@@ -185,11 +192,13 @@ export default {
 
 <style>
 .uploader-ui {
-  padding: 15px;
+  padding: 25px;
   margin: 40px auto 0;
-  font-size: 12px;
+  font-size: 20px;
   font-family: Microsoft YaHei;
   box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+  height: 200px;
+  width: 600px;
 }
 .uploader-ui .uploader-btn {
   margin-right: 4px;
@@ -208,4 +217,14 @@ export default {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.el-header, .el-footer {
+   background-color: #B3C0D1;
+   color: #333;
+   text-align: center;
+   line-height: 60px;
+ }，
+  .el-container {
+    height: 100%;
+  }
 </style>

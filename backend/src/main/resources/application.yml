@@ -43,12 +43,6 @@ spring:
       # 配置默认数据源
       primary: primary
       datasource:
-#         数据源-1，名称为 primary
-#        primary:
-#          username: root
-#          password: a709046532
-#          driver-class-name: com.mysql.cj.jdbc.Driver
-#          url: jdbc:mysql://localhost:3306/ourproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
         primary:
           username: root7
           password: root7
