@@ -35,8 +35,4 @@ public class ProjectScoreServiceImpl extends ServiceImpl<ProjectScoreMapper, Pro
         }
     }
 
-    @Override
-    public List<ProjectScoringRules> getRules() {
-        return baseMapper.selectList(new QueryWrapper());
-    }
 }

@@ -55,7 +55,8 @@ public class ProjectInfoServiceImpl extends ServiceImpl<ProjectInfoMapper, Proje
     }
 
     @Override
-    public void createProjectInfo(ProjectInfo projectInfo){
+    public long createProjectInfo(ProjectInfo projectInfo){
         this.save(projectInfo);
+        return projectInfo.getPid();
     }
 }

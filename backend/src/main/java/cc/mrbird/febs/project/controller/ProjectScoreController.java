@@ -7,6 +7,7 @@ import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.project.domain.ProjectScore;
 import cc.mrbird.febs.project.domain.ProjectScoringRules;
 import cc.mrbird.febs.project.service.ProjectScoreService;
+import cc.mrbird.febs.project.service.ProjectScoringRulesService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -25,6 +26,9 @@ import java.util.List;
 public class ProjectScoreController {
     @Autowired
     private ProjectScoreService projectScoreService;
+
+    @Autowired
+    private ProjectScoringRulesService projectScoringRulesService;
 
     private String message;
 
@@ -63,10 +67,10 @@ public class ProjectScoreController {
     @GetMapping("score/rules")
     public FebsResponse getProjectScoringRules() throws FebsException {
         try {
-            List<ProjectScoringRules> rules = this.projectScoreService.getRules();
-            return new FebsResponse().code("200").message("新增打分规则信息成功").status("success").data(rules);
+            List<ProjectScoringRules> rules = this.projectScoringRulesService.getRules();
+            return new FebsResponse().code("200").message("查询成功").status("success").data(rules);
         } catch (Exception e) {
-            message = "新增打分规则信息失败";
+            message = "查询成功";
             log.error(message, e);
             throw new FebsException(message);
         }

@@ -2,9 +2,13 @@ package cc.mrbird.febs.project.domain;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -22,20 +26,28 @@ public class ProjectInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonIgnore
     @TableId(value = "pid", type = IdType.AUTO)
     private Long  pid;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private LocalDateTime startTime;
+    @JsonFormat(timezone="GTM+8",pattern="yyyy-MM-dd")
+    private Date startTime;
 
-    @DateTimeFormat(pattern="yyyy-MM-dd")
-    private LocalDateTime endTime;
+    @JsonFormat(timezone="GTM+8",pattern="yyyy-MM-dd")
+    private Date endTime;
 
     private String projectName;
 
-    private String groupName;
-
+    @JsonProperty(value = "managerName")
     private String groupLeader;
+
+    private String projectType;
+
+    private String projectDesc;
+
+    private String teacherName;
+
+
 
 
 }
