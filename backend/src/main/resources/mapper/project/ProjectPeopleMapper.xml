@@ -11,8 +11,8 @@
     <resultMap id="PeopleInGroup" type="cc.mrbird.febs.project.domain.ProjectPeople"></resultMap>
     <select id="getAllPeopleInGroup" resultType="cc.mrbird.febs.project.domain.PeopleInGroup">
         SELECT a.sid,a.name,a.classs,b.position
-        FROM `t_user_info` as a,`project_people` as b
-        where a.sid= b.sid and b.pid in (select pid from project_people where sid= #{sid} and pid = #{pid})
+        FROM `t_user_info` as a,`project_member_info` as b
+        where a.sid= b.sid and b.pid in (select pid from project_member_info where sid= #{sid} and pid = #{pid})
     </select>
 
 

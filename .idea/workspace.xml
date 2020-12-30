@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="51da2d91-10ae-4be3-86b7-cf65cc3210af" name="默认的" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/project/create/ProjectCreate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/project/create/ProjectCreate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/project/create/addMember.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/project/score/give/GiveScore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/project/score/give/GiveScore.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/views/project/score/query/QueryScore.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/project/score/query/QueryScore.vue" afterDir="false" />
     </list>
@@ -43,6 +41,8 @@
       <workItem from="1609293404525" duration="5000" />
       <workItem from="1609293415711" duration="7000" />
       <workItem from="1609321365422" duration="2000" />
+      <workItem from="1609326503198" duration="2000" />
+      <workItem from="1609332040319" duration="7000" />
     </task>
     <servers />
   </component>
