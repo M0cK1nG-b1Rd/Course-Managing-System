@@ -1,7 +1,7 @@
 <template>
 <el-container>
   <el-header style="text-align: left">    <!--文字居左-->
-    <div class="el-icon-folder" :style="{Height: Height + 'px'}">简易文件管理</div>
+    <div class="el-icon-folder" :style="{Height: Height + 'px'}">PM管理系统-文件下载中心</div>
 
   </el-header>
   <el-main v-bind:style="{minHeight: Height+'px'}"><router-view/>
@@ -11,7 +11,7 @@
     <el-table :data="tableData.slice((query.currentPage-1)*query.pageSize, query.currentPage * query.pageSize)" style="width: 100%">
       <el-table-column  prop="id" label="ID" width="120" align="center" v-if="isShow">
       </el-table-column>
-      <el-table-column prop="filename" label="文件名" width="500" show-overflow-tooltip><!--tooltip表格列内容过长时显示提示-->
+      <el-table-column prop="filename" label="文件名" width="200" show-overflow-tooltip><!--tooltip表格列内容过长时显示提示-->
       </el-table-column>
       <el-table-column prop="totalSizeName" label="文件大小" width="200">
       </el-table-column>
@@ -19,7 +19,7 @@
       </el-table-column>
       <el-table-column prop="identifier" label="identifier" align="center" v-if="isShow">
       </el-table-column>
-      <el-table-column prop="uploadTimeString" label="上传时间" width="300">
+      <el-table-column prop="uploadTimeString" label="上传时间" width="200">
       </el-table-column>
       <el-table-column fixed="right" label="操作" align="center">
         <template slot-scope="scope">
@@ -30,12 +30,28 @@
               @click="downloadHandle(scope.$index, scope.row)" size="small">下载</el-button>
           <el-button
               type="text"
-              icon="el-icon-download"
+              icon="el-icon-delete"
               class="red"
-              @click="deleteHandle(scope.$index, scope.row)" size="small">删除</el-button>
+              @click="deleteDialogVisible = true" size="small">删除</el-button>
+<!--              删除文件时弹出的警告对话框-->
+          <el-dialog
+            title="提示"
+            :visible.sync="deleteDialogVisible"
+            :before-close="handleDialogClose"
+            width="30%">
+            <span>文件删除后不可恢复，您确定需要删除吗？</span>
+            <span slot="footer" class="dialog-footer">
+              <el-button @click="deleteDialogVisible = false">取 消</el-button>
+              <el-button type="primary" @click="deleteHandle(scope.$index, scope.row)">确 定</el-button>
+            </span>
+          </el-dialog>
         </template>
       </el-table-column>
     </el-table>
+
+
+
+
     <!--  table主要区域结束  -->
 
     <!--  分页 begin   -->
@@ -121,7 +137,9 @@ export default {
       isShow: false,
       uploadVisible: false,
       form: {},
-      id: -1
+      id: -1,
+      // 删除文件时警示框的可见性
+      deleteDialogVisible: false
     };
   },
   //  初始化
@@ -201,6 +219,11 @@ export default {
       }else{
         this.$message.error('删除失败');
       }
+    },
+
+    // 关闭删除文件警示对话框时调用
+    handleDialogClose(){
+        this.deleteDialogVisible = false
     }
 
   },
