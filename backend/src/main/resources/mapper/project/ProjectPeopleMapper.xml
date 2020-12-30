@@ -8,7 +8,16 @@
 <!--        and c.pid= (select pid from project_people where sid=#{sid})-->
 <!--    </select>-->
 
-    <resultMap id="menu" type="cc.mrbird.febs.project.domain.ProjectPeople">
-    </resultMap>
+    <resultMap id="PeopleInGroup" type="cc.mrbird.febs.project.domain.ProjectPeople"></resultMap>
+    <select id="getAllPeopleInGroup" resultType="cc.mrbird.febs.project.domain.PeopleInGroup">
+        SELECT a.sid,a.name,a.classs,b.position
+        FROM `t_user_info` as a,`project_people` as b
+        where a.sid= b.sid and b.pid in (select pid from project_people where sid= #{sid})
+    </select>
+
+
+    <select id="getPeopleInSameGroup" resultType="cc.mrbird.febs.project.domain.ProjectPeople">
+
+    </select>
 
 </mapper>

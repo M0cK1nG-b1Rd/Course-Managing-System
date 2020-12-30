@@ -1,31 +1,29 @@
 package cc.mrbird.febs.project.domain;
 
-import java.io.Serializable;
-
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import java.io.Serializable;
+
 /**
- * 
+ *
  *
  * @author hyl
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class ProjectPeople implements Serializable {
+public class PeopleInGroup implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @TableId
-    private long id;
-
-    private String pid;
 
     private String sid;
 
-    private String position;
+    private String name;
 
+    private String classs;
+
+    private String position;
 
 }

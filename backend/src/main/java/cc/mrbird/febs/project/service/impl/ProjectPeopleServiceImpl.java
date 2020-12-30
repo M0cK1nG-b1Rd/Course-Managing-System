@@ -5,6 +5,7 @@ import cc.mrbird.febs.project.domain.ProjectInfo;
 import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.project.dao.ProjectPeopleMapper;
 import cc.mrbird.febs.project.service.ProjectPeopleService;
+import cc.mrbird.febs.system.domain.Menu;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,10 @@ public class ProjectPeopleServiceImpl extends ServiceImpl<ProjectPeopleMapper, P
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.eq("pid",pid);
         return (List<ProjectPeople>) projectPeopleMapper.selectList(wrapper);
+    }
+
+    @Override
+    public List<ProjectPeople> getAllPeopleInGroup(String sid) {
+        return this.baseMapper.getAllPeopleInGroup(sid);
     }
 }

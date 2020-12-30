@@ -1,16 +1,12 @@
 package cc.mrbird.febs.project.controller;
 
-
 import cc.mrbird.febs.common.authentication.JWTUtil;
 import cc.mrbird.febs.common.domain.FebsResponse;
-import cc.mrbird.febs.common.domain.QueryRequest;
 import cc.mrbird.febs.project.domain.ProjectInfo;
+import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.service.ProjectInfoService;
-import cc.mrbird.febs.system.domain.Dept;
+import cc.mrbird.febs.project.service.TUserInfoService;
 import cc.mrbird.febs.system.manager.UserManager;
-import cc.mrbird.febs.system.service.DeptService;
-import cc.mrbird.febs.system.service.UserService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -37,17 +33,25 @@ public class ProjectInfoController {
     private ProjectInfoService projectInfoService;
 
     @Autowired
+    private TUserInfoService tUserInfoService;
+
+    @Autowired
     private UserManager userManager;
 
-    @GetMapping
-    public FebsResponse projectInfo() {
-        String token = (String) SecurityUtils.getSubject().getPrincipal();
-        String username = "";
-        if (StringUtils.isNotBlank(token)) {
-            username = JWTUtil.getUsername(token);
-        }
 
-        List<ProjectInfo> list = this.projectInfoService.findProjectInfo(username);
+    String getUsername(){
+        String username="";
+        String token = (String) SecurityUtils.getSubject().getPrincipal();
+        if (StringUtils.isNotBlank(token)) {
+             username = JWTUtil.getUsername(token);
+        }
+        return username;
+    }
+
+
+    @GetMapping("my")
+    public FebsResponse projectInfo() {
+        List<ProjectInfo> list = this.projectInfoService.findProjectInfo(this.getUsername());
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
 
@@ -56,4 +60,6 @@ public class ProjectInfoController {
         List<ProjectInfo> list = this.projectInfoService.list();
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
+
+
 }
