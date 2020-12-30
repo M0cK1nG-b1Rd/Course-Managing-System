@@ -14,5 +14,4 @@ import java.util.List;
 public interface ProjectScoreMapper extends BaseMapper<ProjectScore> {
     void addProjectScore(List<ProjectScore> projectScores);
 
-    void addProjectScoringRules(List<ProjectScoringRules> projectScoringRules);
 }

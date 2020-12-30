@@ -88,14 +88,14 @@ export default {
     setMarkRule () {
       // 检查各项权重总和是否等于100
       let total = this.markRule.process + this.markRule.docs + this.markRule.completion + this.markRule.presentation
-      if(total==100){
+      if(total===100){
         // 向后端发送打分规则，让后端存储
-        // let rule = this.markRule
-        // this.$post('url',{rule}).then((r) => {
-        //     this.$message.success('打分规则设置成功！')
-        //   }).catch((err) => {
-        //   this.$message.error('打分规则设置失败！')
-        // })
+        let rule = this.markRule
+        this.$post('project/score/rules',rule).then((r) => {
+            this.$message.success('打分规则设置成功！')
+          }).catch((err) => {
+          this.$message.error('打分规则设置失败！')
+        })
       }
       else{
         this.$message.error('请确保所有选项之和为100！')
