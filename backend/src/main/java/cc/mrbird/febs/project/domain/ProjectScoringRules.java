@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -17,18 +16,16 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("project_member_info")
-public class ProjectPeople implements Serializable {
+public class ProjectScoringRules implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
     @TableId(type = IdType.AUTO)
-    private long id;
+    private Integer id;
 
-    private String pid;
+    private String ruleName;
 
-    private String sid;
-
-    private String position;
+    private Integer ratio;
 
 
 }

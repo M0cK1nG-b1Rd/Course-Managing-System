@@ -1,5 +1,6 @@
 package cc.mrbird.febs.project.dao;
 
+import cc.mrbird.febs.project.domain.PeopleInGroup;
 import cc.mrbird.febs.project.domain.ProjectPeople;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
@@ -12,7 +13,9 @@ import java.util.List;
  */
 @Service
 public interface ProjectPeopleMapper extends BaseMapper<ProjectPeople> {
-    List<ProjectPeople> getAllPeopleInGroup(String sid);
+    List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid);
 
     List<ProjectPeople> getPeopleInSameGroup(@Param("sid") String sid);
+
+    void createProjectPeoples(List<ProjectPeople> projectPeoples);
 }

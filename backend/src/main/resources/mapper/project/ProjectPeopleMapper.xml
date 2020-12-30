@@ -12,12 +12,21 @@
     <select id="getAllPeopleInGroup" resultType="cc.mrbird.febs.project.domain.PeopleInGroup">
         SELECT a.sid,a.name,a.classs,b.position
         FROM `t_user_info` as a,`project_people` as b
-        where a.sid= b.sid and b.pid in (select pid from project_people where sid= #{sid})
+        where a.sid= b.sid and b.pid in (select pid from project_people where sid= #{sid} and pid = #{pid})
     </select>
 
 
     <select id="getPeopleInSameGroup" resultType="cc.mrbird.febs.project.domain.ProjectPeople">
 
     </select>
+
+
+    <insert id="createProjectPeoples" parameterType="java.util.List">
+        insert into project_people(pid,sid,position) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.pid},#{item.sid},#{item.position})
+        </foreach>
+    </insert>
+
 
 </mapper>

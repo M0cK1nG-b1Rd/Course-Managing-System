@@ -3,7 +3,9 @@ package cc.mrbird.febs.system.dao;
 import cc.mrbird.febs.system.domain.UserRole;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface UserRoleMapper extends BaseMapper<UserRole> {
 
     /**

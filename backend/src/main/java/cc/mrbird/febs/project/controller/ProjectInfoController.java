@@ -2,6 +2,7 @@ package cc.mrbird.febs.project.controller;
 
 import cc.mrbird.febs.common.authentication.JWTUtil;
 import cc.mrbird.febs.common.domain.FebsResponse;
+import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.project.domain.ProjectInfo;
 import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.service.ProjectInfoService;
@@ -12,14 +13,9 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
+import org.springframework.web.bind.annotation.*;
+import javax.validation.Valid;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author hyl
@@ -38,6 +34,7 @@ public class ProjectInfoController {
     @Autowired
     private UserManager userManager;
 
+    private String message;
 
     String getUsername(){
         String username="";
@@ -48,10 +45,18 @@ public class ProjectInfoController {
         return username;
     }
 
-
+    //我的项目（总览，不包括项目细节）
     @GetMapping("my")
-    public FebsResponse projectInfo() {
-        List<ProjectInfo> list = this.projectInfoService.findProjectInfo(this.getUsername());
+    public FebsResponse getProjectInfoByUserName() {
+        TUserInfo tUserInfo = tUserInfoService.findByUsername(this.getUsername());
+        String sid = tUserInfo.getSid();
+        List<ProjectInfo> list = this.projectInfoService.findMyProjectInfo(sid);
+//        for (ProjectInfo projectInfo:list) {
+//            if (projectInfo.getPid().toString().equals(pid)) {
+//                return new FebsResponse().code("200").message("请求成功").status("success").data(projectInfo);
+//            }
+//        }
+//        return new FebsResponse().code("404").message("未找到数据").status("not found");
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
 
@@ -60,6 +65,19 @@ public class ProjectInfoController {
         List<ProjectInfo> list = this.projectInfoService.list();
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
+
+    @PostMapping("new")
+    public FebsResponse addProjectInfo(@RequestBody @Valid ProjectInfo projectInfo) throws FebsException {
+        try {
+            this.projectInfoService.createProjectInfo(projectInfo);
+            return new FebsResponse().code("200").message("新增项目信息成功").status("success");
+        } catch (Exception e) {
+            message = "新增项目信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
 
 
 }

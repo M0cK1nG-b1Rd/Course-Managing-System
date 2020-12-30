@@ -1,5 +1,6 @@
 package cc.mrbird.febs.project.service;
 
+import cc.mrbird.febs.project.domain.PeopleInGroup;
 import cc.mrbird.febs.project.domain.ProjectInfo;
 import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.system.domain.Menu;
@@ -14,7 +15,9 @@ import java.util.List;
 @Service
 public interface ProjectPeopleService extends IService<ProjectPeople> {
 
-    List<ProjectPeople> findById(String username);
+    List<ProjectPeople> findBySid(String sid);
 
-    List<ProjectPeople> getAllPeopleInGroup(String sid) ;
+    List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid) ;
+
+    void createProjectPeoples(List<ProjectPeople> projectPeoples);
 }

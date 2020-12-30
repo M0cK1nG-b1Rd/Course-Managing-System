@@ -44,16 +44,16 @@ spring:
       primary: primary
       datasource:
 #         数据源-1，名称为 primary
-        primary:
-          username: root
-          password: a709046532
-          driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/ourproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
 #        primary:
-#          username: root7
-#          password: root7
+#          username: root
+#          password: a709046532
 #          driver-class-name: com.mysql.cj.jdbc.Driver
-#          url: jdbc:mysql://192.168.12.173:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+#          url: jdbc:mysql://localhost:3306/ourproject?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+        primary:
+          username: root7
+          password: root7
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://192.168.12.173:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
   aop:
     proxy-target-class: true
 

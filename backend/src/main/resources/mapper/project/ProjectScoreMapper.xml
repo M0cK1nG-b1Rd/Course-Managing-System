@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cc.mrbird.febs.project.dao.ProjectScoreMapper">
+
+    <insert id="addProjectScore" parameterType="java.util.List">
+        insert into project_score(sid,total_score,process_score,docs_score,complete_score,presentation_score,feedback) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.sid},#{item.total_score},#{item.process_score},#{item.docs_score},#{item.complete_score},#{item.presentation_score},#{item.feedback})
+        </foreach>
+    </insert>
+
+
+    <insert id="addProjectScoringRules">
+        insert into project_scoring_rules(rule_name,ratio) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.rule_name},#{item.ratio})
+        </foreach>
+    </insert>
+
+</mapper>

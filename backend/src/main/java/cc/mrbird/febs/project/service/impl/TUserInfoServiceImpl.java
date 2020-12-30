@@ -29,9 +29,9 @@ public class TUserInfoServiceImpl extends ServiceImpl<TUserInfoMapper, TUserInfo
 
     //Username其实就是sid，动数据库的代价太大了
     @Override
-    public TUserInfo findByUsername(String sid) {
+    public TUserInfo findByUsername(String username) {
         QueryWrapper wrapper = new QueryWrapper();
-        wrapper.eq("sid",sid);
+        wrapper.eq("username",username);
         return tUserInfoMapper.selectOne(wrapper);
     }
 
