@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -69,8 +70,10 @@ public class ProjectInfoController {
     @PostMapping("new")
     public FebsResponse addProjectInfo(@RequestBody @Valid ProjectInfo projectInfo) throws FebsException {
         try {
-            this.projectInfoService.createProjectInfo(projectInfo);
-            return new FebsResponse().code("200").message("新增项目信息成功").status("success");
+            long pid= this.projectInfoService.createProjectInfo(projectInfo);
+            LinkedHashMap<String, Long> map = new LinkedHashMap<>();
+            map.put("pid",pid);
+            return new FebsResponse().code("200").message("新增项目信息成功").status("success").data(map);
         } catch (Exception e) {
             message = "新增项目信息失败";
             log.error(message, e);

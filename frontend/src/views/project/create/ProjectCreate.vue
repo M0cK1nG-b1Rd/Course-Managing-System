@@ -1,15 +1,17 @@
 <template>
   <div>
-<!--    页面头部信息-->
+    <!--    页面头部信息-->
     <el-row>
-      <el-col :span="24"><div class="grid-content bg-purple-light header" >创建项目</div></el-col>
+      <el-col :span="24">
+        <div class="grid-content bg-purple-light header">创建项目</div>
+      </el-col>
     </el-row>
-<!--    项目基本信息表单-->
+    <!--    项目基本信息表单-->
     <el-form ref="projectForm" :model="formData" label-width="80px">
       <el-form-item label="项目名称">
         <el-input v-model="formData.projectName" placeholder="填写项目名称"></el-input>
       </el-form-item>
-      <el-form-item  label="负责人">
+      <el-form-item label="负责人">
         <el-col :span="12">
           <el-input v-model="formData.managerName" placeholder="项目经理姓名"></el-input>
         </el-col>
@@ -56,8 +58,8 @@
       <el-form-item label="项目描述">
         <el-input type="textarea" v-model="formData.projectDesc" placeholder="介绍一下你的项目吧"></el-input>
       </el-form-item>
-<!--      添加项目成员信息-->
-      <el-form-item >
+      <!--      添加项目成员信息-->
+      <el-form-item>
         <div>
           <!-- 添加新成员 -->
           <el-row :gutter="20">
@@ -76,7 +78,8 @@
               <el-table-column label="操作" width="70px" align="center">
                 <template slot-scope="scope">
                   <!-- 删除按钮 -->
-                  <el-button type="danger" icon="el-icon-delete" size="mini" @click="removeUserBySno(scope.row.sno)"></el-button>
+                  <el-button type="danger" icon="el-icon-delete" size="mini"
+                             @click="removeUserBySno(scope.row.sno)"></el-button>
                 </template>
               </el-table-column>
             </el-table>
@@ -85,7 +88,7 @@
           <!-- 添加用户的对话框 -->
           <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="25%" @close="addDialogClosed">
             <!-- 内容主体区域 -->
-            <el-form  :model="newMemberInfo" ref="addFormRef" label-width="70px">
+            <el-form :model="newMemberInfo" ref="addFormRef" label-width="70px">
               <el-form-item label="姓名" prop="name">
                 <el-input v-model="newMemberInfo.name"></el-input>
               </el-form-item>
@@ -107,7 +110,7 @@
           </el-dialog>
         </div>
       </el-form-item>
-<!--      底部按钮-->
+      <!--      底部按钮-->
       <el-form-item>
         <el-button type="success" @click="onSubmit">立即创建</el-button>
         <el-button type="danger" @click="resetForm('projectForm')">重置表单</el-button>
@@ -121,7 +124,7 @@
 
 export default {
   name: 'ProjectCreate',
-  data() {
+  data () {
     return {
       // 控制添加用户对话框的显示与隐藏
       addDialogVisible: false,
@@ -145,34 +148,36 @@ export default {
         position: ''
       },
       // 需要的特殊资源，不必传给后端，仅在前端展示
-      resource: ''
+      resource: '',
+      //新的后端传回的Pid
+      createdPid:'',
     }
   },
   methods: {
     // 添加新成员相关的函数
     // 按照学号删除成员信息
-    removeUserBySno(sno){
-      for(let i = 0; i<this.memberList.length; i++){
-        if(this.memberList[i].sno == sno){
-          this.memberList.splice(i,1)
+    removeUserBySno (sno) {
+      for (let i = 0; i < this.memberList.length; i++) {
+        if (this.memberList[i].sno === sno) {
+          this.memberList.splice(i, 1)
         }
       }
     },
 
     // 监听添加用户对话框的关闭事件,清空表单
-    addDialogClosed() {
+    addDialogClosed () {
       console.log('表单关闭并清空')
       // this.$refs.addFormRef.resetFields()
-      this.newMemberInfo={
+      this.newMemberInfo = {
         name: '',
-          class: '',
-          sno: '',
-          position: ''
+        class: '',
+        sno: '',
+        position: ''
       }
     },
 
     // 点击按钮，添加新用户
-    addMemberCommit(info) {
+    addMemberCommit (info) {
       console.log('新用户的信息')
       // 向memberList中添加新创建的成员信息
       console.log(info)
@@ -188,40 +193,44 @@ export default {
     },
 
     // 点击取消按钮，清空表单内容
-    resetForm(form) {
+    resetForm (form) {
       console.log(form)
-      this.formData= {
+      this.formData = {
         projectName: '',
-          projectType: '',
-          startTime: '',
-          endTime: '',
-          projectDesc: '',
-          managerName: '',
-          teacherName: ''
+        projectType: '',
+        startTime: '',
+        endTime: '',
+        projectDesc: '',
+        managerName: '',
+        teacherName: ''
       }
       this.memberList = []
       this.resource = ''
       console.log('重置成功')
     },
     // 向后台提交新项目数据
-    onSubmit() {
+    onSubmit () {
+      this.submitProjectInfo().then(()=>
+      this.submitProjectDetails()
+      )
+    },
+    async submitProjectInfo () {
       console.log('submit!')
-      let data = this.formData
-      let list = this.memberList
-      console.log('项目信息')
-      console.log(data)
-      // POST发送项目信息表单
-      this.$post('/project/new',{data}).then(
+      this.$post('/project/new', this.formData).then(
         (r) => {
+          this.createdPid = r.data.data.pid
           this.$message.success('项目基本信息添加成功！')
         }).catch((err) => {
         this.$message.error('项目基本信息添加失败！')
       })
-
+    },
+     submitProjectDetails () {
+      //等待新的pid返回
       console.log('项目成员')
-      console.log(list)
       // POST发送成员信息列表
-      this.$post('/project/new',{list}).then(
+      //带上新的pid
+      let data={"pid":this.createdPid, member:this.memberList}
+      this.$post('/project/details', data).then(
         (r) => {
           this.$message.success('项目成员信息添加成功！')
         }).catch((err) => {
@@ -236,10 +245,12 @@ export default {
 .bg-purple-light {
   background: #61bcd1;
 }
+
 .grid-content {
   border-radius: 4px;
   min-height: 36px;
 }
+
 /*header样式*/
 .header {
   font-size: 20px;

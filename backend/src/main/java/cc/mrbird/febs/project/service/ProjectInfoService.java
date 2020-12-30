@@ -20,5 +20,5 @@ public interface ProjectInfoService extends IService<ProjectInfo> {
 
     List<ProjectInfo> findMyProjectInfo(String pid);
 
-    void createProjectInfo(ProjectInfo projectInfo);
+    long createProjectInfo(ProjectInfo projectInfo);
 }

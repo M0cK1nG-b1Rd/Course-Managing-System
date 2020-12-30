@@ -123,12 +123,17 @@ export default {
     }
   },
   // 刷新或者打开页面时，像后端请求数据库中存储的打分规则
-  // mounted () {
-  //   this.$get('project/all').then((r) => {
-  //     console.log(r.data.data)
-  //     this.data = r.data.data
-  //   })
-  // },
+  mounted () {
+    let that = this
+    this.$get('project/score/rules').then((r) => {
+      console.log(r)
+      // this.data = r.data.data
+      that.markRule.process = r.data.data[0].ratio
+      that.markRule.docs = r.data.data[1].ratio
+      that.markRule.completion = r.data.data[2].ratio
+      that.markRule.presentation = r.data.data[3].ratio
+    })
+  },
 
   // 行为区
   methods: {
