@@ -2024,7 +2024,7 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
-axios@^0.18.0:
+axios@^0.18.1:
   version "0.18.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
   integrity sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
@@ -7410,6 +7410,11 @@ js-beautify@^1.6.12, js-beautify@^1.6.14:
     mkdirp "^1.0.4"
     nopt "^5.0.0"
 
+js-file-download@^0.4.12:
+  version "0.4.12"
+  resolved "https://registry.yarnpkg.com/js-file-download/-/js-file-download-0.4.12.tgz#10c70ef362559a5b23cdbdc3bd6f399c3d91d821"
+  integrity sha512-rML+NkoD08p5Dllpjo0ffy4jRHeY6Zsapvr/W86N7E0yuzAO6qa5X9+xog6zQNlH102J7IXljNY2FtS6Lj3ucg==
+
 js-message@1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/js-message/-/js-message-1.0.7.tgz#fbddd053c7a47021871bb8b2c95397cc17c20e47"
@@ -12217,6 +12222,11 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+vue-axios@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/vue-axios/-/vue-axios-3.2.0.tgz#43843cbc9108e807007189ad80cd1ba48a0ad951"
+  integrity sha512-nBS3uVLT50Qfv7Gmhu0VDkYzTJeDWVc8TOTd4UzG/XS865+As4Updyuo4zWVqQ5ygC7JUBRkgc5merS7PpHMlw==
 
 vue-cli-plugin-element@^1.0.1:
   version "1.0.1"

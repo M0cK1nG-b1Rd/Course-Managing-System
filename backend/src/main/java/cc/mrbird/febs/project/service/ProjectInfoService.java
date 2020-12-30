@@ -14,4 +14,5 @@ import java.util.Map;
  */
 public interface ProjectInfoService extends IService<ProjectInfo> {
     List<ProjectInfo> findProjectInfo(String username);
+
 }

@@ -4,6 +4,7 @@ import cc.mrbird.febs.common.domain.QueryRequest;
 import cc.mrbird.febs.project.domain.ProjectInfo;
 import cc.mrbird.febs.project.dao.ProjectInfoMapper;
 import cc.mrbird.febs.project.service.ProjectInfoService;
+import cc.mrbird.febs.system.domain.Menu;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
