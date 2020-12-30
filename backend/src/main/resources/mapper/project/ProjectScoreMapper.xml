@@ -10,11 +10,11 @@
     </insert>
 
 
-    <insert id="addProjectScoringRules">
-        insert into project_scoring_rules(rule_name,ratio) values
-        <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.rule_name},#{item.ratio})
-        </foreach>
-    </insert>
+<!--    <update id="updateProjectScoringRules" parameterType="cc.mrbird.febs.project.domain.ProjectScoringRules">-->
+<!--        insert into project_scoring_rules(rule_name,ratio) values-->
+<!--        <foreach collection="list" item="item" index="index" separator=",">-->
+<!--            (#{item.rule_name},#{item.ratio})-->
+<!--        </foreach>-->
+<!--    </update>-->
 
 </mapper>

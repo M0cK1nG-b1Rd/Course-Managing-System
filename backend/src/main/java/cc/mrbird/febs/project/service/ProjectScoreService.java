@@ -15,7 +15,7 @@ public interface ProjectScoreService extends IService<ProjectScore> {
 
     void addProjectScore(List<ProjectScore> projectScores);
 
-    void addProjectScoringRules(List<ProjectScoringRules> projectScoringRules);
+    void updateProjectScoringRules(int[] rules);
 
     List<ProjectScoringRules> getRules();
 }
