@@ -1,26 +1,9 @@
 <template xmlns:display="giveScore">
-<!--<div>-->
-<!--  &lt;!&ndash;页面头部信息&ndash;&gt;-->
-<!--  <el-row>-->
-<!--    <el-col :span="24"><div class="grid-content bg-purple-light header" >项目评分</div></el-col>-->
-<!--  </el-row>-->
-<!--&lt;!&ndash;  设置打分规则&ndash;&gt;-->
-
-<!--&lt;!&ndash;  选择打分对象&ndash;&gt;-->
-
-<!--&lt;!&ndash;  开始打分&ndash;&gt;-->
-
-<!--&lt;!&ndash;  点评及反馈&ndash;&gt;-->
-
-<!--&lt;!&ndash;  结果预览&ndash;&gt;-->
-
-<!--</div>-->
 
   <el-container>
 <!--    设置打分规则-->
-    <el-header id="setRuleHeader" height="6.5%">设置打分规则</el-header>
+    <el-header id="setRuleHeader" height="34px">设置打分规则</el-header>
     <el-main id="setRuleMain">
-
       <el-form  class="demo-form-inline" label-width="15%" label-position="left">
         <el-form-item label="过程考核">
           <el-col :span="22">
@@ -44,18 +27,64 @@
         </el-form-item>
         <el-form-item><el-button type="primary" size="medium " @click="setMarkRule">完成打分规则设置</el-button></el-form-item>
       </el-form>
-
     </el-main>
-<!--    选择打分对象-->
-    <el-header id="selectStuHeader" height="6.5%">选择打分对象</el-header>
-    <el-main id="selectStuMain">打分对象在此选择</el-main>
-<!--   打分区-->
-    <el-header id="markHeader" height="6.5%">开始打分</el-header>
-    <el-main id="markMain">在此进行打分</el-main>
-<!--   点评区-->
-    <el-header id="commentHeader" height="6.5%">点评及反馈</el-header>
-    <el-main id="commentMain">在此进行反馈</el-main>
 
+<!--    选择打分对象-->
+    <el-header id="selectStuHeader" height="34px">选择打分对象</el-header>
+    <el-main id="selectStuMain">打分对象在此选择</el-main>
+
+<!--   打分区-->
+    <el-header id="markHeader" height="34px">开始打分</el-header>
+    <el-main id="markMain">
+      <el-form  class="demo-form-inline" label-width="15%" label-position="left">
+        <el-form-item label="过程考核">
+          <el-col :span="22">
+            <el-slider v-model="markResult.processScore"
+                       show-input input-size="mini" @change="onGiveSubScore">
+            </el-slider>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="文档及报告">
+          <el-col :span="22">
+            <el-slider v-model="markResult.docsScore"
+                       show-input input-size="mini" @change="onGiveSubScore">
+            </el-slider>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="完成情况">
+          <el-col :span="22">
+            <el-slider v-model="markResult.completionScore"
+                       show-input input-size="mini" @change="onGiveSubScore">
+            </el-slider>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="答辩表现">
+          <el-col :span="22">
+            <el-slider v-model="markResult.presentationScore"
+                       show-input input-size="mini" @change="onGiveSubScore">
+            </el-slider>
+          </el-col>
+        </el-form-item>
+        <el-form-item label="加权总分">
+          <el-col :span="22">
+            <el-progress :percentage="markResult.totalScore" show-text="false"
+                         :format="format" :color="customColors">
+            </el-progress>
+          </el-col>
+        </el-form-item>
+      </el-form>
+    </el-main>
+
+<!--   点评区-->
+    <el-header id="commentHeader" height="34px">点评及反馈</el-header>
+    <el-main id="commentMain">
+      <el-input
+        type="textarea"
+        rows="5"
+        placeholder="请在此对学生进行点评及反馈"
+        v-model="markResult.feedback">
+      </el-input>
+    </el-main>
   </el-container>
 </template>
 
@@ -66,12 +95,31 @@ export default {
   data() {
     return {
       // 打分规则-各项占比情况-0-100的值
-      markRule:{
+      markRule: {
         process: '',// 过程考核占比
         docs: '', // 文档及报告占比
         completion: '', // 项目完成情况占比
         presentation: '' // 答辩得分占比
-      }
+      },
+      // 某学生的各项的得分及评价反馈
+      markResult: {
+        sid: '',
+        totalScore: '',
+        processScore: '',
+        docsScore: '',
+        completionScore: '',
+        presentationScore: '',
+        feedback: ''
+      },
+      // 总分进度条的颜色定制
+      customColors: [
+        {color: '#f56c6c', percentage: 60},
+        {color: '#e6a23c', percentage: 70},
+        {color: '#1989fa', percentage: 80},
+        {color: '#5cb87a', percentage: 100}
+      ],
+      // 布尔值表明是否已完成规则设置
+      hasSetRule: false
     }
   },
   // 刷新或者打开页面时，像后端请求数据库中存储的打分规则
@@ -87,8 +135,10 @@ export default {
     // 提交打分规则
     setMarkRule () {
       // 检查各项权重总和是否等于100
-      let total = this.markRule.process + this.markRule.docs + this.markRule.completion + this.markRule.presentation
+      let total = this.markRule.process + this.markRule.docs +
+        this.markRule.completion + this.markRule.presentation
       if(total===100){
+        this.hasSetRule = true
         // 向后端发送打分规则，让后端存储
         let rule = this.markRule
         this.$post('project/score/rules',rule).then((r) => {
@@ -100,6 +150,28 @@ export default {
       else{
         this.$message.error('请确保所有选项之和为100！')
       }
+    },
+
+    // 当每一个子项打分完成时调用，即拖动滑块时
+    onGiveSubScore() {
+      // 检查是否已经设置好打分规则，若是则更新当前总分
+      if(this.hasSetRule){
+        this.markResult.totalScore =
+          this.markResult.processScore*this.markRule.process +
+          this.markResult.presentationScore*this.markRule.presentation +
+          this.markResult.docsScore*this.markRule.docs +
+          this.markResult.completionScore*this.markRule.completion;
+        this.markResult.totalScore /= 100
+      }
+      else{
+
+        this.$message.error('请先完成打分规则设置！')
+      }
+    },
+
+    // 返回总分进度条的format-即显示在右侧的分数
+    format() {
+      return this.markResult.totalScore + '分';
     }
   }
 }
