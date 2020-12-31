@@ -104,7 +104,7 @@
               width="200"
               trigger="hover"
               content="点击按钮后即可提交对当前同学的打分结果。">
-              <el-button type="primary" size="medium " @="onSubmitScore" slot="reference">提交成绩及评价</el-button>
+              <el-button type="primary" size="medium " @click="onSubmitScore" slot="reference">提交成绩及评价</el-button>
             </el-popover>
           </el-col>
           <el-col :span="10">
@@ -267,6 +267,8 @@ export default {
 
     // 提交成绩
     onSubmitScore() {
+      this.markResult.sid = this.markResult.sid[1]
+      console.log(this.markResult)
       this.$post('project/score', this.markResult).then(r=>{
         this.$message.success('打分提交成功！')
       })
