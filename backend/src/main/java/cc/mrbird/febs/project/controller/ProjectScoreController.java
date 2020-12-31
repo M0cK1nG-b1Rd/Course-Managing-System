@@ -33,9 +33,8 @@ public class ProjectScoreController {
     private String message;
 
     @PostMapping("score")
-    public FebsResponse addProjectScore(@RequestBody List<ProjectScore> projectScore) throws FebsException {
+    public FebsResponse addProjectScore(@RequestBody ProjectScore projectScore) throws FebsException {
         try {
-            //TODO 转换
             this.projectScoreService.addProjectScore(projectScore);
             return new FebsResponse().code("200").message("新增学生分数信息成功").status("success");
         } catch (Exception e) {

@@ -334,7 +334,7 @@ export default {
       // POST发送成员信息列表
       // 带上新的pid
       let data={"pid":this.createdPid, member:this.memberList}
-      this.$post('/project/details', data).then(
+      this.$post('/project/member_info', data).then(
         (r) => {
           this.$message.success('项目成员信息添加成功！')
         }).catch((err) => {

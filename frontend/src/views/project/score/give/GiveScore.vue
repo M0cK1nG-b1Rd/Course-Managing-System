@@ -145,7 +145,8 @@ export default {
         docsScore: '',
         completionScore: '',
         presentationScore: '',
-        feedback: ''
+        feedback: '',
+        isReleased: '0'
       },
       // 总分进度条的颜色定制
       customColors: [
@@ -178,9 +179,9 @@ export default {
       that.markRule.presentation = r.data.data[3].ratio
     })
     // 从数据库获得已有的项目信息，包括项目名称+项目id
-    // this.$get('').then(r=>{
-    //
-    // }).catch()
+    this.$get('project/all').then(r=>{
+        console.log(r)
+    }).catch()
   },
 
   // 行为区
@@ -240,7 +241,11 @@ export default {
         targetOption.loading = false;
 
         // 通过PID向后台请求成员信息，返回结果必须包含该项目所有成员的学号+姓名
-        // let memberInfo = this.$get('url',selectedOptions.value---pid)
+
+        //this.pid 替换成应该传给我的pid
+        this.$get(`project/all_member_info?pid=${this.pid}`).then(r=>{
+          console.log(r)
+        }).catch()
 
         // memberIn格式 = [
         //   {
@@ -268,9 +273,9 @@ export default {
 
     // 提交成绩
     onSubmitScore() {
-      // this.$post('url', sid).then(r=>{
-      //   this.$message.success('打分提交成功！')
-      // })
+      this.$post('project/score', this.markResult).then(r=>{
+        this.$message.success('打分提交成功！')
+      })
       console.log('成绩提交成功！')
     },
 

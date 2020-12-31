@@ -22,8 +22,8 @@ public class ProjectScoreServiceImpl extends ServiceImpl<ProjectScoreMapper, Pro
     ProjectScoringRulesMapper projectScoringRulesMapper;
 
     @Override
-    public void addProjectScore(List<ProjectScore> projectScores) {
-        this.baseMapper.addProjectScore(projectScores);
+    public void addProjectScore(ProjectScore projectScore) {
+        this.save(projectScore);
     }
 
     @Override

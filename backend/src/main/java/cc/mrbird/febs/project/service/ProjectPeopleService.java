@@ -20,4 +20,5 @@ public interface ProjectPeopleService extends IService<ProjectPeople> {
     List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid) ;
 
     void createProjectPeoples(List<ProjectPeople> projectPeoples);
+
 }
