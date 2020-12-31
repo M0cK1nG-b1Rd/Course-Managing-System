@@ -20,12 +20,13 @@
         </el-col>
       </el-form-item>
       <el-form-item label="项目类型">
-        <el-select v-model="formData.projectType" placeholder="请选择项目类型">
+        <el-select v-model="formData.projectType"
+                   allow-create filterable clearable
+                   placeholder="项目类型,可键入其他类型">
           <el-option label="web应用开发" value="web"></el-option>
           <el-option label="桌面应用开发" value="desktop"></el-option>
           <el-option label="微信小程序开发" value="wechat"></el-option>
           <el-option label="AI算法应用" value="ai"></el-option>
-          <el-option label="其他类型" value="other"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="项目时间">
@@ -85,44 +86,55 @@
           </el-row>
 
           <!-- 添加用户的对话框 -->
-          <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="75%" @close="addDialogClosed">
+          <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="30%" @close="addDialogClosed">
             <!-- 内容主体区域 -->
             <el-form :model="newMemberInfo" ref="addFormRef" label-width="70px">
+<!--选择班级-->
               <el-form-item label="班级" prop="class">
                 <el-select v-model="newMemberInfo.class"
-                           placeholder="选择成员所在班级"
+                           placeholder="选择成员所在班级" clearable
                            size="medium">
                   <el-option
                     v-for="item in classList"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
+                    :key="item.class"
+                    :label="item.class"
+                    :value="item.class">
                   </el-option>
                 </el-select>
-
+<!--选择姓名-->
               </el-form-item>
               <el-form-item label="姓名" prop="name">
-                <el-input v-model="newMemberInfo.name"></el-input>
-
                 <el-select v-model="newMemberInfo.name"
-                           placeholder="选择成员所在班级"
+                           placeholder="选择成员姓名" clearable
                            size="medium">
                   <el-option
-                    v-for="item in classList"
-                    :key="item.value"
-                    :label="item.label"
-                    :value="item.value">
+                    v-for="item in selectorInfo"
+                    v-if="newMemberInfo.class==item.class"
+                    :key="item.name"
+                    :label="item.name"
+                    :value="item.name">
                   </el-option>
                 </el-select>
-
+<!--选择学号-->
               </el-form-item>
               <el-form-item label="学号" prop="sno">
-                <el-input v-model="newMemberInfo.sno"></el-input>
+                <el-select v-model="newMemberInfo.sno"
+                           placeholder="成员学号" clearable
+                           size="medium">
+                  <el-option
+                    v-for="item in selectorInfo"
+                    v-if="newMemberInfo.name==item.name"
+                    :key="item.sid"
+                    :label="item.sid"
+                    :value="item.sid">
+                  </el-option>
+                </el-select>
+<!--选择角色-->
               </el-form-item>
               <el-form-item label="角色" prop="position">
                 <el-select v-model="newMemberInfo.position"
                            placeholder="可通过输入创建新选项"
-                           allow-create filterable
+                           allow-create filterable clearable
                            size="medium">
                   <el-option
                     v-for="item in positionOptions"
@@ -236,25 +248,23 @@ export default {
     }
   },
 
-  // 从后端请求选择新成员的选项信息
-  // selectorInfo = {[
-  //     {
-  //       name: "张三",
-  //       class: "软件81",
-  //       sid: "2185112300"
-  //     },
-  //     {
-  //       name: "张三",
-  //         class: "软件81",
-  //       sid: "2185112300"
-  //     }]}
   mounted() {
     let that = this
     // 获取班级列表
     this.$get('project/all_class').then((r)=>{
+      console.log('班级信息')
       console.log(r)
+      that.classList = r.data.data
+      that.classList = that.classList.reverse()
     })
-
+    // 获取学生信息
+    this.$get('project/all_stu').then((r)=>{
+      console.log('学生信息')
+      console.log(r)
+      that.selectorInfo = r.data.data
+      console.log('select')
+      console.log(this.selectorInfo)
+    })
   },
 
   methods: {
@@ -332,9 +342,12 @@ export default {
      submitProjectDetails () {
       //等待新的pid返回
       console.log('项目成员')
+       let squeezedMemberList = {}
+       squeezedMemberList.sid = this.memberList.sno
+       squeezedMemberList.position = this.memberList.position
       // POST发送成员信息列表
       // 带上新的pid
-      let data={"pid":this.createdPid, member:this.memberList}
+      let data={"pid":this.createdPid, member:squeezedMemberList}
       this.$post('/project/member_info', data).then(
         (r) => {
           this.$message.success('项目成员信息添加成功！')
@@ -342,6 +355,7 @@ export default {
         // this.$message.error('项目成员信息添加失败！')
       })
     }
+
   }
 }
 </script>

@@ -156,14 +156,10 @@ export default {
       ],
       // 布尔值表明是否已完成规则设置
       hasSetRule: false,
-      // 选择打分对象的选项
-      projectOptions: [
-        {
-          value: '1', // pid
-          label: '管理系统', // pName
-          isLeaf: false,
-        }
-      ]
+      // 选择打分对象的选项-即列出所有项目
+      projectOptions: [],
+      //
+      memberInfo: []
     }
   },
   // 刷新或者打开页面时，像后端请求数据库中存储的打分规则
@@ -181,6 +177,16 @@ export default {
     // 从数据库获得已有的项目信息，包括项目名称+项目id
     this.$get('project/all').then(r=>{
         console.log(r)
+      // 初始化projectOptions
+      for(let i = 0; i<r.data.data.length; i++){
+        let obj = {}
+        obj.value = r.data.data[i].pid
+        obj.label = r.data.data[i].projectName
+        obj.isLeaf = false
+        that.projectOptions[i] = obj
+      }
+      console.log('projectOptions')
+      console.log(this.projectOptions)
     }).catch()
   },
 
@@ -235,40 +241,28 @@ export default {
       console.log(selectedOptions)
       const targetOption = selectedOptions[selectedOptions.length - 1];
       targetOption.loading = true;
-
+      let that = this
       // load options lazily
       setTimeout(() => {
         targetOption.loading = false;
-
         // 通过PID向后台请求成员信息，返回结果必须包含该项目所有成员的学号+姓名
-
-        //this.pid 替换成应该传给我的pid
-        this.$get(`project/all_member_info?pid=${this.pid}`).then(r=>{
+        this.$get(`project/all_member_info?pid=${targetOption.value}`).then(r=>{
           console.log(r)
+          let thisMemberInfo = r.data.data
+          // 给被选中的一级选项添加其二级选项
+          let children = []
+          for(let i = 0; i<thisMemberInfo.length; i++){
+            let obj = {}
+            obj.value = thisMemberInfo[i].sid
+            obj.label = thisMemberInfo[i].name
+            obj.leaf = true
+            children[i] = obj
+          }
+          targetOption.children = children
         }).catch()
 
-        // memberIn格式 = [
-        //   {
-        //     "sid" : '218576543',
-        //     "name" : '张三'
-        //   },
-        //   {
-        //     "sid" : '218576543',
-        //     "name" : '李四'
-        //   }
-        // ]
-
-        // 给被选中的一级选项添加其二级选项
-        let children = [{}]
-        for(let i = 0; i<memberInfo.length; i++){
-          children[i].value = memberInfo[i].sid
-          children[i].label = memberInfo[i].name
-          children[i].leaf = true
-        }
-        // 或者直接尝试children=memberInfo
-        targetOption.children = children
         this.projectOptions = [...this.projectOptions];
-      }, 10);
+      }, 1);
     },
 
     // 提交成绩

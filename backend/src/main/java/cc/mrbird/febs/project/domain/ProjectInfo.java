@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
 import org.springframework.format.annotation.DateTimeFormat;
 
 /**
- * 
+ *
  *
  * @author hyl
  */
@@ -26,7 +26,6 @@ public class ProjectInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonIgnore
     @TableId(value = "pid", type = IdType.AUTO)
     private Long  pid;
 

@@ -9,7 +9,7 @@
     </select>
 
     <select id="getAllClass" resultType="cc.mrbird.febs.project.domain.TUserInfo">
-        select classs from t_user_info order by classs desc
+        select distinct classs from t_user_info order by classs desc
     </select>
 
     <select id="getAllStu" resultType="cc.mrbird.febs.project.domain.TUserInfo">
