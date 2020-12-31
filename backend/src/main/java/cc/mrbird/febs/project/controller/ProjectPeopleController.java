@@ -17,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -62,22 +64,8 @@ public class ProjectPeopleController {
     }
 
     @PostMapping("member_info")
-    public FebsResponse addProjectPeople(@RequestBody List<ProjectPeople> projectPeoples) throws FebsException{
+    public FebsResponse addProjectPeople(@RequestBody LinkedHashMap<String,Object> projectPeoples) throws FebsException{
         try {
-            //TODO 转换
-            this.projectPeopleService.createProjectPeoples(projectPeoples);
-            return new FebsResponse().code("200").message("新增项目信息成功").status("success");
-        } catch (Exception e) {
-            message = "新增项目信息失败";
-            log.error(message, e);
-            throw new FebsException(message);
-        }
-    }
-    //TODO
-    @GetMapping("member_info")
-    public FebsResponse getAllProjectPeople(@RequestBody List<ProjectPeople> projectPeoples) throws FebsException{
-        try {
-            //TODO 转换
             this.projectPeopleService.createProjectPeoples(projectPeoples);
             return new FebsResponse().code("200").message("新增项目信息成功").status("success");
         } catch (Exception e) {
@@ -87,4 +75,54 @@ public class ProjectPeopleController {
         }
     }
 
+    //TODO 实现
+    @GetMapping("my_member_info")
+    public FebsResponse getMyProjectPeople(@RequestParam(value = "pid") String pid) throws FebsException{
+        try {
+//            String userSid= this.tUserInfoService.findByUsername(this.getUsername()).getSid();
+//            String pid;
+//
+//            List<ProjectPeople> projectPeople = this.projectPeopleService.findBySid(userSid);
+//            this.projectPeopleService.createProjectPeoples(projectPeoples);
+            return new FebsResponse().code("200").message("新增项目信息成功").status("success");
+        } catch (Exception e) {
+            message = "新增项目信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
+
+    @GetMapping("member_info")
+    public FebsResponse getAllProjectPeople(@RequestParam(value = "pid") String pid) throws FebsException{
+        try {
+            List<ProjectPeople> peoples = this.projectPeopleService.findByPid(pid);
+            return new FebsResponse().code("200").message("查询信息成功").status("success").data(peoples);
+        } catch (Exception e) {
+            message = "查询信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
+
+//    @GetMapping("my_details")
+//    public FebsResponse getMyProjectDetails() {
+//        TUserInfo tUserInfo = tUserInfoService.findByUsername(this.getUsername());
+//        String sid = tUserInfo.getSid();
+//        List<ProjectInfo> list = this.projectInfoService.findMyProjectInfo(sid);
+////        for (ProjectInfo projectInfo:list) {
+////            if (projectInfo.getPid().toString().equals(pid)) {
+////                return new FebsResponse().code("200").message("请求成功").status("success").data(projectInfo);
+////            }
+////        }
+////        return new FebsResponse().code("404").message("未找到数据").status("not found");
+//        return new FebsResponse().code("200").message("请求成功").status("success").data(list);
+//    }
+//
+//    @GetMapping("all_details")
+//    public FebsResponse getAllProjectDetails(@RequestParam(value = "pid") String pid) {
+//        ProjectInfo one = this.projectPeopleService.findByPid(pid);
+//        return new FebsResponse().code("200").message("请求成功").status("success").data(one);
+//    }
 }

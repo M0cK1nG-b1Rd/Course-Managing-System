@@ -4,8 +4,10 @@ import cc.mrbird.febs.common.authentication.JWTUtil;
 import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.project.domain.ProjectInfo;
+import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.service.ProjectInfoService;
+import cc.mrbird.febs.project.service.ProjectPeopleService;
 import cc.mrbird.febs.project.service.TUserInfoService;
 import cc.mrbird.febs.system.manager.UserManager;
 import lombok.extern.slf4j.Slf4j;
@@ -62,9 +64,14 @@ public class ProjectInfoController {
     }
 
     @GetMapping("all")
-    public FebsResponse projectInfoList() {
-        List<ProjectInfo> list = this.projectInfoService.list();
-        return new FebsResponse().code("200").message("请求成功").status("success").data(list);
+    public FebsResponse projectInfoList(@RequestParam(value = "pid",required = false) String pid) {
+        if(pid==null){
+            List<ProjectInfo> list = this.projectInfoService.list();
+            return new FebsResponse().code("200").message("请求成功").status("success").data(list);
+        }else {
+            ProjectInfo one = this.projectInfoService.findByPid(pid);
+            return new FebsResponse().code("200").message("请求成功").status("success").data(one);
+        }//IService提供的方法和BaseMapper提供的方法有啥区别？
     }
 
     @PostMapping("new")
@@ -80,7 +87,5 @@ public class ProjectInfoController {
             throw new FebsException(message);
         }
     }
-
-
 
 }

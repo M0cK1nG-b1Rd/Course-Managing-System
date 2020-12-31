@@ -16,7 +16,7 @@ public interface FileInfoService {
      * @param file 查询条件
      * @return List
      */
-    List<TFileInfo> selectFileList(TFileInfo file);
+    List<TFileInfo> selectFileList(TFileInfo file,String pid);
                     
     
     /**

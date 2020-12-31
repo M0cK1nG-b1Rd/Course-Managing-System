@@ -2,6 +2,7 @@ package cc.mrbird.febs.filemanager.dao;
 
 import cc.mrbird.febs.filemanager.model.TFileInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -22,6 +23,6 @@ public interface TFileInfoMapper {
 
 	List<TFileInfo> selectFileByParams(TFileInfo fileInfo);
 	
-	List<TFileInfo> selectFileList(TFileInfo fileInfo);
+	List<TFileInfo> selectFileList(TFileInfo fileInfo, @Param("pid") String pid);
 
 }

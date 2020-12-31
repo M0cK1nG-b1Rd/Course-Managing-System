@@ -1,8 +1,16 @@
 package cc.mrbird.febs.filemanager.controller;
 
+import cc.mrbird.febs.common.authentication.JWTUtil;
+import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.filemanager.model.*;
 import cc.mrbird.febs.filemanager.service.*;
 import cc.mrbird.febs.filemanager.util.*;
+import cc.mrbird.febs.project.domain.ProjectPeople;
+import cc.mrbird.febs.project.domain.TUserInfo;
+import cc.mrbird.febs.project.service.ProjectPeopleService;
+import cc.mrbird.febs.project.service.TUserInfoService;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -31,7 +39,24 @@ public class FileController {
     @Resource
     private ChunkService chunkService;
 
+    @Resource
+    private ProjectPeopleService projectPeopleService;
+
+    @Resource
+    private TUserInfoService tUserInfoService;
+
     private final Logger logger = LoggerFactory.getLogger(FileController.class);
+
+    //从shiro中得到用户信息
+    String getUsername(){
+        String username="";
+        String token = (String) SecurityUtils.getSubject().getPrincipal();
+        if (StringUtils.isNotBlank(token)) {
+            username = JWTUtil.getUsername(token);
+        }
+        return username;
+    }
+
 
     /**
      * 上传文件块
@@ -90,7 +115,7 @@ public class FileController {
     }
 
     @PostMapping("/mergeFile")
-    public String mergeFile(@RequestBody TFileInfoVO fileInfoVO){
+    public String mergeFile(@RequestBody TFileInfoVO fileInfoVO) throws FebsException {
 
         String rlt = "FAILURE";
 
@@ -100,7 +125,21 @@ public class FileController {
         fileInfo.setIdentifier(fileInfoVO.getUniqueIdentifier());
         fileInfo.setId(fileInfoVO.getId());
         fileInfo.setTotalSize(fileInfoVO.getSize());
-        fileInfo.setRefProjectId(fileInfoVO.getRefProjectId());
+        fileInfo.setUploadBy(this.getUsername());
+
+        String userSid= this.tUserInfoService.findByUsername(this.getUsername()).getSid();
+        String pid;
+
+        List<ProjectPeople> projectPeople = this.projectPeopleService.findBySid(userSid);
+        //防止一个用户对应多个项目（这个后续需要可以更改）
+        if (projectPeople.size()==1){
+             pid=projectPeople.get(0).getPid();
+            fileInfo.setRefProjectId(pid);
+        }else{
+            throw new FebsException("一个用户对应多个项目");
+        }
+
+
 
         //进行文件的合并操作
         String filename = fileInfo.getFilename();
@@ -134,8 +173,19 @@ public class FileController {
      * @return ApiResult
      */
     @RequestMapping(value = "/selectFileList", method = RequestMethod.GET)
-    public ApiResult selectFileList(TFileInfo file){
-        List<TFileInfo> list =  fileInfoService.selectFileList(file);
+    public ApiResult selectFileList(TFileInfo file) throws FebsException {
+
+        String userSid= this.tUserInfoService.findByUsername(this.getUsername()).getSid();
+        String pid;
+
+        List<ProjectPeople> projectPeople = this.projectPeopleService.findBySid(userSid);
+        //防止一个用户对应多个项目（这个后续需要可以更改）
+        if (projectPeople.size()==1){
+            pid=projectPeople.get(0).getPid();
+        }else{
+            throw new FebsException("一个用户对应多个项目");
+        }
+        List<TFileInfo> list =  fileInfoService.selectFileList(file,pid);
         return ApiResult.success(list);
     }
 
