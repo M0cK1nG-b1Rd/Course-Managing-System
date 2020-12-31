@@ -94,7 +94,32 @@
       </el-input>
     </el-main>
     <el-main style="{align-content: center;}">
-      <el-button type="primary" size="medium " @="onSubmitScore">提交成绩及评价</el-button>
+      <el-form>
+        <el-form-item>
+          <el-col :span="2">&nbsp</el-col>
+          <el-col :span="10">
+            <el-popover
+              placement="top-start"
+              title="温馨提示"
+              width="200"
+              trigger="hover"
+              content="点击按钮后即可提交对当前同学的打分结果。">
+              <el-button type="primary" size="medium " @="onSubmitScore" slot="reference">提交成绩及评价</el-button>
+            </el-popover>
+          </el-col>
+          <el-col :span="10">
+            <el-popover
+              placement="top-start"
+              title="请注意"
+              width="200"
+              trigger="hover"
+              content="请注意，点击按钮后将发布全班成绩，请先确保已完成所有学生的评价。">
+              <el-button type="primary" size="success " @="onReportScore" slot="reference">发布全班成绩</el-button>
+            </el-popover>
+          </el-col>
+        </el-form-item>
+      </el-form>
+
     </el-main>
   </el-container>
 </template>
@@ -125,8 +150,7 @@ export default {
       // 总分进度条的颜色定制
       customColors: [
         {color: '#f56c6c', percentage: 60},
-        {color: '#e6a23c', percentage: 70},
-        {color: '#1989fa', percentage: 80},
+        {color: '#e6a23c', percentage: 90},
         {color: '#5cb87a', percentage: 100}
       ],
       // 布尔值表明是否已完成规则设置
@@ -248,6 +272,11 @@ export default {
       //   this.$message.success('打分提交成功！')
       // })
       console.log('成绩提交成功！')
+    },
+
+    // 发布全班成绩
+    onReportScore() {
+
     }
   }
 }
@@ -256,7 +285,7 @@ export default {
 <style scoped>
   /*Header*/
   #commentHeader,#setRuleHeader,#selectStuHeader,#markHeader {
-    background-color: #f8efef;
+    background-color: #bed9f1;
     font-size: 15px;
     font-weight: bolder;
     text-align: center;

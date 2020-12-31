@@ -70,7 +70,6 @@
           <!-- 用户列表区域 -->
           <el-row>
             <el-table :data="memberList" border stripe>
-              <!--        <el-table-column type="index"></el-table-column>-->
               <el-table-column label="姓名" prop="name" width="100px" align="center"></el-table-column>
               <el-table-column label="班级" prop="class" width="100px" align="center"></el-table-column>
               <el-table-column label="学号" prop="sno" width="150px" align="center"></el-table-column>
@@ -86,23 +85,55 @@
           </el-row>
 
           <!-- 添加用户的对话框 -->
-          <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="25%" @close="addDialogClosed">
+          <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="75%" @close="addDialogClosed">
             <!-- 内容主体区域 -->
             <el-form :model="newMemberInfo" ref="addFormRef" label-width="70px">
+              <el-form-item label="班级" prop="class">
+                <el-select v-model="newMemberInfo.class"
+                           placeholder="选择成员所在班级"
+                           size="medium">
+                  <el-option
+                    v-for="item in classList"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+
+              </el-form-item>
               <el-form-item label="姓名" prop="name">
                 <el-input v-model="newMemberInfo.name"></el-input>
-              </el-form-item>
-              <el-form-item label="班级" prop="class">
-                <el-input v-model="newMemberInfo.class"></el-input>
+
+                <el-select v-model="newMemberInfo.name"
+                           placeholder="选择成员所在班级"
+                           size="medium">
+                  <el-option
+                    v-for="item in classList"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
+
               </el-form-item>
               <el-form-item label="学号" prop="sno">
                 <el-input v-model="newMemberInfo.sno"></el-input>
               </el-form-item>
               <el-form-item label="角色" prop="position">
-                <el-input v-model="newMemberInfo.position"></el-input>
+                <el-select v-model="newMemberInfo.position"
+                           placeholder="可通过输入创建新选项"
+                           allow-create filterable
+                           size="medium">
+                  <el-option
+                    v-for="item in positionOptions"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </el-form-item>
             </el-form>
-            <!-- 底部区域 -->
+            <!-- 对话框底部区域 -->
             <span slot="footer" class="dialog-footer">
               <el-button @click="addDialogVisible = false">取 消</el-button>
               <el-button type="primary" @click="addMemberCommit(newMemberInfo)">确 定</el-button>
@@ -112,8 +143,27 @@
       </el-form-item>
       <!--      底部按钮-->
       <el-form-item>
-        <el-button type="success" @click="onSubmit">立即创建</el-button>
-        <el-button type="danger" @click="resetForm('projectForm')">重置表单</el-button>
+        <el-col :span="10">
+          <el-popover
+            placement="top-start"
+            title="温馨提示"
+            width="200"
+            trigger="hover"
+            content="点击按钮后即可完成项目创建。">
+            <el-button type="success" @click="onSubmit" slot="reference">立即创建</el-button>
+          </el-popover>
+        </el-col>
+        <el-col :span="4">&nbsp</el-col>
+        <el-col :span="10">
+          <el-popover
+            placement="top-start"
+            title="请注意"
+            width="200"
+            trigger="hover"
+            content="请注意，点击按钮后将清空表单已填内容。">
+            <el-button type="danger" @click="resetForm('projectForm')" slot="reference">重置表单</el-button>
+          </el-popover>
+        </el-col>
       </el-form-item>
     </el-form>
   </div>
@@ -151,8 +201,61 @@ export default {
       resource: '',
       //新的后端传回的Pid
       createdPid:'',
+      // 岗位选择器的选项
+      positionOptions: [
+        {
+          value: '项目经理',
+          label: '项目经理'
+        },{
+          value: '系统设计师',
+          label: '系统设计师'
+        },{
+          value: '系统分析师',
+          label: '系统分析师'
+        },{
+          value: '前端工程师',
+          label: '前端工程师'
+        },{
+          value: '后端工程师',
+          label: '后端工程师'
+        },{
+          value: '测试工程师',
+          label: '测试工程师'
+        },{
+          value: '文档管理员',
+          label: '文档管理员'
+        },{
+          value: '数据库管理员',
+          label: '数据库管理员'
+        }
+          ],
+      // 所有班级列表,升序排序,每个班级包括value和label两个字段
+      classList: [],
+      // 新成员姓名、班级、学号选择器选项
+      selectorInfo: []
     }
   },
+
+  // 从后端请求选择新成员的选项信息
+  // selectorInfo = {[
+  //     {
+  //       name: "张三",
+  //       class: "软件81",
+  //       sid: "2185112300"
+  //     },
+  //     {
+  //       name: "张三",
+  //         class: "软件81",
+  //       sid: "2185112300"
+  //     }]}
+  // mounted() {
+  //   let that = this
+  //   this.$get('url').then((r)=>{
+  //     that.selectorInfo = r.data...
+  //   })
+      //  通过另外一个接口获取班级列表,升序排序,包括value和name字段
+  // },
+
   methods: {
     // 添加新成员相关的函数
     // 按照学号删除成员信息
@@ -167,7 +270,6 @@ export default {
     // 监听添加用户对话框的关闭事件,清空表单
     addDialogClosed () {
       console.log('表单关闭并清空')
-      // this.$refs.addFormRef.resetFields()
       this.newMemberInfo = {
         name: '',
         class: '',
@@ -214,6 +316,7 @@ export default {
       this.submitProjectDetails()
       )
     },
+    // 提交项目信息
     async submitProjectInfo () {
       console.log('submit!')
       this.$post('/project/new', this.formData).then(
@@ -224,6 +327,7 @@ export default {
         this.$message.error('项目基本信息添加失败！')
       })
     },
+    // 提交项目成员信息
      submitProjectDetails () {
       //等待新的pid返回
       console.log('项目成员')
@@ -243,7 +347,7 @@ export default {
 
 <style>
 .bg-purple-light {
-  background: #61bcd1;
+  background: #bdd8f0;
 }
 
 .grid-content {
