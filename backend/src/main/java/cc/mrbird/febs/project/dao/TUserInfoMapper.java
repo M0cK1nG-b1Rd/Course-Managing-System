@@ -15,4 +15,6 @@ public interface TUserInfoMapper extends BaseMapper<TUserInfo> {
     List<TUserInfo> getProjectPeoples(String pid);
 
     List<TUserInfo> getAllClass();
+
+    List<TUserInfo> getAllStu();
 }

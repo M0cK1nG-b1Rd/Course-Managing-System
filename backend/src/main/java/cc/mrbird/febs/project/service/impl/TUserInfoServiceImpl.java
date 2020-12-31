@@ -46,4 +46,8 @@ public class TUserInfoServiceImpl extends ServiceImpl<TUserInfoMapper, TUserInfo
     public List<TUserInfo> getAllClass(){
         return this.baseMapper.getAllClass();
     }
+
+    public List<TUserInfo> getAllStu(){
+        return this.baseMapper.getAllStu();
+    }
 }
