@@ -20,12 +20,13 @@
         </el-col>
       </el-form-item>
       <el-form-item label="项目类型">
-        <el-select v-model="formData.projectType" placeholder="请选择项目类型">
+        <el-select v-model="formData.projectType"
+                   allow-create filterable clearable
+                   placeholder="项目类型,可键入其他类型">
           <el-option label="web应用开发" value="web"></el-option>
           <el-option label="桌面应用开发" value="desktop"></el-option>
           <el-option label="微信小程序开发" value="wechat"></el-option>
           <el-option label="AI算法应用" value="ai"></el-option>
-          <el-option label="其他类型" value="other"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="项目时间">
@@ -70,7 +71,6 @@
           <!-- 用户列表区域 -->
           <el-row>
             <el-table :data="memberList" border stripe>
-              <!--        <el-table-column type="index"></el-table-column>-->
               <el-table-column label="姓名" prop="name" width="100px" align="center"></el-table-column>
               <el-table-column label="班级" prop="class" width="100px" align="center"></el-table-column>
               <el-table-column label="学号" prop="sno" width="150px" align="center"></el-table-column>
@@ -86,23 +86,66 @@
           </el-row>
 
           <!-- 添加用户的对话框 -->
-          <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="25%" @close="addDialogClosed">
+          <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="30%" @close="addDialogClosed">
             <!-- 内容主体区域 -->
             <el-form :model="newMemberInfo" ref="addFormRef" label-width="70px">
-              <el-form-item label="姓名" prop="name">
-                <el-input v-model="newMemberInfo.name"></el-input>
-              </el-form-item>
+<!--选择班级-->
               <el-form-item label="班级" prop="class">
-                <el-input v-model="newMemberInfo.class"></el-input>
+                <el-select v-model="newMemberInfo.class"
+                           placeholder="选择成员所在班级" clearable
+                           size="medium">
+                  <el-option
+                    v-for="item in classList"
+                    :key="item.class"
+                    :label="item.class"
+                    :value="item.class">
+                  </el-option>
+                </el-select>
+<!--选择姓名-->
+              </el-form-item>
+              <el-form-item label="姓名" prop="name">
+                <el-select v-model="newMemberInfo.name"
+                           placeholder="选择成员姓名" clearable
+                           size="medium">
+                  <el-option
+                    v-for="item in selectorInfo"
+                    v-if="newMemberInfo.class==item.class"
+                    :key="item.name"
+                    :label="item.name"
+                    :value="item.name">
+                  </el-option>
+                </el-select>
+<!--选择学号-->
               </el-form-item>
               <el-form-item label="学号" prop="sno">
-                <el-input v-model="newMemberInfo.sno"></el-input>
+                <el-select v-model="newMemberInfo.sno"
+                           placeholder="成员学号" clearable
+                           size="medium">
+                  <el-option
+                    v-for="item in selectorInfo"
+                    v-if="newMemberInfo.name==item.name"
+                    :key="item.sid"
+                    :label="item.sid"
+                    :value="item.sid">
+                  </el-option>
+                </el-select>
+<!--选择角色-->
               </el-form-item>
               <el-form-item label="角色" prop="position">
-                <el-input v-model="newMemberInfo.position"></el-input>
+                <el-select v-model="newMemberInfo.position"
+                           placeholder="可通过输入创建新选项"
+                           allow-create filterable clearable
+                           size="medium">
+                  <el-option
+                    v-for="item in positionOptions"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+                  </el-option>
+                </el-select>
               </el-form-item>
             </el-form>
-            <!-- 底部区域 -->
+            <!-- 对话框底部区域 -->
             <span slot="footer" class="dialog-footer">
               <el-button @click="addDialogVisible = false">取 消</el-button>
               <el-button type="primary" @click="addMemberCommit(newMemberInfo)">确 定</el-button>
@@ -112,8 +155,27 @@
       </el-form-item>
       <!--      底部按钮-->
       <el-form-item>
-        <el-button type="success" @click="onSubmit">立即创建</el-button>
-        <el-button type="danger" @click="resetForm('projectForm')">重置表单</el-button>
+        <el-col :span="10">
+          <el-popover
+            placement="top-start"
+            title="温馨提示"
+            width="200"
+            trigger="hover"
+            content="点击按钮后即可完成项目创建。">
+            <el-button type="success" @click="onSubmit" slot="reference">立即创建</el-button>
+          </el-popover>
+        </el-col>
+        <el-col :span="4">&nbsp</el-col>
+        <el-col :span="10">
+          <el-popover
+            placement="top-start"
+            title="请注意"
+            width="200"
+            trigger="hover"
+            content="请注意，点击按钮后将清空表单已填内容。">
+            <el-button type="danger" @click="resetForm('projectForm')" slot="reference">重置表单</el-button>
+          </el-popover>
+        </el-col>
       </el-form-item>
     </el-form>
   </div>
@@ -151,8 +213,60 @@ export default {
       resource: '',
       //新的后端传回的Pid
       createdPid:'',
+      // 岗位选择器的选项
+      positionOptions: [
+        {
+          value: '项目经理',
+          label: '项目经理'
+        },{
+          value: '系统设计师',
+          label: '系统设计师'
+        },{
+          value: '系统分析师',
+          label: '系统分析师'
+        },{
+          value: '前端工程师',
+          label: '前端工程师'
+        },{
+          value: '后端工程师',
+          label: '后端工程师'
+        },{
+          value: '测试工程师',
+          label: '测试工程师'
+        },{
+          value: '文档管理员',
+          label: '文档管理员'
+        },{
+          value: '数据库管理员',
+          label: '数据库管理员'
+        }
+          ],
+      // 所有班级列表,升序排序,每个班级包括value和label两个字段
+      classList: [],
+      // 新成员姓名、班级、学号选择器选项
+      selectorInfo: []
     }
   },
+
+  mounted() {
+    let that = this
+    // 获取班级列表
+    this.$get('project/all_class').then((r)=>{
+      console.log('班级信息')
+      console.log(r)
+      that.classList = r.data.data
+      that.classList = that.classList.reverse()
+    })
+    // 获取学生信息
+    this.$get('project/all_stu').then((r)=>{
+      console.log('学生信息')
+      console.log(r)
+      that.selectorInfo = r.data.data
+      console.log('select')
+      console.log(this.selectorInfo)
+    })
+  },
+
   methods: {
     // 添加新成员相关的函数
     // 按照学号删除成员信息
@@ -167,7 +281,6 @@ export default {
     // 监听添加用户对话框的关闭事件,清空表单
     addDialogClosed () {
       console.log('表单关闭并清空')
-      // this.$refs.addFormRef.resetFields()
       this.newMemberInfo = {
         name: '',
         class: '',
@@ -214,6 +327,7 @@ export default {
       this.submitProjectDetails()
       )
     },
+    // 提交项目信息
     async submitProjectInfo () {
       console.log('submit!')
       this.$post('/project/new', this.formData).then(
@@ -224,12 +338,16 @@ export default {
         this.$message.error('项目基本信息添加失败！')
       })
     },
+    // 提交项目成员信息
      submitProjectDetails () {
       //等待新的pid返回
       console.log('项目成员')
+       let squeezedMemberList = {}
+       squeezedMemberList.sid = this.memberList.sno
+       squeezedMemberList.position = this.memberList.position
       // POST发送成员信息列表
       // 带上新的pid
-      let data={"pid":this.createdPid, member:this.memberList}
+      let data={"pid":this.createdPid, member:squeezedMemberList}
       this.$post('/project/member_info', data).then(
         (r) => {
           this.$message.success('项目成员信息添加成功！')
@@ -237,13 +355,14 @@ export default {
         // this.$message.error('项目成员信息添加失败！')
       })
     }
+
   }
 }
 </script>
 
 <style>
 .bg-purple-light {
-  background: #61bcd1;
+  background: #bdd8f0;
 }
 
 .grid-content {
