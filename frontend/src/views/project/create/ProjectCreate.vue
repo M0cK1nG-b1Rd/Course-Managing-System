@@ -248,13 +248,14 @@ export default {
   //         class: "软件81",
   //       sid: "2185112300"
   //     }]}
-  // mounted() {
-  //   let that = this
-  //   this.$get('url').then((r)=>{
-  //     that.selectorInfo = r.data...
-  //   })
-      //  通过另外一个接口获取班级列表,升序排序,包括value和name字段
-  // },
+  mounted() {
+    let that = this
+    // 获取班级列表
+    this.$get('project/all_class').then((r)=>{
+      console.log(r)
+    })
+
+  },
 
   methods: {
     // 添加新成员相关的函数
