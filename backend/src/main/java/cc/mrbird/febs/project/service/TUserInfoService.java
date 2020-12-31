@@ -14,4 +14,6 @@ public interface TUserInfoService extends IService<TUserInfo> {
      List<TUserInfo> getProjectPeoples(String pid);
 
     List<TUserInfo> getAllClass();
+
+    List<TUserInfo> getAllStu();
 }

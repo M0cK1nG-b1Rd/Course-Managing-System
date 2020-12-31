@@ -3,7 +3,6 @@ package cc.mrbird.febs.project.controller;
 
 import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
-import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.project.domain.ProjectScore;
 import cc.mrbird.febs.project.domain.ProjectScoringRules;
 import cc.mrbird.febs.project.service.ProjectScoreService;
