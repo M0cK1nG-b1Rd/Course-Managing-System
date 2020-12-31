@@ -31,7 +31,15 @@
 
 <!--    选择打分对象-->
     <el-header id="selectStuHeader" height="34px">选择打分对象</el-header>
-    <el-main id="selectStuMain">打分对象在此选择</el-main>
+    <el-main id="selectStuMain">
+      <a-cascader
+        v-model="markResult.sid"
+        :options="projectOptions"
+        :load-data="loadData"
+        placeholder="请选择需要打分的学生"
+        change-on-select
+      />
+    </el-main>
 
 <!--   打分区-->
     <el-header id="markHeader" height="34px">开始打分</el-header>
@@ -85,6 +93,9 @@
         v-model="markResult.feedback">
       </el-input>
     </el-main>
+    <el-main style="{align-content: center;}">
+      <el-button type="primary" size="medium " @="onSubmitScore">提交成绩及评价</el-button>
+    </el-main>
   </el-container>
 </template>
 
@@ -119,12 +130,21 @@ export default {
         {color: '#5cb87a', percentage: 100}
       ],
       // 布尔值表明是否已完成规则设置
-      hasSetRule: false
+      hasSetRule: false,
+      // 选择打分对象的选项
+      projectOptions: [
+        {
+          value: '1', // pid
+          label: '管理系统', // pName
+          isLeaf: false,
+        }
+      ]
     }
   },
   // 刷新或者打开页面时，像后端请求数据库中存储的打分规则
   mounted () {
     let that = this
+    // 从数据库获取已有的打分规则
     this.$get('project/score/rules').then((r) => {
       console.log(r)
       // this.data = r.data.data
@@ -133,6 +153,10 @@ export default {
       that.markRule.completion = r.data.data[2].ratio
       that.markRule.presentation = r.data.data[3].ratio
     })
+    // 从数据库获得已有的项目信息，包括项目名称+项目id
+    // this.$get('').then(r=>{
+    //
+    // }).catch()
   },
 
   // 行为区
@@ -160,16 +184,18 @@ export default {
     // 当每一个子项打分完成时调用，即拖动滑块时
     onGiveSubScore() {
       // 检查是否已经设置好打分规则，若是则更新当前总分
-      if(this.hasSetRule){
+      let total = this.markRule.process + this.markRule.docs +
+        this.markRule.completion + this.markRule.presentation
+      if(total===100){
         this.markResult.totalScore =
           this.markResult.processScore*this.markRule.process +
           this.markResult.presentationScore*this.markRule.presentation +
           this.markResult.docsScore*this.markRule.docs +
           this.markResult.completionScore*this.markRule.completion;
         this.markResult.totalScore /= 100
+
       }
       else{
-
         this.$message.error('请先完成打分规则设置！')
       }
     },
@@ -177,6 +203,51 @@ export default {
     // 返回总分进度条的format-即显示在右侧的分数
     format() {
       return this.markResult.totalScore + '分';
+    },
+
+    // 级联选择时动态加载学生信息供选择
+    loadData(selectedOptions) {
+      console.log(selectedOptions)
+      const targetOption = selectedOptions[selectedOptions.length - 1];
+      targetOption.loading = true;
+
+      // load options lazily
+      setTimeout(() => {
+        targetOption.loading = false;
+
+        // 通过PID向后台请求成员信息，返回结果必须包含该项目所有成员的学号+姓名
+        // let memberInfo = this.$get('url',selectedOptions.value---pid)
+
+        // memberIn格式 = [
+        //   {
+        //     "sid" : '218576543',
+        //     "name" : '张三'
+        //   },
+        //   {
+        //     "sid" : '218576543',
+        //     "name" : '李四'
+        //   }
+        // ]
+
+        // 给被选中的一级选项添加其二级选项
+        let children = [{}]
+        for(let i = 0; i<memberInfo.length; i++){
+          children[i].value = memberInfo[i].sid
+          children[i].label = memberInfo[i].name
+          children[i].leaf = true
+        }
+        // 或者直接尝试children=memberInfo
+        targetOption.children = children
+        this.projectOptions = [...this.projectOptions];
+      }, 10);
+    },
+
+    // 提交成绩
+    onSubmitScore() {
+      // this.$post('url', sid).then(r=>{
+      //   this.$message.success('打分提交成功！')
+      // })
+      console.log('成绩提交成功！')
     }
   }
 }

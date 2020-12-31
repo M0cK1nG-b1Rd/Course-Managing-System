@@ -228,13 +228,13 @@ export default {
       //等待新的pid返回
       console.log('项目成员')
       // POST发送成员信息列表
-      //带上新的pid
+      // 带上新的pid
       let data={"pid":this.createdPid, member:this.memberList}
       this.$post('/project/details', data).then(
         (r) => {
           this.$message.success('项目成员信息添加成功！')
         }).catch((err) => {
-        this.$message.error('项目成员信息添加失败！')
+        // this.$message.error('项目成员信息添加失败！')
       })
     }
   }
