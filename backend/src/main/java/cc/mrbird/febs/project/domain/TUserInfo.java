@@ -1,5 +1,6 @@
 package cc.mrbird.febs.project.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -22,6 +23,7 @@ public class TUserInfo implements Serializable {
 
     private String name;
 
+    @JsonProperty(value = "class")
     private String classs;
 
 

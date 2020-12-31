@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public interface ProjectScoreService extends IService<ProjectScore> {
 
-    void addProjectScore(List<ProjectScore> projectScores);
+    void addProjectScore(ProjectScore projectScore);
 
     void updateProjectScoringRules(int[] rules);
 

@@ -2,4 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.mrbird.febs.project.dao.TUserInfoMapper">
 
+    <select id="getProjectPeoples" resultType="cc.mrbird.febs.project.domain.TUserInfo">
+        select a.sid,a.name
+        from t_user_info as a, project_member_info as b
+        where a.sid=b.sid and pid = #{pid}
+    </select>
+
+    <select id="getAllClass" resultType="cc.mrbird.febs.project.domain.TUserInfo">
+        select classs from t_user_info order by classs desc
+    </select>
 </mapper>

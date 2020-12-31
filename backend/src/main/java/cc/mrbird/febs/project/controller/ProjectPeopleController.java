@@ -61,7 +61,7 @@ public class ProjectPeopleController {
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
 
-    @PostMapping("details")
+    @PostMapping("member_info")
     public FebsResponse addProjectPeople(@RequestBody List<ProjectPeople> projectPeoples) throws FebsException{
         try {
             //TODO 转换
@@ -73,4 +73,18 @@ public class ProjectPeopleController {
             throw new FebsException(message);
         }
     }
+    //TODO
+    @GetMapping("member_info")
+    public FebsResponse getAllProjectPeople(@RequestBody List<ProjectPeople> projectPeoples) throws FebsException{
+        try {
+            //TODO 转换
+            this.projectPeopleService.createProjectPeoples(projectPeoples);
+            return new FebsResponse().code("200").message("新增项目信息成功").status("success");
+        } catch (Exception e) {
+            message = "新增项目信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
 }

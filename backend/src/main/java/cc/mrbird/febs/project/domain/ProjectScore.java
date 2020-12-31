@@ -39,5 +39,6 @@ public class ProjectScore implements Serializable {
 
     private String feedback;
 
+    private Integer isReleased;
 
 }

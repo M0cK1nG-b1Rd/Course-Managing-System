@@ -1,5 +1,6 @@
 package cc.mrbird.febs.project.service.impl;
 
+import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.dao.TUserInfoMapper;
 import cc.mrbird.febs.project.service.TUserInfoService;
@@ -35,4 +36,14 @@ public class TUserInfoServiceImpl extends ServiceImpl<TUserInfoMapper, TUserInfo
         return tUserInfoMapper.selectOne(wrapper);
     }
 
+    @Override
+    public List<TUserInfo> getProjectPeoples(String pid) {
+        List<TUserInfo> test =this.baseMapper.getProjectPeoples(pid);
+        return this.baseMapper.getProjectPeoples(pid);
+    }
+
+    @Override
+    public List<TUserInfo> getAllClass(){
+        return this.baseMapper.getAllClass();
+    }
 }
