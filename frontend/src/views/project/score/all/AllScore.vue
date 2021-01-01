@@ -1,30 +1,95 @@
 <template>
-  <div>
-    <ve-histogram :data="chartData" :settings="chartSettings">你好</ve-histogram>
-  </div>
+  <el-table
+    :data="tableData"
+    border
+    style="width: 100%">
+    <el-table-column
+      fixed
+      prop="tuserInfo.name"
+      label="姓名"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="tuserInfo.class"
+      label="班级"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="sid"
+      label="学号"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      sortable
+      prop="totalScore"
+      label="总成绩"
+      width="100">
+    </el-table-column>
+    <el-table-column
+      sortable
+      prop="processScore"
+      label="过程考核"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      sortable
+      prop="docsScore"
+      label="文档报告"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      sortable
+      prop="completeScore"
+      label="完成度"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      sortable
+      prop="presentationScore"
+      label="答辩表现"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      prop="feedback"
+      label="评价及反馈"
+      width="120">
+    </el-table-column>
+    <el-table-column
+      fixed="right"
+      label="操作"
+      width="100">
+      <template slot-scope="scope">
+        <el-button
+          type="primary"
+          size="mini"
+          icon="el-icon-edit"
+          @click="handleEdit(scope.row)">编辑</el-button>
+      </template>
+    </el-table-column>
+  </el-table>
+
 </template>
 
 <script>
-
 export default {
-  data () {
+  methods: {
+    handleEdit(row) {
+      console.log(row);
+    }
+  },
+
+  mounted() {
+    let that = this
+    this.$get('project/stu_score').then(r=>{
+      console.log(r)
+      that.tableData = r.data.data.stuScore
+    })
+  },
+
+  data() {
     return {
-      chartData: {
-        columns: ['日期', '访问用户', '下单用户', '下单率'],
-        rows: [
-          { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
-          { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
-          { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
-          { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
-          { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
-          { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
-        ]
-      },
-      chartSettings : {
-        showLine: ['下单用户']
-      }
+      tableData: []
     }
   }
 }
-
 </script>
