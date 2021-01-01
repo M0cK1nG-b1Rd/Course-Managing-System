@@ -1,42 +1,30 @@
 <template>
-  <el-card class="box-card">
-    <div slot="header" class="clearfix">
-      <span>{{ commenter }}</span>
-    </div>
-    <div v-for="o in 4" :key="o" class="text item">
-      {{ '  ' + content }}
-    </div>
-  </el-card>
+  <div>
+    <ve-histogram :data="chartData" :settings="chartSettings">你好</ve-histogram>
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'Comment',
-    props: ['commenter', 'content'],
-    data() {
+
+export default {
+  data () {
+    return {
+      chartData: {
+        columns: ['日期', '访问用户', '下单用户', '下单率'],
+        rows: [
+          { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
+          { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
+          { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
+          { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
+          { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
+          { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
+        ]
+      },
+      chartSettings : {
+        showLine: ['下单用户']
+      }
     }
   }
+}
+
 </script>
-
-<style>
-.text {
-  font-size: 14px;
-}
-
-.item {
-  margin-bottom: 18px;
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: "";
-}
-.clearfix:after {
-  clear: both
-}
-
-.box-card {
-  width: 400px;
-}
-</style>
