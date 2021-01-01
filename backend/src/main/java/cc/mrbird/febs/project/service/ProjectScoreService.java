@@ -31,4 +31,6 @@ public interface ProjectScoreService extends IService<ProjectScore> {
     List<ProjectScore> getAllProjectScore();
 
     void releaseScore();
+
+    void unreleaseScore();
 }

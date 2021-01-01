@@ -124,4 +124,15 @@ public class ProjectScoreController {
         }
     }
 
+    @PutMapping("unrelease_score")
+    public FebsResponse unreleaseScore() throws FebsException {
+        try {
+            this.projectScoreService.unreleaseScore();
+            return new FebsResponse().code("200").message("变更成功").status("success");
+        } catch (Exception e) {
+            message = "变更成功";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
 }
