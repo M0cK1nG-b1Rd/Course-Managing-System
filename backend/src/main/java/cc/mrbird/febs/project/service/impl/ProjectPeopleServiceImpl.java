@@ -12,6 +12,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -38,13 +40,30 @@ public class ProjectPeopleServiceImpl extends ServiceImpl<ProjectPeopleMapper, P
     }
 
     @Override
+    public List<ProjectPeople> findByPid(String pid) {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("pid",pid);
+        return (List<ProjectPeople>) projectPeopleMapper.selectList(wrapper);
+    }
+
+    @Override
     public List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid) {
         return this.baseMapper.getAllPeopleInGroup(sid,pid);
     }
 
     @Override
-    public void createProjectPeoples(List<ProjectPeople> projectPeoples) {
-        this.baseMapper.createProjectPeoples(projectPeoples);
+    public void createProjectPeoples(LinkedHashMap<String,Object> projectPeoples) {
+        ProjectPeople projectPeople = new ProjectPeople();
+        String pid = projectPeoples.get("pid").toString();
+        ArrayList<LinkedHashMap> peoples = (ArrayList<LinkedHashMap>)projectPeoples.get("member");
+        for (LinkedHashMap people:peoples) {
+            String sid = people.get("sno").toString();
+            String position =people.get("position").toString();
+            projectPeople.setPid(pid);
+            projectPeople.setSid(sid);
+            projectPeople.setPosition(position);
+            this.save(projectPeople);
+        }
     }
 
 

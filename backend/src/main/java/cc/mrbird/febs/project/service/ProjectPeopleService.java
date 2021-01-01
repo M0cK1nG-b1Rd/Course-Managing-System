@@ -7,6 +7,7 @@ import cc.mrbird.febs.system.domain.Menu;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -19,6 +20,7 @@ public interface ProjectPeopleService extends IService<ProjectPeople> {
 
     List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid) ;
 
-    void createProjectPeoples(List<ProjectPeople> projectPeoples);
+    void createProjectPeoples(LinkedHashMap<String,Object> projectPeoples);
 
+    List<ProjectPeople> findByPid(String pid);
 }

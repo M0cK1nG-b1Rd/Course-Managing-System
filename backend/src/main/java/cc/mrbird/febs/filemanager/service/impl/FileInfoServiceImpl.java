@@ -32,8 +32,8 @@ public class FileInfoServiceImpl implements FileInfoService {
     }
     
     @Override
-	public List<TFileInfo> selectFileList(TFileInfo file) {
-		return tFileInfoMapper.selectFileList(file);
+	public List<TFileInfo> selectFileList(TFileInfo file,String pid) {
+		return tFileInfoMapper.selectFileList(file,pid);
 	}
 
 	@Override

@@ -2,19 +2,78 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.mrbird.febs.project.dao.ProjectScoreMapper">
 
-<!--    <insert id="addProjectScore" parameterType="java.util.List">-->
-<!--        insert into project_score(sid,total_score,process_score,docs_score,complete_score,presentation_score,feedback) values-->
-<!--        <foreach collection="list" item="item" index="index" separator=",">-->
-<!--            (#{item.sid},#{item.total_score},#{item.process_score},#{item.docs_score},#{item.complete_score},#{item.presentation_score},#{item.feedback})-->
-<!--        </foreach>-->
-<!--    </insert>-->
+    <!--    <insert id="addProjectScore" parameterType="java.util.List">-->
+    <!--        insert into project_score(sid,total_score,process_score,docs_score,complete_score,presentation_score,feedback) values-->
+    <!--        <foreach collection="list" item="item" index="index" separator=",">-->
+    <!--            (#{item.sid},#{item.total_score},#{item.process_score},#{item.docs_score},#{item.complete_score},#{item.presentation_score},#{item.feedback})-->
+    <!--        </foreach>-->
+    <!--    </insert>-->
 
 
-<!--    <update id="updateProjectScoringRules" parameterType="cc.mrbird.febs.project.domain.ProjectScoringRules">-->
-<!--        insert into project_scoring_rules(rule_name,ratio) values-->
-<!--        <foreach collection="list" item="item" index="index" separator=",">-->
-<!--            (#{item.rule_name},#{item.ratio})-->
-<!--        </foreach>-->
-<!--    </update>-->
+    <!--    <update id="updateProjectScoringRules" parameterType="cc.mrbird.febs.project.domain.ProjectScoringRules">-->
+    <!--        insert into project_scoring_rules(rule_name,ratio) values-->
+    <!--        <foreach collection="list" item="item" index="index" separator=",">-->
+    <!--            (#{item.rule_name},#{item.ratio})-->
+    <!--        </foreach>-->
+    <!--    </update>-->
 
+    <select id="getGreaterThanInProject" resultType="java.lang.Float">
+        select greater_than.count / all_in_project.all_member as greater_in_project
+        from (SELECT count(*) as count
+              from project_score
+              where sid in
+                    (SELECT sid
+                     from project_member_info
+                     where pid in (SELECT pid FROM `project_member_info` where sid = #{sid}))
+                and total_score
+                  &lt;
+                    (SELECT total_score from project_score where sid = #{sid})) as greater_than,
+             (SELECT count(*) as all_member
+              from project_member_info
+              where pid in (SELECT pid FROM `project_member_info` where sid = #{sid})) as all_in_project
+    </select>
+
+    <select id="getGreaterThanInClass" resultType="java.lang.Float">
+        select greater_than.count / all_in_class.all_member as greater_in_class
+        from (SELECT count(*) as count
+              from project_score
+              where sid in (SELECT sid
+                            from t_user_info
+                            where classs in (SELECT classs
+                                             FROM `t_user_info`
+                                             where sid = #{sid}))
+                and total_score
+                  &lt;
+                    (SELECT total_score from project_score where sid = #{sid})) as greater_than,
+             (SELECT count(*) as all_member
+              from t_user_info
+              where classs in (SELECT classs FROM `t_user_info` where sid = #{sid})) as all_in_class
+    </select>
+
+    <!--    <select id="getStatisticsInProject" resultType="java.lang.Float">-->
+
+
+    <!--    </select>-->
+
+    <select id="getStatisticsInClass" resultType="cc.mrbird.febs.project.domain.ClassStatistics">
+        SELECT a.classs, max(total_score) as max_score, avg(total_score) as avg_score, min(total_score) as min_score
+        from t_user_info as a,
+             project_score as b
+        where classs in (SELECT classs FROM `t_user_info` where sid = #{sid})
+          and a.sid = b.sid
+
+    </select>
+    <select id="getProjectScore" resultType="cc.mrbird.febs.project.domain.ProjectScore">
+        SELECT sid,
+               feedback,
+               presentation_score,
+               docs_score,
+               is_released,
+               complete_score,
+               process_score,
+               total_score,
+               sid
+        FROM project_score
+        WHERE (sid = #{sid});
+    </select>
 </mapper>

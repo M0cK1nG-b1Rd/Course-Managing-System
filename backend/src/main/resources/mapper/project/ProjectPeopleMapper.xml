@@ -21,12 +21,12 @@
     </select>
 
 
-    <insert id="createProjectPeoples" parameterType="java.util.List">
-        insert into project_member_info(pid,sid,position) values
-        <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.pid},#{item.sid},#{item.position})
-        </foreach>
-    </insert>
+<!--    <insert id="createProjectPeoples" parameterType="java.util.List">-->
+<!--        insert into project_member_info(pid,sid,position) values-->
+<!--        <foreach collection="list" item="item" index="index" separator=",">-->
+<!--            (#{item.pid},#{item.sid},#{item.position})-->
+<!--        </foreach>-->
+<!--    </insert>-->
 
 
 </mapper>

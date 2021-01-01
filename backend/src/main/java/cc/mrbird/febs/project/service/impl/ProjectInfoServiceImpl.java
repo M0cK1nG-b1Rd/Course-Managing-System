@@ -29,34 +29,41 @@ public class ProjectInfoServiceImpl extends ServiceImpl<ProjectInfoMapper, Proje
     private ProjectPeopleService projectPeopleService;
 
     @Autowired
-    public ProjectInfoServiceImpl(ProjectInfoMapper projectInfoMapper){
+    public ProjectInfoServiceImpl(ProjectInfoMapper projectInfoMapper) {
         this.projectInfoMapper = projectInfoMapper;
     }
 
-    public ProjectInfoServiceImpl( ){
+    public ProjectInfoServiceImpl() {
 
     }
 
     @Override
     public List<ProjectInfo> findProjectInfo(String username) {
         QueryWrapper wrapper = new QueryWrapper();
-        wrapper.eq("group_leader",username);
+        wrapper.eq("group_leader", username);
         return (List<ProjectInfo>) projectInfoMapper.selectList(wrapper);
     }
 
 
     @Override
-    public List<ProjectInfo> findMyProjectInfo(String sid){
+    public List<ProjectInfo> findMyProjectInfo(String sid) {
         List<ProjectPeople> projectPeopleList = projectPeopleService.findBySid(sid);
         //只要pid
-        List<String> pidList=projectPeopleList.stream().map(ProjectPeople::getPid).collect(Collectors.toList());
+        List<String> pidList = projectPeopleList.stream().map(ProjectPeople::getPid).collect(Collectors.toList());
         List<ProjectInfo> projectInfoList = projectInfoMapper.selectBatchIds(pidList);
-        return  projectInfoList;
+        return projectInfoList;
     }
 
     @Override
-    public long createProjectInfo(ProjectInfo projectInfo){
+    public long createProjectInfo(ProjectInfo projectInfo) {
         this.save(projectInfo);
         return projectInfo.getPid();
+    }
+
+    @Override
+    public ProjectInfo findByPid(String pid) {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("pid", pid);
+        return projectInfoMapper.selectOne(wrapper);
     }
 }

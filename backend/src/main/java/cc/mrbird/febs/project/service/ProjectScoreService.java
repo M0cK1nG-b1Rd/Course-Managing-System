@@ -1,5 +1,6 @@
 package cc.mrbird.febs.project.service;
 
+import cc.mrbird.febs.project.domain.ClassStatistics;
 import cc.mrbird.febs.project.domain.ProjectScore;
 import cc.mrbird.febs.project.domain.ProjectScoringRules;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -17,4 +18,13 @@ public interface ProjectScoreService extends IService<ProjectScore> {
 
     void updateProjectScoringRules(int[] rules);
 
+    float getGreaterThanInProject(String sid);
+
+    float getGreaterThanInClass(String sid);
+
+//    float getStatisticsInProject(String sid);
+
+    ClassStatistics getStatisticsInClass(String sid);
+
+    ProjectScore getProjectScore(String sid);
 }

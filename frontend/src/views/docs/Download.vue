@@ -8,7 +8,7 @@
 
 
 <!--    table主要区域   -->
-    <el-table :data="tableData.slice((query.currentPage-1)*query.pageSize, query.currentPage * query.pageSize)" style="width: 100%">
+    <el-table :data="mySlice(this.tableData)" style="width: 100%">
       <el-table-column  prop="id" label="ID" width="120" align="center" v-if="isShow">
       </el-table-column>
       <el-table-column prop="filename" label="文件名" width="200" show-overflow-tooltip><!--tooltip表格列内容过长时显示提示-->
@@ -151,8 +151,8 @@ export default {
     getData() {
       selectFileList(this.query).then(res => {
         this.tableData = res.data;
+        if(res.data)
         this.total = res.data.length;
-
       })
     },
 
@@ -224,6 +224,12 @@ export default {
     // 关闭删除文件警示对话框时调用
     handleDialogClose(){
         this.deleteDialogVisible = false
+    },
+
+    mySlice(tableData){
+      if(tableData.length!==0){
+        return tableData.slice((query.currentPage-1)*query.pageSize, query.currentPage * query.pageSize)
+      }else{return null}
     }
 
   },
@@ -233,6 +239,7 @@ export default {
     //监听浏览器窗口变化
     window.onresize = () => {this.Height = document.documentElement.clientHeight - 120}
   },
+
   components: {
     UploadBigFile
   }
