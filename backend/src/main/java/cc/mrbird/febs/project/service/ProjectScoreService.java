@@ -27,4 +27,8 @@ public interface ProjectScoreService extends IService<ProjectScore> {
     ClassStatistics getStatisticsInClass(String sid);
 
     ProjectScore getProjectScore(String sid);
+
+    List<ProjectScore> getAllProjectScore();
+
+    void releaseScore();
 }

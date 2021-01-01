@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.mrbird.febs.project.dao.ProjectScoreMapper">
+    <update id="releaseScore">
+        UPDATE project_score SET is_released=1
+    </update>
 
     <!--    <insert id="addProjectScore" parameterType="java.util.List">-->
     <!--        insert into project_score(sid,total_score,process_score,docs_score,complete_score,presentation_score,feedback) values-->
@@ -76,4 +79,38 @@
         FROM project_score
         WHERE (sid = #{sid});
     </select>
+
+    <resultMap id="projectScoreMap" type="cc.mrbird.febs.project.domain.ProjectScore" >
+        <id column="sid" property="sid"/>
+        <result column="total_score" property="totalScore" />
+        <result column="process_score" property="processScore" />
+        <result column="docs_score" property="docsScore" />
+        <result column="complete_score" property="completeScore" />
+        <result column="presentation_score" property="presentationScore" />
+        <result column="feedback" property="feedback" />
+        <result column="is_released" property="isReleased" />
+        <!-- association 中的property对应ProjectScore类中新添加的tUserInfo类对象属性    -->
+        <association property="tUserInfo" javaType="cc.mrbird.febs.project.domain.TUserInfo">
+            <result column="name" property="name" />
+            <result column="classs" property="classs"  />
+        </association>
+    </resultMap>
+
+    <select id="getAllProjectScore" resultMap="projectScoreMap">
+        select a.sid,
+               a.name,
+               a.classs,
+               b.total_score,
+               b.process_score,
+               b.docs_score,
+               b.complete_score,
+               b.presentation_score,
+               b.feedback,
+               b.is_released
+        from t_user_info as a,
+             project_score as b
+        where a.sid = b.sid
+    </select>
+
+
 </mapper>

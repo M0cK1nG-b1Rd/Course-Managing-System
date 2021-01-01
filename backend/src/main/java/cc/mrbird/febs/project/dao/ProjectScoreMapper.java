@@ -5,6 +5,8 @@ import cc.mrbird.febs.project.domain.ProjectScore;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author hyl
  */
@@ -21,4 +23,8 @@ public interface ProjectScoreMapper extends BaseMapper<ProjectScore> {
     ClassStatistics getStatisticsInClass(String sid);
 
     ProjectScore getProjectScore(String sid);
+
+    List<ProjectScore> getAllProjectScore();
+
+    void releaseScore();
 }

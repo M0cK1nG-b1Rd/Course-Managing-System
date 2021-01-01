@@ -40,7 +40,7 @@ public class ProjectPeopleController {
 //        return new FebsResponse().code("200").message("请求成功").status("success").data(list);
 //    }
 
-
+    //查看同组的成员信息（权限：学生）
     @GetMapping("same_group")
     public FebsResponse getPeopleInSameGroup(@RequestParam(name="pid") String pid) {
         List<PeopleInGroup> list = this.projectPeopleService.getAllPeopleInGroup(ProjectUtil.getSid(),pid);
@@ -50,36 +50,35 @@ public class ProjectPeopleController {
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
 
+    //新增成员信息（权限：学生）
     @PostMapping("member_info")
     public FebsResponse addProjectPeople(@RequestBody LinkedHashMap<String,Object> projectPeoples) throws FebsException{
         try {
             this.projectPeopleService.createProjectPeoples(projectPeoples);
-            return new FebsResponse().code("200").message("新增项目信息成功").status("success");
+            return new FebsResponse().code("200").message("请求成功").status("success");
         } catch (Exception e) {
-            message = "新增项目信息失败";
+            message = "请求失败";
             log.error(message, e);
             throw new FebsException(message);
         }
     }
 
     //TODO 实现
+    //查看成员信息（权限：学生）
     @GetMapping("my_member_info")
     public FebsResponse getMyProjectPeople(@RequestParam(value = "pid") String pid) throws FebsException{
         try {
-//            String userSid= this.tUserInfoService.findByUsername(this.getUsername()).getSid();
-//            String pid;
-//
-//            List<ProjectPeople> projectPeople = this.projectPeopleService.findBySid(userSid);
-//            this.projectPeopleService.createProjectPeoples(projectPeoples);
-            return new FebsResponse().code("200").message("新增项目信息成功").status("success");
+            String sid = ProjectUtil.getSid();
+            List<ProjectPeople> data = this.projectPeopleService.getMyProjectPeople(sid,pid);
+            return new FebsResponse().code("200").message("请求成功").status("success").data(data);
         } catch (Exception e) {
-            message = "新增项目信息失败";
+            message = "请求成功";
             log.error(message, e);
             throw new FebsException(message);
         }
     }
 
-
+    //查看成员信息（权限：老师）
     @GetMapping("member_info")
     public FebsResponse getAllProjectPeople(@RequestParam(value = "pid") String pid) throws FebsException{
         try {
