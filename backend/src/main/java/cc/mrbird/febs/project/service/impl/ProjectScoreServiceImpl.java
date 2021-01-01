@@ -75,4 +75,9 @@ public class ProjectScoreServiceImpl extends ServiceImpl<ProjectScoreMapper, Pro
         this.baseMapper.releaseScore();
     }
 
+    @Override
+    public void unreleaseScore() {
+        this.baseMapper.unreleaseScore();
+    }
+
 }
