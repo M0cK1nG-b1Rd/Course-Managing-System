@@ -16,6 +16,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import './components/common/directives'
 import uploader from 'vue-simple-uploader'
+import dataV from '@jiaminghi/data-view'
+
+
 
 Vue.use(VueAxios, axios)
 Vue.use(uploader)
@@ -24,13 +27,15 @@ Vue.use(Antd)
 Vue.use(db)
 Vue.use(VueMeta)
 Vue.use(ElementUI)
-Vue.prototype.$echarts = echarts
+Vue.use(dataV)
 Vue.use({
   install (Vue) {
     Vue.prototype.$db = db
   }
 })
 
+
+Vue.prototype.$echarts = echarts
 Vue.prototype.$post = request.post
 Vue.prototype.$get = request.get
 Vue.prototype.$put = request.put

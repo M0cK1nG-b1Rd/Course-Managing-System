@@ -1,15 +1,42 @@
 <template>
-    <div>
-      你好
+  <el-card class="box-card">
+    <div slot="header" class="clearfix">
+      <span>{{ commenter }}</span>
     </div>
+    <div v-for="o in 4" :key="o" class="text item">
+      {{ '  ' + content }}
+    </div>
+  </el-card>
 </template>
 
 <script>
-export default {
-  name: "AllScore"
-}
+  export default {
+    name: 'Comment',
+    props: ['commenter', 'content'],
+    data() {
+    }
+  }
 </script>
 
-<style scoped>
+<style>
+.text {
+  font-size: 14px;
+}
 
+.item {
+  margin-bottom: 18px;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  content: "";
+}
+.clearfix:after {
+  clear: both
+}
+
+.box-card {
+  width: 400px;
+}
 </style>

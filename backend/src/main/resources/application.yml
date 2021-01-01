@@ -48,6 +48,8 @@ spring:
           password: root8
           driver-class-name: com.mysql.cj.jdbc.Driver
           url: jdbc:mysql://192.168.12.173:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+
+
   aop:
     proxy-target-class: true
 

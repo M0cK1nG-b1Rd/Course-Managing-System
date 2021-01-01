@@ -33,6 +33,7 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@jiaminghi/data-view": "^2.10.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
