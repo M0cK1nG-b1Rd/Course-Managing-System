@@ -35,7 +35,8 @@ public class TUserInfoController {
     @GetMapping("all_member_info")
     public FebsResponse getProjectPeople(@RequestParam(value = "pid",required = false) String pid ) throws FebsException {
         try {
-            List<TUserInfo> data= this.tUserInfoService.getProjectPeoples(pid);
+//            List<TUserInfo> data= this.tUserInfoService.getProjectPeoples(pid);
+            List<TUserInfo> data= this.tUserInfoService.getProjectPeoples();
             return new FebsResponse().code("200").message("查询信息成功").status("success").data(data);
         } catch (Exception e) {
             message = "查询信息失败";

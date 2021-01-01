@@ -14,7 +14,8 @@ import java.util.List;
 public interface TUserInfoService extends IService<TUserInfo> {
     TUserInfo findByUsername(String username);
 
-     List<TUserInfo> getProjectPeoples(String pid);
+//     List<TUserInfo> getProjectPeoples(String pid);
+    List<TUserInfo> getProjectPeoples();
 
     List<TUserInfo> getAllClass();
 

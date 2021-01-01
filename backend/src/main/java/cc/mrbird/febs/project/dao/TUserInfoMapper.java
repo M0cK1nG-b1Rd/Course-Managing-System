@@ -12,7 +12,8 @@ import java.util.List;
 @Service
 public interface TUserInfoMapper extends BaseMapper<TUserInfo> {
 
-    List<TUserInfo> getProjectPeoples(String pid);
+//    List<TUserInfo> getProjectPeoples(String pid);
+List<TUserInfo> getProjectPeoples();
 
     List<TUserInfo> getAllClass();
 

@@ -34,10 +34,16 @@ public class TUserInfoServiceImpl extends ServiceImpl<TUserInfoMapper, TUserInfo
         return tUserInfoMapper.selectOne(wrapper);
     }
 
+//    @Override
+//    public List<TUserInfo> getProjectPeoples(String pid) {
+//        List<TUserInfo> test =this.baseMapper.getProjectPeoples(pid);
+//        return this.baseMapper.getProjectPeoples(pid);
+//    }
+
     @Override
-    public List<TUserInfo> getProjectPeoples(String pid) {
-        List<TUserInfo> test =this.baseMapper.getProjectPeoples(pid);
-        return this.baseMapper.getProjectPeoples(pid);
+    public List<TUserInfo> getProjectPeoples() {
+        List<TUserInfo> test =this.baseMapper.getProjectPeoples();
+        return this.baseMapper.getProjectPeoples();
     }
 
     @Override

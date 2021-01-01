@@ -2,11 +2,26 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.mrbird.febs.project.dao.TUserInfoMapper">
 
-    <select id="getProjectPeoples" resultType="cc.mrbird.febs.project.domain.TUserInfo">
-        select a.sid,a.name
+<!--    <select id="getProjectPeoples" resultType="cc.mrbird.febs.project.domain.TUserInfo">-->
+<!--        select a.sid,a.name-->
+<!--        from t_user_info as a, project_member_info as b-->
+<!--        where a.sid=b.sid and pid = #{pid}-->
+<!--    </select>-->
+
+    <select id="getProjectPeoples" resultMap="projectPeopleMap">
+        select b.pid ,b.sid,a.name
         from t_user_info as a, project_member_info as b
-        where a.sid=b.sid and pid = #{pid}
+        where a.sid=b.sid
     </select>
+
+    <resultMap id="projectPeopleMap" type="cc.mrbird.febs.project.domain.ProjectPeople" >
+        <result column="pid" property="pid" />
+        <result column="sid" property="sid" />
+        <!-- association 中的property对应TUserInfo类中新添加的tUserInfo类对象属性    -->
+        <association property="tUserInfo" javaType="cc.mrbird.febs.project.domain.TUserInfo">
+            <result column="name" property="name" />
+        </association>
+    </resultMap>
 
     <select id="getAllClass" resultType="cc.mrbird.febs.project.domain.TUserInfo">
         select distinct classs from t_user_info order by classs desc
