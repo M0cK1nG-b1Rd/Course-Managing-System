@@ -5,6 +5,7 @@ import java.io.Serializable;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -21,6 +22,7 @@ import lombok.experimental.Accessors;
 public class ProjectPeople implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    @JsonIgnore
     @TableId(type = IdType.AUTO)
     private long id;
 
@@ -30,5 +32,5 @@ public class ProjectPeople implements Serializable {
 
     private String position;
 
-
+    private TUserInfo tUserInfo;
 }

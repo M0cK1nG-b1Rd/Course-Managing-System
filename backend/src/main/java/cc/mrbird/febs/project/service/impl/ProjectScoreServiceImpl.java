@@ -65,4 +65,14 @@ public class ProjectScoreServiceImpl extends ServiceImpl<ProjectScoreMapper, Pro
         return this.baseMapper.getProjectScore(sid);
     }
 
+    @Override
+    public List<ProjectScore> getAllProjectScore() {
+        return this.baseMapper.getAllProjectScore();
+    }
+
+    @Override
+    public void releaseScore() {
+        this.baseMapper.releaseScore();
+    }
+
 }

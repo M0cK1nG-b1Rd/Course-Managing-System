@@ -23,4 +23,6 @@ public interface ProjectPeopleService extends IService<ProjectPeople> {
     void createProjectPeoples(LinkedHashMap<String,Object> projectPeoples);
 
     List<ProjectPeople> findByPid(String pid);
+
+    List<ProjectPeople> getMyProjectPeople(String sid,String pid);
 }

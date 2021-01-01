@@ -17,5 +17,7 @@ public interface ProjectPeopleMapper extends BaseMapper<ProjectPeople> {
 
     List<ProjectPeople> getPeopleInSameGroup(@Param("sid") String sid);
 
+    List<ProjectPeople> getMyProjectPeople(String sid,String pid);
+
 //    void createProjectPeoples(List<ProjectPeople> projectPeoples);
 }

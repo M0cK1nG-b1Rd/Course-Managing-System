@@ -32,18 +32,20 @@ public class ProjectScoreController {
 
     private String message;
 
+    //提交打分信息（权限：老师）
     @PostMapping("score")
     public FebsResponse addProjectScore(@RequestBody ProjectScore projectScore) throws FebsException {
         try {
             this.projectScoreService.addProjectScore(projectScore);
             return new FebsResponse().code("200").message("新增学生分数信息成功").status("success");
         } catch (Exception e) {
-            message = "新增项目信息失败";
+            message = "新增学生分数信息失败";
             log.error(message, e);
             throw new FebsException(message);
         }
     }
 
+    //查看分数信息（权限：学生）
     @GetMapping("score")
     public FebsResponse getProjectScore() throws FebsException {
         try {
@@ -54,15 +56,32 @@ public class ProjectScoreController {
             map.put("greaterThanInClass",this.projectScoreService.getGreaterThanInClass(sid));
             map.put("classStatistics",this.projectScoreService.getStatisticsInClass(sid));
 //            this.projectScoreService.getStatisticsInProject(sid);
-            return new FebsResponse().code("200").message("新增学生分数信息成功").status("success").data(map);
+            return new FebsResponse().code("200").message("查询信息成功").status("success").data(map);
         } catch (Exception e) {
-            message = "新增项目信息失败";
+            message = "查询信息失败";
             log.error(message, e);
             throw new FebsException(message);
         }
     }
 
+    //查看学生分数信息（权限：老师）
+    @GetMapping("stu_score")
+    public FebsResponse getAllProjectScore() throws FebsException {
+        try {
+            LinkedHashMap<String, Object> map = new LinkedHashMap<>();
+            //TODO Prettify Json
+            map.put("stuScore",this.projectScoreService.getAllProjectScore());
+//            map.put("classStatistics",this.projectScoreService.getStatisticsInClass(sid));
+//            this.projectScoreService.getStatisticsInProject(sid);
+            return new FebsResponse().code("200").message("查询信息成功").status("success").data(map);
+        } catch (Exception e) {
+            message = "查询信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
 
+    //更新分数权重信息（权限：老师）
     @PostMapping("score/rules")
     public FebsResponse updateProjectScoringRules(@RequestBody LinkedHashMap<Object, Integer> projectScoringRules) throws FebsException {
         try {
@@ -80,7 +99,7 @@ public class ProjectScoreController {
         }
     }
 
-
+    //查看分数权重信息（权限：老师）
     @GetMapping("score/rules")
     public FebsResponse getProjectScoringRules() throws FebsException {
         try {
@@ -88,6 +107,18 @@ public class ProjectScoreController {
             return new FebsResponse().code("200").message("查询成功").status("success").data(rules);
         } catch (Exception e) {
             message = "查询成功";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
+    @PutMapping("release_score")
+    public FebsResponse releaseScore() throws FebsException {
+        try {
+            this.projectScoreService.releaseScore();
+            return new FebsResponse().code("200").message("变更成功").status("success");
+        } catch (Exception e) {
+            message = "变更成功";
             log.error(message, e);
             throw new FebsException(message);
         }

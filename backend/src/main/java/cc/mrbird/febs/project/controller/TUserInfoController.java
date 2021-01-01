@@ -31,6 +31,7 @@ public class TUserInfoController {
 
     private String message;
 
+    //查看全部成员信息（权限：老师）
     @GetMapping("all_member_info")
     public FebsResponse getProjectPeople(@RequestParam(value = "pid",required = false) String pid ) throws FebsException {
         try {
@@ -43,6 +44,7 @@ public class TUserInfoController {
         }
     }
 
+    //查看全部班级信息（权限：老师）
     @GetMapping("all_class")
     public FebsResponse getAllClass() throws FebsException {
         try {
@@ -55,6 +57,7 @@ public class TUserInfoController {
         }
     }
 
+    //查看全部学生信息（权限：老师）
     @GetMapping("all_stu")
     public FebsResponse getAllStu() throws FebsException {
         try {

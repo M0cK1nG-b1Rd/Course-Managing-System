@@ -47,6 +47,11 @@ public class ProjectPeopleServiceImpl extends ServiceImpl<ProjectPeopleMapper, P
     }
 
     @Override
+    public List<ProjectPeople> getMyProjectPeople(String sid,String pid) {
+        return this.baseMapper.getMyProjectPeople(sid,pid);
+    }
+
+    @Override
     public List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid) {
         return this.baseMapper.getAllPeopleInGroup(sid,pid);
     }

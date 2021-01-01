@@ -34,7 +34,7 @@ public class ProjectInfoController {
 
     private String message;
 
-    //查看我的项目（总览，不包括项目细节）
+    //查看我的项目（总览，不包括项目细节）（权限：学生）
     @GetMapping("my")
     public FebsResponse getProjectInfoByUserName() {
         List<ProjectInfo> list = this.projectInfoService.findMyProjectInfo(ProjectUtil.getSid());
@@ -47,6 +47,7 @@ public class ProjectInfoController {
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
 
+    //查看所有项目（权限：学生）
     @GetMapping("all")
     public FebsResponse projectInfoList(@RequestParam(value = "pid",required = false) String pid) {
         if(pid==null){
@@ -55,9 +56,10 @@ public class ProjectInfoController {
         }else {
             ProjectInfo one = this.projectInfoService.findByPid(pid);
             return new FebsResponse().code("200").message("请求成功").status("success").data(one);
-        }//IService提供的方法和BaseMapper提供的方法有啥区别？
+        }
     }
 
+    //创建新的项目（权限：学生）
     @PostMapping("new")
     public FebsResponse addProjectInfo(@RequestBody @Valid ProjectInfo projectInfo) throws FebsException {
         try {
