@@ -3,6 +3,7 @@ package cc.mrbird.febs.project.domain;
 import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
@@ -25,7 +26,7 @@ public class ProjectScore implements Serializable {
     @TableId(type = IdType.AUTO)
     private  Integer id;
 
-    private Integer sid;
+    private String sid;
 
     private Integer totalScore;
 
@@ -40,5 +41,4 @@ public class ProjectScore implements Serializable {
     private String feedback;
 
     private Integer isReleased;
-
 }

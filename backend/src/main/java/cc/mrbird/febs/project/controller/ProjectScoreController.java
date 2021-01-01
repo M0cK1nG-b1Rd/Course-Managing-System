@@ -3,6 +3,7 @@ package cc.mrbird.febs.project.controller;
 
 import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
+import cc.mrbird.febs.common.utils.ProjectUtil;
 import cc.mrbird.febs.project.domain.ProjectScore;
 import cc.mrbird.febs.project.domain.ProjectScoringRules;
 import cc.mrbird.febs.project.service.ProjectScoreService;
@@ -36,6 +37,24 @@ public class ProjectScoreController {
         try {
             this.projectScoreService.addProjectScore(projectScore);
             return new FebsResponse().code("200").message("新增学生分数信息成功").status("success");
+        } catch (Exception e) {
+            message = "新增项目信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
+    @GetMapping("score")
+    public FebsResponse getProjectScore() throws FebsException {
+        try {
+            String sid = ProjectUtil.getSid();
+            LinkedHashMap<String, Object> map = new LinkedHashMap<>();
+            map.put("stuScore",this.projectScoreService.getProjectScore(sid));
+            map.put("greaterThanInProject",this.projectScoreService.getGreaterThanInProject(sid));
+            map.put("greaterThanInClass",this.projectScoreService.getGreaterThanInClass(sid));
+            map.put("classStatistics",this.projectScoreService.getStatisticsInClass(sid));
+//            this.projectScoreService.getStatisticsInProject(sid);
+            return new FebsResponse().code("200").message("新增学生分数信息成功").status("success").data(map);
         } catch (Exception e) {
             message = "新增项目信息失败";
             log.error(message, e);

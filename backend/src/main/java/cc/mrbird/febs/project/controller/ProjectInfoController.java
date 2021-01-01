@@ -3,6 +3,7 @@ package cc.mrbird.febs.project.controller;
 import cc.mrbird.febs.common.authentication.JWTUtil;
 import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
+import cc.mrbird.febs.common.utils.ProjectUtil;
 import cc.mrbird.febs.project.domain.ProjectInfo;
 import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.project.domain.TUserInfo;
@@ -31,29 +32,12 @@ public class ProjectInfoController {
     @Autowired
     private ProjectInfoService projectInfoService;
 
-    @Autowired
-    private TUserInfoService tUserInfoService;
-
-    @Autowired
-    private UserManager userManager;
-
     private String message;
 
-    String getUsername(){
-        String username="";
-        String token = (String) SecurityUtils.getSubject().getPrincipal();
-        if (StringUtils.isNotBlank(token)) {
-             username = JWTUtil.getUsername(token);
-        }
-        return username;
-    }
-
-    //我的项目（总览，不包括项目细节）
+    //查看我的项目（总览，不包括项目细节）
     @GetMapping("my")
     public FebsResponse getProjectInfoByUserName() {
-        TUserInfo tUserInfo = tUserInfoService.findByUsername(this.getUsername());
-        String sid = tUserInfo.getSid();
-        List<ProjectInfo> list = this.projectInfoService.findMyProjectInfo(sid);
+        List<ProjectInfo> list = this.projectInfoService.findMyProjectInfo(ProjectUtil.getSid());
 //        for (ProjectInfo projectInfo:list) {
 //            if (projectInfo.getPid().toString().equals(pid)) {
 //                return new FebsResponse().code("200").message("请求成功").status("success").data(projectInfo);

@@ -4,6 +4,7 @@ package cc.mrbird.febs.project.controller;
 import cc.mrbird.febs.common.authentication.JWTUtil;
 import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
+import cc.mrbird.febs.common.utils.ProjectUtil;
 import cc.mrbird.febs.project.domain.PeopleInGroup;
 import cc.mrbird.febs.project.domain.ProjectInfo;
 import cc.mrbird.febs.project.domain.ProjectPeople;
@@ -31,19 +32,7 @@ public class ProjectPeopleController {
     @Autowired
     private ProjectPeopleService projectPeopleService;
 
-    @Autowired
-    private TUserInfoService tUserInfoService;
-
     private String message;
-
-    String getUsername(){
-        String username="";
-        String token = (String) SecurityUtils.getSubject().getPrincipal();
-        if (StringUtils.isNotBlank(token)) {
-            username = JWTUtil.getUsername(token);
-        }
-        return username;
-    }
 
 //    @GetMapping("details")
 //    public FebsResponse getProjectDetail(@RequestParam(name="pid") String sid){
@@ -54,9 +43,7 @@ public class ProjectPeopleController {
 
     @GetMapping("same_group")
     public FebsResponse getPeopleInSameGroup(@RequestParam(name="pid") String pid) {
-        TUserInfo userInfo= tUserInfoService.findByUsername(this.getUsername());
-        String sid= userInfo.getSid();
-        List<PeopleInGroup> list = this.projectPeopleService.getAllPeopleInGroup(sid,pid);
+        List<PeopleInGroup> list = this.projectPeopleService.getAllPeopleInGroup(ProjectUtil.getSid(),pid);
         if(list.isEmpty()){
             return new FebsResponse().code("404").message("not found").status("not found");
         }
