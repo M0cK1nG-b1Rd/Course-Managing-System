@@ -114,7 +114,7 @@
               width="200"
               trigger="hover"
               content="请注意，点击按钮后将发布全班成绩，请先确保已完成所有学生的评价。">
-              <el-button type="primary" size="success " @="onReportScore" slot="reference">发布全班成绩</el-button>
+              <el-button type="primary" size="success " @click="onReportScore" slot="reference">发布全班成绩</el-button>
             </el-popover>
           </el-col>
         </el-form-item>
@@ -277,7 +277,9 @@ export default {
 
     // 发布全班成绩
     onReportScore() {
-
+      this.$put('project/release_score').then(r=>{
+        this.$message.success('成绩已发布！')
+      })
     }
   }
 }

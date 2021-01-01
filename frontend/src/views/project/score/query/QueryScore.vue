@@ -207,8 +207,6 @@ export default {
       that.stasticsConfig.data[0].value = r.data.data.classStatistics.maxScore
       that.stasticsConfig.data[1].value = r.data.data.classStatistics.minScore
       that.stasticsConfig.data[2].value = r.data.data.classStatistics.avgScore
-      // 为了便于调试，设置为已发布
-      that.isReleased = 1
 
     })
   },
