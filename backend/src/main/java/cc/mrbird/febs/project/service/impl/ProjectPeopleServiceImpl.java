@@ -54,10 +54,6 @@ public class ProjectPeopleServiceImpl extends ServiceImpl<ProjectPeopleMapper, P
         this.createProjectPeoples(projectPeoples);
     }
 
-    @Override
-    public void updateMyProjectPeoples(LinkedHashMap<String, Object> projectPeoples) {
-
-    }
 
     @Override
     public List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid) {

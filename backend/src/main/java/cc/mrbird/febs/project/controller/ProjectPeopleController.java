@@ -101,7 +101,7 @@ public class ProjectPeopleController {
     }
 
     //修改成员信息（权限：项目经理）
-    //TODO 测试
+    //TODO TEST
     @PutMapping("my_member_info")
     public FebsResponse updateMyProjectPeople(@RequestBody LinkedHashMap<String, Object> projectPeoples, @RequestParam("pid") String pid) throws FebsException {
         try {
