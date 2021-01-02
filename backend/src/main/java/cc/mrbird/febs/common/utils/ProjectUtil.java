@@ -45,4 +45,9 @@ public class ProjectUtil {
         return userInfo.getSid();
     }
 
+//    public static String[] getPidBySid(){
+//        TUserInfo userInfo= projectUtil.tUserInfoService.findByUsername(ProjectUtil.getUsername());
+//        return userInfo.getSid();
+//    }
+
 }

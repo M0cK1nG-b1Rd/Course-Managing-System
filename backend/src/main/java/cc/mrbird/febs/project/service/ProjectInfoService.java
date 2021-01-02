@@ -23,4 +23,8 @@ public interface ProjectInfoService extends IService<ProjectInfo> {
     long createProjectInfo(ProjectInfo projectInfo);
 
     ProjectInfo findByPid(String pid);
+
+    void updateProjectInfo(ProjectInfo projectInfo, String pid);
+
+    void deleteProjectInfo(String pid);
 }

@@ -31,19 +31,7 @@ public class TUserInfoController {
 
     private String message;
 
-    //查看全部成员信息（权限：老师）
-    @GetMapping("all_member_info")
-    public FebsResponse getProjectPeople(@RequestParam(value = "pid",required = false) String pid ) throws FebsException {
-        try {
-//            List<TUserInfo> data= this.tUserInfoService.getProjectPeoples(pid);
-            List<TUserInfo> data= this.tUserInfoService.getProjectPeoples();
-            return new FebsResponse().code("200").message("查询信息成功").status("success").data(data);
-        } catch (Exception e) {
-            message = "查询信息失败";
-            log.error(message, e);
-            throw new FebsException(message);
-        }
-    }
+
 
     //查看全部班级信息（权限：老师）
     @GetMapping("all_class")

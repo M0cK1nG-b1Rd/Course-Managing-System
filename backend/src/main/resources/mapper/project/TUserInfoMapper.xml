@@ -9,17 +9,22 @@
 <!--    </select>-->
 
     <select id="getProjectPeoples" resultMap="projectPeopleMap">
-        select b.pid ,b.sid,a.name
+        select b.pid ,b.sid,b.position,a.name,a.classs
         from t_user_info as a, project_member_info as b
         where a.sid=b.sid
+        <if test="pid != null and pid != ''">
+            AND b.pid = #{pid}
+        </if>
     </select>
 
     <resultMap id="projectPeopleMap" type="cc.mrbird.febs.project.domain.ProjectPeople" >
         <result column="pid" property="pid" />
         <result column="sid" property="sid" />
+        <result column="position" property="position" />
         <!-- association 中的property对应TUserInfo类中新添加的tUserInfo类对象属性    -->
         <association property="tUserInfo" javaType="cc.mrbird.febs.project.domain.TUserInfo">
             <result column="name" property="name" />
+            <result column="classs" property="classs" />
         </association>
     </resultMap>
 

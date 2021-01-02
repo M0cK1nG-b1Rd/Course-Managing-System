@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.mrbird.febs.project.dao.ProjectInfoMapper">
-
+    <update id="updateProjectInfo" parameterType="cc.mrbird.febs.project.domain.ProjectInfo">
+        update project_info
+        <set>
+            <if test="startTime != null">start_time=#{startTime},</if>
+            <if test="endTime != null">end_time=#{endTime},</if>
+            <if test="projectName != null">project_name=#{projectName},</if>
+            <if test="groupLeader != null">group_leader=#{groupLeader}</if>
+            <if test="projectDesc != null">project_desc=#{projectDesc}</if>
+            <if test="teacherName != null">teacher_name=#{teacherName}</if>
+            <if test="projectType != null">project_type=#{projectType}</if>
+        </set>
+        where pid=#{pid}
+    </update>
     <select id="getProjectInfoByUsername" resultType="cc.mrbird.febs.project.domain.ProjectInfo"></select>
+
 
 </mapper>

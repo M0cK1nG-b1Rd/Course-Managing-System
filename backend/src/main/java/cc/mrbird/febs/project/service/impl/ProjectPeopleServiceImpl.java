@@ -34,21 +34,29 @@ public class ProjectPeopleServiceImpl extends ServiceImpl<ProjectPeopleMapper, P
 
     @Override
     public List<ProjectPeople> findBySid(String sid) {
-        QueryWrapper wrapper = new QueryWrapper();
-        wrapper.eq("sid",sid);
-        return (List<ProjectPeople>) projectPeopleMapper.selectList(wrapper);
+        return this.baseMapper.findBySid(sid);
     }
 
     @Override
     public List<ProjectPeople> findByPid(String pid) {
-        QueryWrapper wrapper = new QueryWrapper();
-        wrapper.eq("pid",pid);
-        return (List<ProjectPeople>) projectPeopleMapper.selectList(wrapper);
+        return  this.baseMapper.selectPureList(pid);
     }
 
     @Override
     public List<ProjectPeople> getMyProjectPeople(String sid,String pid) {
         return this.baseMapper.getMyProjectPeople(sid,pid);
+    }
+
+    @Override
+    public void updateProjectPeoples(LinkedHashMap<String, Object> projectPeoples,String pid) {
+        //先删除再添加记录，这样更简单一点
+        this.baseMapper.deleteByPid(pid);
+        this.createProjectPeoples(projectPeoples);
+    }
+
+    @Override
+    public void updateMyProjectPeoples(LinkedHashMap<String, Object> projectPeoples) {
+
     }
 
     @Override

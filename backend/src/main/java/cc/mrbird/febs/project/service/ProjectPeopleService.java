@@ -25,4 +25,8 @@ public interface ProjectPeopleService extends IService<ProjectPeople> {
     List<ProjectPeople> findByPid(String pid);
 
     List<ProjectPeople> getMyProjectPeople(String sid,String pid);
+
+    void updateProjectPeoples(LinkedHashMap<String, Object> projectPeoples,String pid);
+
+    void updateMyProjectPeoples(LinkedHashMap<String, Object> projectPeoples);
 }

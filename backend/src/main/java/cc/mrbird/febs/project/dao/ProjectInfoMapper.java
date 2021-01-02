@@ -12,4 +12,6 @@ import java.util.List;
 @Service
 public interface ProjectInfoMapper extends BaseMapper<ProjectInfo> {
     List<ProjectInfo> getProjectInfoByUsername(String username);
+
+    void updateProjectInfo(ProjectInfo projectInfo, String pid);
 }
