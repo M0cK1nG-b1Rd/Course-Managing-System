@@ -360,7 +360,7 @@ export default {
     // 是否使用内置前置任务列
     usePreColumn: {
       type: Boolean,
-      default: true
+      default: false
     },
     // 是否开启前置任务多选 如果开启多选则pre字段必须是Array，否则可以是Number\String
     preMultiple: {

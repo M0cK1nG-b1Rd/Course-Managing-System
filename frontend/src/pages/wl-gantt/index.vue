@@ -411,7 +411,7 @@ export default {
     // 是否使用内置前置任务列
     usePreColumn: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     // 是否使用复选框列
     useCheckColumn: {

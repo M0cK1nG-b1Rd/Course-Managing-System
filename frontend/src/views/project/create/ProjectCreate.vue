@@ -89,7 +89,7 @@
           <el-dialog title="添加新成员" :visible.sync="addDialogVisible" width="30%" @close="addDialogClosed">
             <!-- 内容主体区域 -->
             <el-form :model="newMemberInfo" ref="addFormRef" label-width="70px">
-<!--选择班级-->
+              <!--选择班级-->
               <el-form-item label="班级" prop="class">
                 <el-select v-model="newMemberInfo.class"
                            placeholder="选择成员所在班级" clearable
@@ -101,7 +101,7 @@
                     :value="item.class">
                   </el-option>
                 </el-select>
-<!--选择姓名-->
+                <!--选择姓名-->
               </el-form-item>
               <el-form-item label="姓名" prop="name">
                 <el-select v-model="newMemberInfo.name"
@@ -115,7 +115,7 @@
                     :value="item.name">
                   </el-option>
                 </el-select>
-<!--选择学号-->
+                <!--选择学号-->
               </el-form-item>
               <el-form-item label="学号" prop="sno">
                 <el-select v-model="newMemberInfo.sno"
@@ -129,7 +129,7 @@
                     :value="item.sid">
                   </el-option>
                 </el-select>
-<!--选择角色-->
+                <!--选择角色-->
               </el-form-item>
               <el-form-item label="角色" prop="position">
                 <el-select v-model="newMemberInfo.position"
@@ -212,35 +212,35 @@ export default {
       // 需要的特殊资源，不必传给后端，仅在前端展示
       resource: '',
       //新的后端传回的Pid
-      createdPid:'',
+      createdPid: '',
       // 岗位选择器的选项
       positionOptions: [
         {
           value: '项目经理',
           label: '项目经理'
-        },{
+        }, {
           value: '系统设计师',
           label: '系统设计师'
-        },{
+        }, {
           value: '系统分析师',
           label: '系统分析师'
-        },{
+        }, {
           value: '前端工程师',
           label: '前端工程师'
-        },{
+        }, {
           value: '后端工程师',
           label: '后端工程师'
-        },{
+        }, {
           value: '测试工程师',
           label: '测试工程师'
-        },{
+        }, {
           value: '文档管理员',
           label: '文档管理员'
-        },{
+        }, {
           value: '数据库管理员',
           label: '数据库管理员'
         }
-          ],
+      ],
       // 所有班级列表,升序排序,每个班级包括value和label两个字段
       classList: [],
       // 新成员姓名、班级、学号选择器选项
@@ -248,15 +248,15 @@ export default {
     }
   },
 
-  mounted() {
+  mounted () {
     let that = this
     // 获取班级列表
-    this.$get('project/all_class').then((r)=>{
+    this.$get('project/all_class').then((r) => {
       that.classList = r.data.data
       that.classList = that.classList.reverse()
     })
     // 获取学生信息
-    this.$get('project/all_stu').then((r)=>{
+    this.$get('project/all_stu').then((r) => {
       that.selectorInfo = r.data.data
     })
   },
@@ -310,32 +310,33 @@ export default {
     },
     // 向后台提交新项目数据
     onSubmit () {
-      this.submitProjectInfo().then(()=>
-      this.submitProjectDetails()
+      this.submitProjectInfo().then(() =>
+        this.submitProjectDetails()
       )
     },
     // 提交项目信息
     async submitProjectInfo () {
-      this.$post('/project', this.formData).then(
+      await this.$post('/project', this.formData).then(
         (r) => {
           this.createdPid = r.data.data.pid
           this.$message.success('项目基本信息添加成功！')
         }).catch((err) => {
         this.$message.error('项目基本信息添加失败！')
       })
+
     },
     // 提交项目成员信息
      submitProjectDetails () {
       //等待新的pid返回
-       let squeezedMemberList = []
-       for(let i=0; i<this.memberList.length; i++){
-         squeezedMemberList[i] = {}
-         squeezedMemberList[i].sid = this.memberList[i].sno
-         squeezedMemberList[i].position = this.memberList[i].position
-       }
+      let squeezedMemberList = []
+      for (let i = 0; i < this.memberList.length; i++) {
+        squeezedMemberList[i] = {}
+        squeezedMemberList[i].sid = this.memberList[i].sno
+        squeezedMemberList[i].position = this.memberList[i].position
+      }
       // POST发送成员信息列表
       // 带上新的pid
-      let data={"pid":this.createdPid, member:squeezedMemberList}
+      let data = {'pid': this.createdPid, member: squeezedMemberList}
       this.$post('/project/member_info', data).then(
         (r) => {
           this.$message.success('项目成员信息添加成功！')

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-// import wlGantt from "./components/gantt.vue";
+// import wlGantt from "@/components/gantt/gantt.vue";
 import wlGantt from "@/pages/wl-gantt";
 import "@/assets/css/clear.css";
 
