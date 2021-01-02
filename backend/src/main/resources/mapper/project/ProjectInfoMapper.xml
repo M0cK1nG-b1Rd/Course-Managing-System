@@ -4,13 +4,13 @@
     <update id="updateProjectInfo" parameterType="cc.mrbird.febs.project.domain.ProjectInfo">
         update project_info
         <set>
-            <if test="startTime != null">start_time=#{startTime},</if>
-            <if test="endTime != null">end_time=#{endTime},</if>
-            <if test="projectName != null">project_name=#{projectName},</if>
-            <if test="groupLeader != null">group_leader=#{groupLeader}</if>
-            <if test="projectDesc != null">project_desc=#{projectDesc}</if>
-            <if test="teacherName != null">teacher_name=#{teacherName}</if>
-            <if test="projectType != null">project_type=#{projectType}</if>
+            <if test="projectInfo.startTime != null">start_time=#{projectInfo.startTime},</if>
+            <if test="projectInfo.endTime != null">end_time=#{projectInfo.endTime},</if>
+            <if test="projectInfo.projectName != null">project_name=#{projectInfo.projectName},</if>
+            <if test="projectInfo.groupLeader != null">group_leader=#{projectInfo.groupLeader},</if>
+            <if test="projectInfo.projectDesc != null">project_desc=#{projectInfo.projectDesc},</if>
+            <if test="projectInfo.teacherName != null">teacher_name=#{projectInfo.teacherName},</if>
+            <if test="projectInfo.projectType != null">project_type=#{projectInfo.projectType}</if>
         </set>
         where pid=#{pid}
     </update>

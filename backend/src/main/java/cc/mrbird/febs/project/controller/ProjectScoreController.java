@@ -45,8 +45,21 @@ public class ProjectScoreController {
         }
     }
 
+    //提交打分信息（权限：老师）
+    @PutMapping("score")
+    public FebsResponse updateProjectScore(@RequestBody ProjectScore projectScore) throws FebsException {
+        try {
+            this.projectScoreService.updateProjectScore(projectScore);
+            return new FebsResponse().code("200").message("新增学生分数信息成功").status("success");
+        } catch (Exception e) {
+            message = "新增学生分数信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
     //查看分数信息（权限：学生）
-    @GetMapping("score")
+    @GetMapping("my_score")
     public FebsResponse getProjectScore() throws FebsException {
         try {
             String sid = ProjectUtil.getSid();

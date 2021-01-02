@@ -16,6 +16,8 @@ public interface ProjectScoreService extends IService<ProjectScore> {
 
     void addProjectScore(ProjectScore projectScore);
 
+    void updateProjectScore(ProjectScore projectScore);
+
     void updateProjectScoringRules(int[] rules);
 
     float getGreaterThanInProject(String sid);

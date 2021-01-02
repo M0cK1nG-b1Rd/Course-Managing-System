@@ -32,6 +32,11 @@ public class ProjectScoreServiceImpl extends ServiceImpl<ProjectScoreMapper, Pro
     }
 
     @Override
+    public void updateProjectScore(ProjectScore projectScore) {
+        this.baseMapper.updateProjectScore(projectScore);
+    }
+
+    @Override
     public void updateProjectScoringRules(int[] rules){
         for (int i=1;i<= rules.length;i++){
             ProjectScoringRules rule=  this.projectScoringRulesMapper.selectById(i);
