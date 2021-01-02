@@ -159,12 +159,12 @@ export default {
     this.$get('project/all').then((r) => {
       this.tableData = r.data.data
     })
-  },
-  updated() {
-    this.$get('project/all').then((r) => {
-      this.tableData = r.data.data
-    })
   }
+  // updated() {
+  //   this.$get('project/all').then((r) => {
+  //     this.tableData = r.data.data
+  //   })
+  // }
 }
 </script>
 
