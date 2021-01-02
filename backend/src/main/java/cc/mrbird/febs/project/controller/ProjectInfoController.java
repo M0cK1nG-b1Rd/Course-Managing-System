@@ -1,19 +1,11 @@
 package cc.mrbird.febs.project.controller;
 
-import cc.mrbird.febs.common.authentication.JWTUtil;
 import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.common.utils.ProjectUtil;
 import cc.mrbird.febs.project.domain.ProjectInfo;
-import cc.mrbird.febs.project.domain.ProjectPeople;
-import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.service.ProjectInfoService;
-import cc.mrbird.febs.project.service.ProjectPeopleService;
-import cc.mrbird.febs.project.service.TUserInfoService;
-import cc.mrbird.febs.system.manager.UserManager;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

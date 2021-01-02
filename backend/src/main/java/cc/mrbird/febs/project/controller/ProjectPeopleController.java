@@ -30,11 +30,6 @@ public class ProjectPeopleController {
     @Autowired
     private TUserInfoService tUserInfoService;
 
-//    @GetMapping("details")
-//    public FebsResponse getProjectDetail(@RequestParam(name="pid") String sid){
-//        List<ProjectPeople> list =  this.projectPeopleService.findBySid(sid);
-//        return new FebsResponse().code("200").message("请求成功").status("success").data(list);
-//    }
 
     //查看同组的成员信息（权限：学生）
     @GetMapping("same_group")
@@ -73,19 +68,6 @@ public class ProjectPeopleController {
         }
     }
 
-//    //查看成员信息（权限：学生）
-//    //TODO
-//    @GetMapping("member_info")
-//    public FebsResponse getAllProjectPeople(@RequestParam(value = "pid") String pid) throws FebsException{
-//        try {
-//            List<ProjectPeople> peoples = this.projectPeopleService.findByPid(pid);
-//            return new FebsResponse().code("200").message("查询信息成功").status("success").data(peoples);
-//        } catch (Exception e) {
-//            message = "查询信息失败";
-//            log.error(message, e);
-//            throw new FebsException(message);
-//        }
-//    }
 
     //查看全部成员信息（权限：老师）
     @GetMapping("all_member_info")
