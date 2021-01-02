@@ -2,6 +2,7 @@
 
   <el-container>
 <!--    设置打分规则-->
+    <el-divider content-position="center" ></el-divider>
     <el-header id="setRuleHeader" height="34px">设置打分规则</el-header>
     <el-main id="setRuleMain">
       <el-form  class="demo-form-inline" label-width="15%" label-position="left">
@@ -30,6 +31,7 @@
     </el-main>
 
 <!--    选择打分对象-->
+    <el-divider content-position="center"></el-divider>
     <el-header id="selectStuHeader" height="34px">选择打分对象</el-header>
     <el-main id="selectStuMain">
       <a-cascader
@@ -42,6 +44,7 @@
     </el-main>
 
 <!--   打分区-->
+    <el-divider content-position="center" ></el-divider>
     <el-header id="markHeader" height="34px">开始打分</el-header>
     <el-main id="markMain">
       <el-form  class="demo-form-inline" label-width="15%" label-position="left">
@@ -75,15 +78,21 @@
         </el-form-item>
         <el-form-item label="加权总分">
           <el-col :span="22">
-            <el-progress :percentage="markResult.totalScore" show-text="false"
-                         :format="format" :color="customColors">
-            </el-progress>
+            <a-progress
+              :stroke-color="{
+                  from: '#03aeff',
+                  to: '#87d068',}"
+              :percent="markResult.totalScore"
+              :format="percent => `${percent} 分`"
+              status="active"
+            />
           </el-col>
         </el-form-item>
       </el-form>
     </el-main>
 
 <!--   点评区-->
+    <el-divider content-position="center" ></el-divider>
     <el-header id="commentHeader" height="34px">点评及反馈</el-header>
     <el-main id="commentMain">
       <el-input
@@ -96,30 +105,41 @@
     <el-main style="{align-content: center;}">
       <el-form>
         <el-form-item>
-          <el-col :span="2">&nbsp</el-col>
-          <el-col :span="10">
+          <el-col :span="1">&nbsp</el-col>
+          <el-col :span="6">
             <el-popover
               placement="top-start"
               title="温馨提示"
               width="200"
               trigger="hover"
               content="点击按钮后即可提交对当前同学的打分结果。">
-              <el-button type="primary" size="medium " @click="onSubmitScore" slot="reference">提交成绩及评价</el-button>
+              <el-button type="primary" @click="onSubmitScore" slot="reference">提交本次评价</el-button>
             </el-popover>
           </el-col>
-          <el-col :span="10">
+          <el-col :span="1">&nbsp</el-col>
+          <el-col :span="6">
             <el-popover
               placement="top-start"
               title="请注意"
               width="200"
               trigger="hover"
               content="请注意，点击按钮后将发布全班成绩，请先确保已完成所有学生的评价。">
-              <el-button type="primary" size="success " @="onReportScore" slot="reference">发布全班成绩</el-button>
+              <el-button type="success" @click="onReleaseScore" slot="reference">发布全班成绩</el-button>
+            </el-popover>
+          </el-col>
+          <el-col :span="1">&nbsp</el-col>
+          <el-col :span="6">
+            <el-popover
+              placement="top-start"
+              title="温馨提示"
+              width="200"
+              trigger="hover"
+              content="点击按钮后将取消已发布发的成绩，原来的评分记录仍然存在，但学生无法查看。">
+              <el-button type="warning" @click="onUnReleaseScore" slot="reference">暂停成绩发布</el-button>
             </el-popover>
           </el-col>
         </el-form-item>
       </el-form>
-
     </el-main>
   </el-container>
 </template>
@@ -231,11 +251,6 @@ export default {
       }
     },
 
-    // 返回总分进度条的format-即显示在右侧的分数
-    format() {
-      return this.markResult.totalScore + '分';
-    },
-
     // 级联选择时动态加载学生信息供选择
     loadData(selectedOptions) {
       console.log(selectedOptions)
@@ -276,8 +291,17 @@ export default {
     },
 
     // 发布全班成绩
-    onReportScore() {
+    onReleaseScore() {
+      this.$put('project/release_score').then(r=>{
+        this.$message.success('成绩已发布！')
+      })
+    },
 
+    // 取消发布全班成绩
+    onUnReleaseScore() {
+      this.$put('project/unrelease_score').then(r=>{
+        this.$message.info('成绩已暂停发布！')
+      })
     }
   }
 }
@@ -286,16 +310,16 @@ export default {
 <style scoped>
   /*Header*/
   #commentHeader,#setRuleHeader,#selectStuHeader,#markHeader {
-    background-color: #bed9f1;
-    font-size: 15px;
+    background-color: #ffffff;
+    font-size: 20px;
     font-weight: bolder;
     text-align: center;
     padding-top: 7px;
-    width: 80%;
+    width: 100%;
   }
   /*Main*/
   #commentMain,#setRuleMain,#selectStuMain,#markMain {
-    width: 80%;
+    width: 100%;
   }
 
   /*滑块*/
