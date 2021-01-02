@@ -74,6 +74,7 @@
 export default {
   methods: {
     handleEdit(row) {
+      console.log('正在编辑成绩')
       console.log(row);
     }
   },
@@ -81,7 +82,6 @@ export default {
   mounted() {
     let that = this
     this.$get('project/stu_score').then(r=>{
-      console.log(r)
       that.tableData = r.data.data.stuScore
     })
   },
