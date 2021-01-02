@@ -76,4 +76,9 @@ public class ProjectInfoServiceImpl extends ServiceImpl<ProjectInfoMapper, Proje
         wrapper.eq("pid", pid);
         this.baseMapper.delete(wrapper);
     }
+
+    @Override
+    public List<ProjectInfo> findProjectInfoList(String pid) {
+        return this.baseMapper.findProjectInfoList(pid);
+    }
 }

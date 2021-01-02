@@ -17,9 +17,11 @@ import VueAxios from 'vue-axios'
 import './components/common/directives'
 import uploader from 'vue-simple-uploader'
 import dataV from '@jiaminghi/data-view'
+import wlGantt from 'wl-gantt'
+import "wl-gantt/lib/wl-gantt.css"
 
 
-
+Vue.use(wlGantt)
 Vue.use(VueAxios, axios)
 Vue.use(uploader)
 Vue.config.productionTip = false

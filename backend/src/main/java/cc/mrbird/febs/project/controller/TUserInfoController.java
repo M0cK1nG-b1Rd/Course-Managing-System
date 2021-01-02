@@ -3,19 +3,13 @@ package cc.mrbird.febs.project.controller;
 
 import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
-import cc.mrbird.febs.project.domain.ProjectPeople;
 import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.service.TUserInfoService;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.print.DocFlavor;
 import java.util.List;
 
 /**

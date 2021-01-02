@@ -53,7 +53,6 @@
         </association>
     </resultMap>
 
-    <select id="getPeopleInGroup" resultType="cc.mrbird.febs.project.domain.ProjectPeople"></select>
 
     <select id="selectPureList" resultType="cc.mrbird.febs.project.domain.ProjectPeople">
         SELECT id, pid, position, sid
