@@ -23,25 +23,23 @@ import java.util.stream.Collectors;
  */
 @Service
 public class ProjectInfoServiceImpl extends ServiceImpl<ProjectInfoMapper, ProjectInfo> implements ProjectInfoService {
-    private ProjectInfoMapper projectInfoMapper;
-
     @Autowired
     private ProjectPeopleService projectPeopleService;
 
-    @Autowired
-    public ProjectInfoServiceImpl(ProjectInfoMapper projectInfoMapper) {
-        this.projectInfoMapper = projectInfoMapper;
-    }
-
-    public ProjectInfoServiceImpl() {
-
-    }
+//    @Autowired
+//    public ProjectInfoServiceImpl(ProjectInfoMapper projectInfoMapper) {
+//        this.projectInfoMapper = projectInfoMapper;
+//    }
+//
+//    public ProjectInfoServiceImpl() {
+//
+//    }
 
     @Override
     public List<ProjectInfo> findProjectInfo(String username) {
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.eq("group_leader", username);
-        return (List<ProjectInfo>) projectInfoMapper.selectList(wrapper);
+        return (List<ProjectInfo>) this.baseMapper.selectList(wrapper);
     }
 
 
@@ -50,7 +48,7 @@ public class ProjectInfoServiceImpl extends ServiceImpl<ProjectInfoMapper, Proje
         List<ProjectPeople> projectPeopleList = projectPeopleService.findBySid(sid);
         //只要pid
         List<String> pidList = projectPeopleList.stream().map(ProjectPeople::getPid).collect(Collectors.toList());
-        List<ProjectInfo> projectInfoList = projectInfoMapper.selectBatchIds(pidList);
+        List<ProjectInfo> projectInfoList = this.baseMapper.selectBatchIds(pidList);
         return projectInfoList;
     }
 
@@ -64,6 +62,18 @@ public class ProjectInfoServiceImpl extends ServiceImpl<ProjectInfoMapper, Proje
     public ProjectInfo findByPid(String pid) {
         QueryWrapper wrapper = new QueryWrapper();
         wrapper.eq("pid", pid);
-        return projectInfoMapper.selectOne(wrapper);
+        return this.baseMapper.selectOne(wrapper);
+    }
+
+    @Override
+    public void updateProjectInfo(ProjectInfo projectInfo, String pid) {
+        this.baseMapper.updateProjectInfo(projectInfo, pid);
+    }
+
+    @Override
+    public void deleteProjectInfo(String pid) {
+        QueryWrapper wrapper = new QueryWrapper();
+        wrapper.eq("pid", pid);
+        this.baseMapper.delete(wrapper);
     }
 }

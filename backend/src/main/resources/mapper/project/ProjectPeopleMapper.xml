@@ -7,16 +7,19 @@
     <!--        and b.pid=c.pid-->
     <!--        and c.pid= (select pid from project_people where sid=#{sid})-->
     <!--    </select>-->
-    <resultMap id="projectPeopleMap" type="cc.mrbird.febs.project.domain.ProjectPeople" >
-        <result column="pid" property="pid" />
-        <result column="sid" property="sid" />
-        <result column="position" property="position" />
+    <resultMap id="projectPeopleMap" type="cc.mrbird.febs.project.domain.ProjectPeople">
+        <result column="pid" property="pid"/>
+        <result column="sid" property="sid"/>
+        <result column="position" property="position"/>
         <!-- association 中的property对应TUserInfo类中新添加的tUserInfo类对象属性    -->
         <association property="tUserInfo" javaType="cc.mrbird.febs.project.domain.TUserInfo">
-            <result column="name" property="name" />
-            <result column="classs" property="classs"  />
+            <result column="name" property="name"/>
+            <result column="classs" property="classs"/>
         </association>
     </resultMap>
+    <delete id="deleteByPid">
+        delete from project_member_info where pid = #{pid}
+    </delete>
 
     <select id="getMyProjectPeople" resultMap="projectPeopleMap">
         SELECT *
@@ -25,15 +28,40 @@
                    t_user_info as b
               where a.sid = b.sid) as member_info
         where pid in (select pid from project_member_info where sid = #{sid})
-          and pid = #{pid}
+        <if test="pid != null and pid != ''">
+            and pid = #{pid}
+        </if>
+
     </select>
 
-    <select id="getAllPeopleInGroup" resultType="cc.mrbird.febs.project.domain.PeopleInGroup">
+    <select id="getAllPeopleInGroup" resultMap="allPeopleMap">
         SELECT a.sid, a.name, a.classs, b.position
         FROM `t_user_info` as a,
              `project_member_info` as b
         where a.sid = b.sid
           and b.pid in (select pid from project_member_info where sid = #{sid} and pid = #{pid})
+    </select>
+
+
+    <resultMap id="allPeopleMap" type="cc.mrbird.febs.project.domain.ProjectPeople">
+        <result column="position" property="position"/>
+        <!-- association 中的property对应TUserInfo类中新添加的tUserInfo类对象属性    -->
+        <association property="tUserInfo" javaType="cc.mrbird.febs.project.domain.TUserInfo">
+            <result column="sid" property="sid"/>
+            <result column="name" property="name"/>
+            <result column="classs" property="classs"/>
+        </association>
+    </resultMap>
+
+    <select id="getPeopleInGroup" resultType="cc.mrbird.febs.project.domain.ProjectPeople"></select>
+
+    <select id="selectPureList" resultType="cc.mrbird.febs.project.domain.ProjectPeople">
+        SELECT id, pid, position, sid
+        FROM project_member_info
+        WHERE pid = #{pid}
+    </select>
+    <select id="findBySid" resultType="cc.mrbird.febs.project.domain.ProjectPeople">
+        SELECT id,pid,position,sid FROM project_member_info WHERE (sid = #{sid});
     </select>
 
 

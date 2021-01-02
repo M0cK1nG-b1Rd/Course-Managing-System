@@ -330,7 +330,7 @@ export default {
     // 提交项目信息
     async submitProjectInfo () {
       console.log('submit!')
-      this.$post('/project/new', this.formData).then(
+      this.$post('/project', this.formData).then(
         (r) => {
           this.createdPid = r.data.data.pid
           this.$message.success('项目基本信息添加成功！')

@@ -15,9 +15,14 @@ import java.util.List;
 public interface ProjectPeopleMapper extends BaseMapper<ProjectPeople> {
     List<PeopleInGroup> getAllPeopleInGroup(String sid, String pid);
 
-    List<ProjectPeople> getPeopleInSameGroup(@Param("sid") String sid);
+    List<ProjectPeople> getPeopleInGroup(@Param("sid") String sid);
 
     List<ProjectPeople> getMyProjectPeople(String sid,String pid);
 
+    List<ProjectPeople> selectPureList(String pid);
+
+    List<ProjectPeople> findBySid(String sid);
+
+    void deleteByPid(String pid);
 //    void createProjectPeoples(List<ProjectPeople> projectPeoples);
 }

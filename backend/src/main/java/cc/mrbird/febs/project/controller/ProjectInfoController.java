@@ -47,7 +47,7 @@ public class ProjectInfoController {
         return new FebsResponse().code("200").message("请求成功").status("success").data(list);
     }
 
-    //查看所有项目（权限：学生）
+    //查看所有项目（权限：老师）
     @GetMapping("all")
     public FebsResponse projectInfoList(@RequestParam(value = "pid",required = false) String pid) {
         if(pid==null){
@@ -60,7 +60,7 @@ public class ProjectInfoController {
     }
 
     //创建新的项目（权限：学生）
-    @PostMapping("new")
+    @PostMapping
     public FebsResponse addProjectInfo(@RequestBody @Valid ProjectInfo projectInfo) throws FebsException {
         try {
             long pid= this.projectInfoService.createProjectInfo(projectInfo);
@@ -69,6 +69,34 @@ public class ProjectInfoController {
             return new FebsResponse().code("200").message("新增项目信息成功").status("success").data(map);
         } catch (Exception e) {
             message = "新增项目信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
+
+    //更新项目信息（权限：老师，项目经理）
+    //TODO TEST
+    @PutMapping
+    public FebsResponse updateProjectInfo(@RequestBody @Valid ProjectInfo projectInfo,@RequestParam String pid) throws FebsException {
+        try {
+            this.projectInfoService.updateProjectInfo(projectInfo,pid);
+            return new FebsResponse().code("200").message("更改项目信息成功").status("success");
+        } catch (Exception e) {
+            message = "更改项目信息失败";
+            log.error(message, e);
+            throw new FebsException(message);
+        }
+    }
+
+    //删除项目（权限：老师，项目经理）
+    @DeleteMapping
+    public FebsResponse deleteProjectInfo(@RequestParam String pid) throws FebsException {
+        try {
+            this.projectInfoService.deleteProjectInfo(pid);
+            return new FebsResponse().code("200").message("更改项目信息成功").status("success");
+        } catch (Exception e) {
+            message = "更改项目信息失败";
             log.error(message, e);
             throw new FebsException(message);
         }
