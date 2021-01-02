@@ -66,7 +66,7 @@ public class ProjectPeopleServiceImpl extends ServiceImpl<ProjectPeopleMapper, P
         String pid = projectPeoples.get("pid").toString();
         ArrayList<LinkedHashMap> peoples = (ArrayList<LinkedHashMap>)projectPeoples.get("member");
         for (LinkedHashMap people:peoples) {
-            String sid = people.get("sno").toString();
+            String sid = people.get("sid").toString();
             String position =people.get("position").toString();
             projectPeople.setPid(pid);
             projectPeople.setSid(sid);
