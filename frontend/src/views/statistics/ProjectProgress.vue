@@ -1,20 +1,37 @@
 <template>
   <div>
-    <el-progress type="circle" :percentage="0"></el-progress>
-    <el-progress type="circle" :percentage="25"></el-progress>
-    <el-progress type="circle" :percentage="100" status="success"></el-progress>
-    <el-progress type="circle" :percentage="70" status="warning"></el-progress>
-    <el-progress type="circle" :percentage="50" status="exception"></el-progress>
+    <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleClose">
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ProjectProgress'
-
-}
+  name: 'projectViewDialog',
+  props: ['projectInfo', 'memberInfo'],
+  data() {
+    return {
+      dialogVisible: false
+    };
+  },
+  methods: {
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done();
+        })
+        .catch(_ => {});
+    }
+  }
+};
 </script>
-
-<style scoped>
-
-</style>
