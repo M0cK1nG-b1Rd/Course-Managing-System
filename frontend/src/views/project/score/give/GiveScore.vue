@@ -34,13 +34,29 @@
     <el-divider content-position="center"></el-divider>
     <el-header id="selectStuHeader" height="34px">选择打分对象</el-header>
     <el-main id="selectStuMain">
-      <a-cascader
-        v-model="markResult.sid"
-        :options="projectOptions"
-        :load-data="loadData"
-        placeholder="请选择需要打分的学生"
-        change-on-select
-      />
+      <!--选择项目-->
+        <el-select v-model="markingObj.pid"
+                   placeholder="选择项目" clearable
+                   size="medium">
+          <el-option
+            v-for="item in projectOptions"
+            :key="item.pid"
+            :label="item.projectName"
+            :value="item.pid">
+          </el-option>
+        </el-select>
+      <!--选择该项目下的某一个学生，作为打分对象-->
+      <el-select v-model="markingObj.sid"
+                 placeholder="选择成员姓名" clearable
+                 size="medium">
+        <el-option
+          v-for="item in studentOptions"
+          v-if="markingObj.pid==item.pid"
+          :key="item.sid"
+          :label="item.tuserInfo.name"
+          :value="item.sid">
+        </el-option>
+      </el-select>
     </el-main>
 
 <!--   打分区-->
@@ -176,10 +192,25 @@ export default {
       ],
       // 布尔值表明是否已完成规则设置
       hasSetRule: false,
-      // 选择打分对象的选项-即列出所有项目
-      projectOptions: [],
-      //
-      memberInfo: []
+      // 所有项目的pid和projectName
+      projectOptions: [{
+        pid: '',
+        projectName: ''
+      }],
+      // 当前选中的项目的所有成员信息
+      studentOptions: [{
+        pid: '',
+        sid: '',
+        tuserInfo: {
+          name: ''
+        }
+      }],
+
+      // 当前打分对象信息，包括pid和sid
+      markingObj: {
+        pid: '',
+        sid: ''
+      }
     }
   },
   // 刷新或者打开页面时，像后端请求数据库中存储的打分规则
@@ -187,7 +218,6 @@ export default {
     let that = this
     // 从数据库获取已有的打分规则
     this.$get('project/score/rules').then((r) => {
-      console.log(r)
       // this.data = r.data.data
       that.markRule.process = r.data.data[0].ratio
       that.markRule.docs = r.data.data[1].ratio
@@ -196,18 +226,14 @@ export default {
     })
     // 从数据库获得已有的项目信息，包括项目名称+项目id
     this.$get('project/all').then(r=>{
-        console.log(r)
       // 初始化projectOptions
-      for(let i = 0; i<r.data.data.length; i++){
-        let obj = {}
-        obj.value = r.data.data[i].pid
-        obj.label = r.data.data[i].projectName
-        obj.isLeaf = false
-        that.projectOptions[i] = obj
-      }
-      console.log('projectOptions')
-      console.log(this.projectOptions)
+      that.projectOptions = r.data.data
     }).catch()
+      // 从数据库获得所有成员的信息，包括sid，sname和pid
+    this.$get('project/all_member_info').then((r)=>{
+      // 初始化studentOptions
+      that.studentOptions = r.data.data
+    })
   },
 
   // 行为区
@@ -244,47 +270,31 @@ export default {
           this.markResult.docsScore*this.markRule.docs +
           this.markResult.completionScore*this.markRule.completion;
         this.markResult.totalScore /= 100
-
       }
       else{
         this.$message.error('请先完成打分规则设置！')
       }
     },
 
-    // 级联选择时动态加载学生信息供选择
-    loadData(selectedOptions) {
-      console.log(selectedOptions)
-      const targetOption = selectedOptions[selectedOptions.length - 1];
-      targetOption.loading = true;
-      let that = this
-      // load options lazily
-      setTimeout(() => {
-        targetOption.loading = false;
-        // 通过PID向后台请求成员信息，返回结果必须包含该项目所有成员的学号+姓名
-        this.$get(`project/all_member_info?pid=${targetOption.value}`).then(r=>{
-          console.log(r)
-          let thisMemberInfo = r.data.data
-          // 给被选中的一级选项添加其二级选项
-          let children = []
-          for(let i = 0; i<thisMemberInfo.length; i++){
-            let obj = {}
-            obj.value = thisMemberInfo[i].sid
-            obj.label = thisMemberInfo[i].name
-            obj.leaf = true
-            children[i] = obj
-          }
-          targetOption.children = children
-        }).catch()
-
-        this.projectOptions = [...this.projectOptions];
-      }, 1);
-    },
-
     // 提交成绩
     onSubmitScore() {
-      this.markResult.sid = this.markResult.sid[1]
-      console.log(this.markResult)
-      this.$post('project/score', this.markResult).then(r=>{
+      this.markResult.sid = this.markingObj.sid
+      let result = {}
+      result.completionScore = this.markResult.completionScore
+      result.docsScore = this.markResult.docsScore
+      result.processScore = this.markResult.processScore
+      result.presentationScore = this.markResult.presentationScore
+      result.totalScore = this.markResult.totalScore
+      result.feedback = this.markResult.feedback
+      result.isReleased = this.markResult.isReleased
+      result.sid = this.markResult.sid
+      result.tuserInfo = {}
+      result.tuserInfo.sid = this.markResult.sid
+      console.log(result)
+      // 1. this.markResult.sid是不带tuserInfo的
+      // 2. result是带tuserInfo的
+      // 3. 打死你hls
+      this.$post('project/score', result).then(r=>{
         this.$message.success('打分提交成功！')
       })
       console.log('成绩提交成功！')
