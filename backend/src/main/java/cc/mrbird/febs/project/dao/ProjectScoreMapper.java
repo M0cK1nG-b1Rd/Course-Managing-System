@@ -31,4 +31,6 @@ public interface ProjectScoreMapper extends BaseMapper<ProjectScore> {
     void unreleaseScore();
 
     void updateProjectScore(ProjectScore projectScore);
+
+    void addProjectScore(ProjectScore projectScore);
 }

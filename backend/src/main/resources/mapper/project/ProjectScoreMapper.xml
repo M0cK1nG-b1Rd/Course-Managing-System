@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cc.mrbird.febs.project.dao.ProjectScoreMapper">
+    <insert id="addProjectScore" parameterType="cc.mrbird.febs.project.domain.ProjectScore">
+        insert into project_score(sid, total_score, process_score, docs_score, complete_score, presentation_score,
+                                  feedback)
+        values (#{projectScore.tUserInfo.sid}, #{projectScore.totalScore}, #{projectScore.processScore},
+                #{projectScore.docsScore}, #{projectScore.completeScore}, #{projectScore.presentationScore},
+                #{projectScore.feedback})
+    </insert>
     <update id="releaseScore">
         UPDATE project_score
         SET is_released=1
@@ -12,14 +19,14 @@
     <update id="updateProjectScore" parameterType="cc.mrbird.febs.project.domain.ProjectScore">
         update project_score
         <set>
-            <if test="projectScore.totalScore != null">start_time=#{projectScore.totalScore},</if>
-            <if test="projectScore.processScore != null">end_time=#{projectScore.processScore},</if>
-            <if test="projectScore.docsScore != null">project_name=#{projectScore.docsScore},</if>
-            <if test="projectScore.completeScore != null">group_leader=#{projectScore.completeScore},</if>
-            <if test="projectScore.presentationScore != null">project_desc=#{projectScore.presentationScore},</if>
-            <if test="projectScore.feedback != null">teacher_name=#{projectScore.feedback}</if>
+            <if test="projectScore.totalScore != null">total_score=#{projectScore.totalScore},</if>
+            <if test="projectScore.processScore != null">process_score=#{projectScore.processScore},</if>
+            <if test="projectScore.docsScore != null">docs_score=#{projectScore.docsScore},</if>
+            <if test="projectScore.completeScore != null">complete_score=#{projectScore.completeScore},</if>
+            <if test="projectScore.presentationScore != null">presentation_score=#{projectScore.presentationScore},</if>
+            <if test="projectScore.feedback != null">feedback=#{projectScore.feedback}</if>
         </set>
-        where sid=#{projectScore.totalScore}
+        where sid=#{projectScore.sid}
     </update>
 
     <!--    <insert id="addProjectScore" parameterType="java.util.List">-->
