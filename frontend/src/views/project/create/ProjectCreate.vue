@@ -252,18 +252,12 @@ export default {
     let that = this
     // 获取班级列表
     this.$get('project/all_class').then((r)=>{
-      console.log('班级信息')
-      console.log(r)
       that.classList = r.data.data
       that.classList = that.classList.reverse()
     })
     // 获取学生信息
     this.$get('project/all_stu').then((r)=>{
-      console.log('学生信息')
-      console.log(r)
       that.selectorInfo = r.data.data
-      console.log('select')
-      console.log(this.selectorInfo)
     })
   },
 
@@ -280,7 +274,6 @@ export default {
 
     // 监听添加用户对话框的关闭事件,清空表单
     addDialogClosed () {
-      console.log('表单关闭并清空')
       this.newMemberInfo = {
         name: '',
         class: '',
@@ -291,14 +284,8 @@ export default {
 
     // 点击按钮，添加新用户
     addMemberCommit (info) {
-      console.log('新用户的信息')
       // 向memberList中添加新创建的成员信息
-      console.log(info)
-      console.log('添加前的memberList')
-      console.log(this.memberList)
       this.memberList.push(info)
-      console.log('添加后memberList')
-      console.log(this.memberList)
       // 通知添加成功
       this.$message.success('添加新成员成功！')
       // 隐藏添加用户的对话框
@@ -329,7 +316,6 @@ export default {
     },
     // 提交项目信息
     async submitProjectInfo () {
-      console.log('submit!')
       this.$post('/project', this.formData).then(
         (r) => {
           this.createdPid = r.data.data.pid
@@ -341,19 +327,19 @@ export default {
     // 提交项目成员信息
      submitProjectDetails () {
       //等待新的pid返回
-      console.log('项目成员')
-       let squeezedMemberList = {}
-       squeezedMemberList.sid = this.memberList.sno
-       squeezedMemberList.position = this.memberList.position
+       let squeezedMemberList = []
+       for(let i=0; i<this.memberList.length; i++){
+         squeezedMemberList[i] = {}
+         squeezedMemberList[i].sid = this.memberList[i].sno
+         squeezedMemberList[i].position = this.memberList[i].position
+       }
       // POST发送成员信息列表
       // 带上新的pid
       let data={"pid":this.createdPid, member:squeezedMemberList}
       this.$post('/project/member_info', data).then(
         (r) => {
           this.$message.success('项目成员信息添加成功！')
-        }).catch((err) => {
-        // this.$message.error('项目成员信息添加失败！')
-      })
+        })
     }
 
   }

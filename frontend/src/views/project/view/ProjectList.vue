@@ -77,7 +77,22 @@
     </el-table>
 
     <!--  查看项目细节对话框组件-->
-    <projectViewDialog :project-info="projectInfo" :member-info="memberInfo"></projectViewDialog>
+    <projectViewDialog :projectInfo="projectInfo"
+                       :memberInfo="memberInfo"
+                       :dialogVisible="ViewDialogVisible">
+    </projectViewDialog>
+    <!--  删除项目警告对话框组件-->
+    <el-dialog
+      title="注意"
+      :visible.sync="DeleteDialogVisible"
+      width="30%"
+      center>
+      <span>&nbsp&nbsp项目删除后不可恢复，请谨慎操作！</span>
+      <span slot="footer" class="dialog-footer">
+    <el-button @click="DeleteDialogVisible = false">取 消</el-button>
+    <el-button type="warning" @click="deleteProject(deleteRow)">确 定</el-button>
+  </span>
+    </el-dialog>
   </div>
 
 </template>
@@ -91,14 +106,14 @@ export default {
   methods: {
     // 处理查看项目细节请求
     handleViewClick(row) {
-      // console.log(row);
+      this.ViewDialogVisible = true
       let that = this
       let pid = row.pid
       this.$get(`project/all?pid=${pid}`).then(r=>{
         that.projectInfo = r.data.data
       })
-      this.$get(`project/member_info?pid=${pid}`).then(r=>{
-        console.log(r)
+      this.$get(`project/all_member_info?pid=${pid}`).then(r=>{
+        this.memberInfo = r.data.data
       })
     },
     // 处理编辑项目信息请求
@@ -109,29 +124,49 @@ export default {
     },
     // 处理删除项目信息请求
     handleDeleteClick(row) {
-
+      this.deleteRow = row
+      this.DeleteDialogVisible = true
+    },
+    // 点击警告对话框中的确认删除后，删除项目的操作
+    deleteProject(row) {
+      this.$delete(`project?pid=${row.pid}`).then(r=>{
+        this.$message.success('该项目已成功删除！')
+      })
+      this.DeleteDialogVisible = false
     }
   },
   data() {
     return {
       // 表格内容信息，包含所有项目的简要信息，不含成员信息
       tableData: [],
-      // 项目基本信息
+      // 当前查看的这一个项目基本信息
       projectInfo: {},
       // 成员信息
-      memberInfo: {}
+      memberInfo: [],
+      // 查看项目细节对话框可见性
+      ViewDialogVisible: false,
+      // 编辑项目细节对话框可见性
+      EidtDialogVisible: false,
+      // 删除项目细节对话框可见性
+      DeleteDialogVisible: false,
+      // 需要被删除的行内容
+      deleteRow: {}
+
     }
   },
   mounted () {
+    // 获得所有项目的概要信息，用于表格填充
     this.$get('project/all').then((r) => {
-      // console.log(r.data.data)
+      this.tableData = r.data.data
+    })
+  },
+  updated() {
+    this.$get('project/all').then((r) => {
       this.tableData = r.data.data
     })
   }
 }
 </script>
-
-
 
 <style scoped>
 

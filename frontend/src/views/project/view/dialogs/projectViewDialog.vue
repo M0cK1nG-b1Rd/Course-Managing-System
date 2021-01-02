@@ -1,15 +1,13 @@
 <template>
   <div>
-    <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
     <el-dialog
       center
       title="项目详细信息"
       :visible.sync="dialogVisible"
-      width="50%"
-      :before-close="handleClose">
+      width="50%">
 <!--对话框表单信息-->
       <span>
-        <dialogContent :projectInfo="projectInfo" :memberInfo="memberInfo"></dialogContent>
+        <ViewDialogContent :projectInfo="projectInfo" :memberInfo="memberInfo"></ViewDialogContent>
       </span>
 <!--对话框底部按钮-->
       <span slot="footer" class="dialog-footer">
@@ -21,30 +19,20 @@
 </template>
 
 <script>
-import dialogContent from './dialogContent'
+import ViewDialogContent from './ViewDialogContent'
 
 export default {
   name: 'projectViewDialog',
-  props: ['projectInfo', 'memberInfo'],
-  components: {dialogContent},
+  props: ['projectInfo', 'memberInfo','dialogVisible'],
+  components: {ViewDialogContent},
   data() {
     return {
-      dialogVisible: false
     }
   },
   mounted() {
-    console.log('我是dialogContent')
-    console.log(this.projectInfo)
-    console.log(this.projectInfo)
   },
   methods: {
-    handleClose(done) {
-      this.$confirm('确认关闭？')
-        .then(_ => {
-          done();
-        })
-        .catch(_ => {});
-    }
+
   }
 };
 </script>
