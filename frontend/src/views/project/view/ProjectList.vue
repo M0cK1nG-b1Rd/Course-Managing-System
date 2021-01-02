@@ -77,10 +77,76 @@
     </el-table>
 
     <!--  查看项目细节对话框组件-->
-    <projectViewDialog :projectInfo="projectInfo"
-                       :memberInfo="memberInfo"
-                       :dialogVisible="ViewDialogVisible">
-    </projectViewDialog>
+    <div>
+      <el-dialog
+        center
+        title="项目详细信息"
+        :visible.sync="ViewDialogVisible"
+        width="50%">
+        <!--对话框表单信息-->
+        <span>
+        <div>
+          <!--    项目基本信息表单-->
+          <el-form ref="projectForm" :model="projectInfo" label-width="80px" inline >
+            <el-form-item label="项目名称" >
+              <el-input v-model="projectInfo.projectName" style="width: 485px" disabled></el-input>
+            </el-form-item>
+            <el-form-item label="项目经理">
+              <el-input v-model="projectInfo.managerName" disabled></el-input>
+            </el-form-item>
+            <el-form-item label="指导老师">
+              <el-input v-model="projectInfo.teacherName" disabled></el-input>
+            </el-form-item>
+            <el-form-item label="项目类型">
+              <el-input v-model="projectInfo.projectType" disabled></el-input>
+            </el-form-item>
+            <el-form-item label="特殊资源">
+              <el-input v-model="resource" disabled></el-input>
+            </el-form-item>
+            <el-form-item label="开始时间">
+                <el-date-picker type="date"
+                                disabled
+                                v-model="projectInfo.startTime"
+                                style="width: 195px;"
+                                format="yyyy 年 MM 月 dd 日"
+                                value-format="yyyy-MM-dd">
+                </el-date-picker>
+            </el-form-item>
+                <el-form-item label="开始时间">
+                <el-date-picker type="date"
+                                disabled
+                                v-model="projectInfo.endTime"
+                                style="width: 195px;"
+                                format="yyyy 年 MM 月 dd 日"
+                                value-format="yyyy-MM-dd">
+                </el-date-picker>
+            </el-form-item>
+            <el-form-item label="项目描述">
+              <el-input type="textarea" v-model="projectInfo.projectDesc" style="width: 485px" disabled></el-input>
+            </el-form-item>
+            <el-form-item label="项目成员">
+              <div>
+                <!-- 用户列表区域 -->
+                <el-row>
+                  <el-table :data="memberInfo" border stripe disabled>
+                    <el-table-column label="姓名" prop="tuserInfo.name" width="100px" align="center"></el-table-column>
+                    <el-table-column label="班级" prop="tuserInfo.class" width="100px" align="center"></el-table-column>
+                    <el-table-column label="学号" prop="sid" width="135px" align="center"></el-table-column>
+                    <el-table-column label="岗位" prop="position" width="150px" align="center"></el-table-column>
+                  </el-table>
+                </el-row>
+              </div>
+            </el-form-item>
+          </el-form>
+        </div>
+      </span>
+        <!--对话框底部按钮-->
+        <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="ViewDialogVisible = false">确 定</el-button>
+      </span>
+
+      </el-dialog>
+    </div>
     <!--  删除项目警告对话框组件-->
     <el-dialog
       title="注意"
@@ -98,24 +164,27 @@
 </template>
 
 <script>
-import projectViewDialog from "./dialogs/projectViewDialog";
 
 export default {
-  name: 'ProjectView',
-  components: {projectViewDialog},
+  name: 'ProjectList',
   methods: {
     // 处理查看项目细节请求
     handleViewClick(row) {
       this.ViewDialogVisible = true
       let that = this
       let pid = row.pid
+      // 获取当前项目的基本信息
       this.$get(`project/all?pid=${pid}`).then(r=>{
-        that.projectInfo = r.data.data
+        that.projectInfo = r.data.data[0]
       })
+      console.log(this.projectInfo)
+      // 获取当前项目成员信息
       this.$get(`project/all_member_info?pid=${pid}`).then(r=>{
         this.memberInfo = r.data.data
       })
+      console.log(this.memberInfo)
     },
+
     // 处理编辑项目信息请求
     handleEditClick(row) {
       // this.$get('project/all_member_info').then(r=>{
@@ -150,7 +219,9 @@ export default {
       // 删除项目细节对话框可见性
       DeleteDialogVisible: false,
       // 需要被删除的行内容
-      deleteRow: {}
+      deleteRow: {},
+      // 需要的特殊资源，不必传给后端，仅在前端展示
+      resource: '服务器算力资源'
 
     }
   },
