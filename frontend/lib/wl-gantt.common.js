@@ -1122,7 +1122,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
  * auth: weilan
  * time: 2020-03-11
  * des: el自定义表单验证及正则验证
- * rule：el校验以va开头 vaPhone；正则验证以reg开头 
+ * rule：el校验以va开头 vaPhone；正则验证以reg开头
  */
 // el手机格式校验
 function vaPhone(rule, value, callback) {
@@ -1148,7 +1148,7 @@ function isNum(value) {
 }
 /**
  * @name 验证整数
- * @param {*} val 要验证的内容 
+ * @param {*} val 要验证的内容
  */
 
 
@@ -1365,7 +1365,7 @@ var VaJwt = /*#__PURE__*/function () {
 
     /**
      * 截取jwt中有效载荷部分
-     * @param {*} jwt 
+     * @param {*} jwt
      */
     value: function extractJwtPayload(jwt) {
       if (!jwt) throw Error('缺少jwt！');
@@ -1375,7 +1375,7 @@ var VaJwt = /*#__PURE__*/function () {
     }
     /**
      * 简单解析未特殊加密的payload部分
-     * @param {*} jwt 
+     * @param {*} jwt
      */
 
   }, {
@@ -1387,7 +1387,7 @@ var VaJwt = /*#__PURE__*/function () {
     }
     /**
      * 检验jwt是否过期
-     * @param {String} jwt 
+     * @param {String} jwt
      * @param {Function} vaCb 自定义验证函数，返回Boolean true表示过期
      */
 
@@ -1406,7 +1406,7 @@ var VaJwt = /*#__PURE__*/function () {
     }
     /**
      * 监测浏览器tab页切换立即校验账号
-     * @param {Function} cb 检测到切换后的回调函数  
+     * @param {Function} cb 检测到切换后的回调函数
      */
 
   }, {
@@ -1975,7 +1975,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 var WlNumber = /*#__PURE__*/function () {
   /**
    * @name 实例化bigjs
-   * @param {Number|String} val 
+   * @param {Number|String} val
    */
   function WlNumber(val) {
     _classCallCheck(this, WlNumber);
@@ -2095,7 +2095,7 @@ var WlNumber = /*#__PURE__*/function () {
     }
     /**
      * @name 将数据转化为数字类型，如果不可转化则返回0
-     * @param {*} val 
+     * @param {*} val
      */
 
   }], [{
@@ -3882,7 +3882,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 /**
  * 从树形数据中递归筛选目标值
- * arr 数据源 
+ * arr 数据源
  * val 目标值
  * id 需要判断相等的字段
  * childs 子集
@@ -4048,7 +4048,7 @@ function patchTreeChain(data, sourceData) {
 /**
  * 从坐标值拼接指定字段到祖先元素
  * @param {*} data 一维数据源
- * @param {*} coordinate 坐标值数据 
+ * @param {*} coordinate 坐标值数据
  * @param {*} options 配置项
  */
 
@@ -4058,9 +4058,9 @@ function splicParentsUntil(data, coordinate) {
     pathName: 'name',
     // 所要拼接字段
     pathConnector: '\\',
-    // 连接符 
+    // 连接符
     pathId: "id",
-    // 数据源匹配字段 
+    // 数据源匹配字段
     pathParents: "parents",
     pathIdentityId: "identityId"
   };
@@ -4221,8 +4221,8 @@ var depData = function depData(arr, key) {
  * @param {String} key 作为判断依据的数据key
  * @param {String|Number} delId 要删除数据的id
  * @param {String|Number} actId 当前选中的数据id
- * @param {Boolean} isTree 
- * @param {String} keyParent 
+ * @param {Boolean} isTree
+ * @param {String} keyParent
  */
 
 
@@ -4807,14 +4807,14 @@ var DataType = /*#__PURE__*/function () {
 
     /**
      * @method 检测当前目标是否为对象
-     * @param {*} item 
+     * @param {*} item
      */
     value: function isObject(item) {
       return Object.prototype.toString.call(item) === "[object Object]";
     }
     /**
      * @method 检测当前目标是否为空对象
-     * @param {*} item 
+     * @param {*} item
      */
 
   }, {
@@ -4824,7 +4824,7 @@ var DataType = /*#__PURE__*/function () {
     }
     /**
      * @method 检测当前目标是否为数组
-     * @param {*} item 
+     * @param {*} item
      */
 
   }, {
@@ -4834,7 +4834,7 @@ var DataType = /*#__PURE__*/function () {
     }
     /**
      * @method 检测当前目标是否为空数组
-     * @param {*} item 
+     * @param {*} item
      */
 
   }, {
@@ -5029,7 +5029,7 @@ var Storage = /*#__PURE__*/function () {
     }
     /**
      * @method 获取存储库里存储实例个数
-     * @param {*} type 
+     * @param {*} type
      */
 
   }, {
@@ -5420,7 +5420,7 @@ var wl_contextmenuvue_type_template_id_3c88b214_staticRenderFns = []
   }
 });
 // CONCATENATED MODULE: ./src/pages/wl-gantt/components/wl-contextmenu.vue?vue&type=script&lang=js&
- /* harmony default export */ var components_wl_contextmenuvue_type_script_lang_js_ = (wl_contextmenuvue_type_script_lang_js_); 
+ /* harmony default export */ var components_wl_contextmenuvue_type_script_lang_js_ = (wl_contextmenuvue_type_script_lang_js_);
 // EXTERNAL MODULE: ./src/pages/wl-gantt/components/wl-contextmenu.vue?vue&type=style&index=0&lang=scss&
 var wl_contextmenuvue_type_style_index_0_lang_scss_ = __webpack_require__("2b14");
 
@@ -5541,7 +5541,7 @@ var component = normalizeComponent(
   null,
   null,
   null
-  
+
 )
 
 /* harmony default export */ var wl_contextmenu = (component.exports);
@@ -6015,7 +6015,7 @@ dayjs_min_default.a.extend(isBetween_default.a);
     // 是否使用内置前置任务列
     usePreColumn: {
       type: Boolean,
-      default: false
+      default: true
     },
     // 是否使用复选框列
     useCheckColumn: {
@@ -7649,7 +7649,7 @@ dayjs_min_default.a.extend(isBetween_default.a);
   }
 });
 // CONCATENATED MODULE: ./src/pages/wl-gantt/index.vue?vue&type=script&lang=js&
- /* harmony default export */ var pages_wl_ganttvue_type_script_lang_js_ = (wl_ganttvue_type_script_lang_js_); 
+ /* harmony default export */ var pages_wl_ganttvue_type_script_lang_js_ = (wl_ganttvue_type_script_lang_js_);
 // EXTERNAL MODULE: ./src/pages/wl-gantt/index.vue?vue&type=style&index=0&lang=scss&
 var wl_ganttvue_type_style_index_0_lang_scss_ = __webpack_require__("a26c");
 
@@ -7670,7 +7670,7 @@ var wl_gantt_component = normalizeComponent(
   null,
   null,
   null
-  
+
 )
 
 /* harmony default export */ var wl_gantt = (wl_gantt_component.exports);

@@ -1,5 +1,5 @@
 <template>
-<div class="wl-gantt"> 
+<div class="wl-gantt">
   <!-- 主体图形部分 -->
   <el-table
     ref="wl-gantt"
@@ -509,7 +509,7 @@ export default {
     // 内置表格列
     selfBuiltInColumn(){
       return {
-        
+
       }
     },
     // 根据日期类型改样式

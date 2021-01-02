@@ -202,11 +202,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  padding: 20px 25px 0;
+  padding: 10px 10px 0;
+  width: 100%
 }
 
 .wl-gantt-demo {
-  margin: 40px auto;
-  // width: 800px;
+  width: 100%;
 }
 </style>
