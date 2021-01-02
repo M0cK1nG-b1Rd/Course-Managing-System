@@ -2,27 +2,40 @@
   <div>
     <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
     <el-dialog
-      title="提示"
+      center
+      title="项目详细信息"
       :visible.sync="dialogVisible"
-      width="30%"
+      width="50%"
       :before-close="handleClose">
-      <span>这是一段信息</span>
+<!--对话框表单信息-->
+      <span>
+        <dialogContent :projectInfo="projectInfo" :memberInfo="memberInfo"></dialogContent>
+      </span>
+<!--对话框底部按钮-->
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
       </span>
+
     </el-dialog>
   </div>
 </template>
 
 <script>
+import dialogContent from './dialogContent'
+
 export default {
   name: 'projectViewDialog',
   props: ['projectInfo', 'memberInfo'],
+  components: {dialogContent},
   data() {
     return {
       dialogVisible: false
-    };
+    }
+  },
+  mounted() {
+    console.log('我是dialogContent')
+    console.log(this.projectInfo)
+    console.log(this.projectInfo)
   },
   methods: {
     handleClose(done) {
