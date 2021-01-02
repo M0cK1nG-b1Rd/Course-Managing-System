@@ -27,4 +27,6 @@ public interface ProjectInfoService extends IService<ProjectInfo> {
     void updateProjectInfo(ProjectInfo projectInfo, String pid);
 
     void deleteProjectInfo(String pid);
+
+    List<ProjectInfo> findProjectInfoList(String pid);
 }

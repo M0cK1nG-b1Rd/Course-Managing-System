@@ -15,6 +15,13 @@
         where pid=#{pid}
     </update>
     <select id="getProjectInfoByUsername" resultType="cc.mrbird.febs.project.domain.ProjectInfo"></select>
+    <select id="findProjectInfoList" resultType="cc.mrbird.febs.project.domain.ProjectInfo">
+        SELECT * from project_info
+        <if test="pid != null and pid != ''">
+            where pid = #{pid}
+        </if>
+
+    </select>
 
 
 </mapper>

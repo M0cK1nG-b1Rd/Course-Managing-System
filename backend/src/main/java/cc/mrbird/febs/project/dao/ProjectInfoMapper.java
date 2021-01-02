@@ -14,4 +14,6 @@ public interface ProjectInfoMapper extends BaseMapper<ProjectInfo> {
     List<ProjectInfo> getProjectInfoByUsername(String username);
 
     void updateProjectInfo(ProjectInfo projectInfo, String pid);
+
+    List<ProjectInfo> findProjectInfoList(String pid);
 }

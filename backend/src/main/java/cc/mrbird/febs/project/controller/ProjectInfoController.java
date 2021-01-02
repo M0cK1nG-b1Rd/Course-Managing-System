@@ -49,13 +49,14 @@ public class ProjectInfoController {
 
     //查看所有项目（权限：老师）
     @GetMapping("all")
-    public FebsResponse projectInfoList(@RequestParam(value = "pid",required = false) String pid) {
-        if(pid==null){
-            List<ProjectInfo> list = this.projectInfoService.list();
-            return new FebsResponse().code("200").message("请求成功").status("success").data(list);
-        }else {
-            ProjectInfo one = this.projectInfoService.findByPid(pid);
-            return new FebsResponse().code("200").message("请求成功").status("success").data(one);
+    public FebsResponse projectInfoList(@RequestParam(value = "pid",required = false) String pid) throws FebsException {
+        try {
+            List<ProjectInfo> list = this.projectInfoService.findProjectInfoList(pid);
+            return new FebsResponse().code("200").message("查询成功").status("success").data(list);
+        } catch (Exception e) {
+            message = "查询失败";
+            log.error(message, e);
+            throw new FebsException(message);
         }
     }
 
@@ -75,7 +76,7 @@ public class ProjectInfoController {
     }
 
 
-    //更新项目信息（权限：老师，项目经理）
+    //更新项目总体信息（权限：老师，项目经理）
     //TODO TEST
     @PutMapping
     public FebsResponse updateProjectInfo(@RequestBody @Valid ProjectInfo projectInfo,@RequestParam String pid) throws FebsException {
