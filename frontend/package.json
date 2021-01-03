@@ -74,8 +74,8 @@
     "filemanager-webpack-plugin": "^3.0.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.30.1",
-    "increase-memory-limit": "^1.0.7",
     "image-webpack-loader": "^7.0.1",
+    "increase-memory-limit": "^1.0.7",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",
     "less": "^3.7.1",
@@ -114,7 +114,8 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0",
-    "webpackbar": "^4.0.0"
+    "webpackbar": "^4.0.0",
+    "zx-markdown-editor": "^0.0.2"
   },
   "engines": {
     "node": ">= 6.0.0",
