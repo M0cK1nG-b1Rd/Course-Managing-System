@@ -228,7 +228,7 @@ export default {
 
     mySlice(tableData){
       if(tableData.length!==0){
-        return tableData.slice((query.currentPage-1)*query.pageSize, query.currentPage * query.pageSize)
+        return tableData.slice((this.query.currentPage-1)*this.query.pageSize, this.query.currentPage * this.query.pageSize)
       }else{return null}
     }
 
