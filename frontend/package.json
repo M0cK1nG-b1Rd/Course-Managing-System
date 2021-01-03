@@ -38,6 +38,7 @@
     "wl-gantt": "^1.0.5"
   },
   "devDependencies": {
+    "@hellowuxin/mindmap": "^2.1.4",
     "@jiaminghi/data-view": "^2.10.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",

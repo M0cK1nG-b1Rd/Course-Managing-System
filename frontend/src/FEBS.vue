@@ -1,6 +1,6 @@
 <template>
   <a-locale-provider :locale="chinese">
-    <div id="febs">
+    <div id="febs" style="height: 100%">
       <router-view/>
     </div>
   </a-locale-provider>
@@ -62,6 +62,7 @@ export default {
 
   .single-page {
     margin: 0;
+    height: 100%;
   }
 
   .card-area {

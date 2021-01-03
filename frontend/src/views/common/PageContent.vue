@@ -43,16 +43,19 @@ export default {
 
 <style lang="less" scoped>
   .page-content{
+    height: 100%;
     background: #fff;
     padding: 14px 22px;
     border-left: 1px solid #e8e8e8;
     border-right: 1px solid #e8e8e8;
     border-bottom: 1px solid #e8e8e8;
     .page-header-wide{
+      height: 100%;
       .breadcrumb{
         margin-bottom: .6rem;
       }
       .detail{
+        height: 100%;
         display: flex;
         padding: 0 0 1rem 0;
         .row {
