@@ -9,6 +9,8 @@ import cc.mrbird.febs.project.domain.ProjectScoringRules;
 import cc.mrbird.febs.project.service.ProjectScoreService;
 import cc.mrbird.febs.project.service.ProjectScoringRulesService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +36,7 @@ public class ProjectScoreController {
 
     //提交打分信息（权限：老师）
     @PostMapping("score")
+    @RequiresPermissions("score:give")
     public FebsResponse addProjectScore(@RequestBody ProjectScore projectScore) throws FebsException {
         try {
             this.projectScoreService.addProjectScore(projectScore);
@@ -47,6 +50,7 @@ public class ProjectScoreController {
 
     //修改打分信息（权限：老师）
     @PutMapping("score")
+    @RequiresPermissions("score:all")
     public FebsResponse updateProjectScore(@RequestBody ProjectScore projectScore) throws FebsException {
         try {
             this.projectScoreService.updateProjectScore(projectScore);
@@ -60,6 +64,7 @@ public class ProjectScoreController {
 
     //查看分数信息（权限：学生）
     @GetMapping("my_score")
+    @RequiresPermissions("score:my")
     public FebsResponse getProjectScore() throws FebsException {
         try {
             String sid = ProjectUtil.getSid();
@@ -79,6 +84,7 @@ public class ProjectScoreController {
 
     //查看学生分数信息（权限：老师）
     @GetMapping("all_score")
+    @RequiresPermissions("score:all")
     public FebsResponse getAllProjectScore() throws FebsException {
         try {
             LinkedHashMap<String, Object> map = new LinkedHashMap<>();
@@ -96,6 +102,7 @@ public class ProjectScoreController {
 
     //更新分数权重信息（权限：老师）
     @PostMapping("score/rules")
+    @RequiresPermissions("score:all")
     public FebsResponse updateProjectScoringRules(@RequestBody LinkedHashMap<Object, Integer> projectScoringRules) throws FebsException {
         try {
             int process = projectScoringRules.get("process");
@@ -114,6 +121,7 @@ public class ProjectScoreController {
 
     //查看分数权重信息（权限：老师）
     @GetMapping("score/rules")
+    @RequiresPermissions("score:all")
     public FebsResponse getProjectScoringRules() throws FebsException {
         try {
             List<ProjectScoringRules> rules = this.projectScoringRulesService.getRules();
@@ -126,6 +134,7 @@ public class ProjectScoreController {
     }
 
     @PutMapping("release_score")
+    @RequiresPermissions("score:give")
     public FebsResponse releaseScore() throws FebsException {
         try {
             this.projectScoreService.releaseScore();
@@ -138,6 +147,7 @@ public class ProjectScoreController {
     }
 
     @PutMapping("unrelease_score")
+    @RequiresPermissions("score:give")
     public FebsResponse unreleaseScore() throws FebsException {
         try {
             this.projectScoreService.unreleaseScore();

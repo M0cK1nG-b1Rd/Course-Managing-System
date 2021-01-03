@@ -6,6 +6,7 @@ import cc.mrbird.febs.common.utils.ProjectUtil;
 import cc.mrbird.febs.project.domain.ProjectInfo;
 import cc.mrbird.febs.project.service.ProjectInfoService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,7 @@ public class ProjectInfoController {
 
     //查看我的项目（总览，不包括项目细节）（权限：学生）
     @GetMapping("my")
+    @RequiresPermissions("project:my")
     public FebsResponse getProjectInfoByUserName() {
         List<ProjectInfo> list = this.projectInfoService.findMyProjectInfo(ProjectUtil.getSid());
 //        for (ProjectInfo projectInfo:list) {
@@ -41,6 +43,7 @@ public class ProjectInfoController {
 
     //查看所有项目（权限：老师）
     @GetMapping("all")
+    @RequiresPermissions("project:all")
     public FebsResponse projectInfoList(@RequestParam(value = "pid",required = false) String pid) throws FebsException {
         try {
             List<ProjectInfo> list = this.projectInfoService.findProjectInfoList(pid);
@@ -54,6 +57,7 @@ public class ProjectInfoController {
 
     //创建新的项目（权限：学生）
     @PostMapping
+    @RequiresPermissions("project:create")
     public FebsResponse addProjectInfo(@RequestBody @Valid ProjectInfo projectInfo) throws FebsException {
         try {
             long pid= this.projectInfoService.createProjectInfo(projectInfo);
@@ -71,6 +75,7 @@ public class ProjectInfoController {
     //更新项目总体信息（权限：老师，项目经理）
     //TODO TEST
     @PutMapping
+    @RequiresPermissions("project:all")
     public FebsResponse updateProjectInfo(@RequestBody @Valid ProjectInfo projectInfo,@RequestParam String pid) throws FebsException {
         try {
             this.projectInfoService.updateProjectInfo(projectInfo,pid);
@@ -84,6 +89,7 @@ public class ProjectInfoController {
 
     //删除项目（权限：老师，项目经理）
     @DeleteMapping
+    @RequiresPermissions("project:all")
     public FebsResponse deleteProjectInfo(@RequestParam String pid) throws FebsException {
         try {
             this.projectInfoService.deleteProjectInfo(pid);

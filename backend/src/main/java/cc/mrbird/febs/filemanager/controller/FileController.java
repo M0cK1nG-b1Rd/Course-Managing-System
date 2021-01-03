@@ -57,6 +57,14 @@ public class FileController {
         return username;
     }
 
+    String getRole(){
+        String role="";
+        String token = (String) SecurityUtils.getSubject().getPrincipal();
+        if (StringUtils.isNotBlank(token)) {
+//            role = JWTUtil.get(token);
+        }
+        return role;
+    }
 
     /**
      * 上传文件块
@@ -182,6 +190,8 @@ public class FileController {
         //防止一个用户对应多个项目（这个后续需要可以更改）
         if (projectPeople.size()==1){
             pid=projectPeople.get(0).getPid();
+        }else if(projectPeople.size()==0) {
+            throw new FebsException("用户暂未加入项目");
         }else{
             throw new FebsException("一个用户对应多个项目");
         }

@@ -10,6 +10,8 @@ import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.service.ProjectPeopleService;
 import cc.mrbird.febs.project.service.TUserInfoService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +35,7 @@ public class ProjectPeopleController {
 
     //查看同组的成员信息（权限：学生）
     @GetMapping("same_group")
+    @RequiresPermissions("project:my")
     public FebsResponse getPeopleInSameGroup(@RequestParam(name = "pid") String pid) {
         List<PeopleInGroup> list = this.projectPeopleService.getAllPeopleInGroup(ProjectUtil.getSid(), pid);
         if (list.isEmpty()) {
@@ -43,6 +46,7 @@ public class ProjectPeopleController {
 
     //新增成员信息（权限：项目经理）
     @PostMapping("member_info")
+    @RequiresPermissions("project:create")
     public FebsResponse addProjectPeople(@RequestBody LinkedHashMap<String, Object> projectPeoples) throws FebsException {
         try {
             this.projectPeopleService.createProjectPeoples(projectPeoples);
@@ -56,6 +60,7 @@ public class ProjectPeopleController {
 
     //查看成员信息（权限：学生）
     @GetMapping("my_member_info")
+    @RequiresPermissions("project:my")
     public FebsResponse getMyProjectPeople(@RequestParam(value = "pid", required = false) String pid) throws FebsException {
         try {
             String sid = ProjectUtil.getSid();
@@ -71,6 +76,7 @@ public class ProjectPeopleController {
 
     //查看全部成员信息（权限：老师）
     @GetMapping("all_member_info")
+    @RequiresPermissions("project:all")
     public FebsResponse getProjectPeople(@RequestParam(value = "pid", required = false) String pid) throws FebsException {
         try {
             List<TUserInfo> data = this.tUserInfoService.getProjectPeoples(pid);
@@ -85,6 +91,7 @@ public class ProjectPeopleController {
     //修改成员信息（权限：项目经理）
     //TODO TEST
     @PutMapping("my_member_info")
+    @RequiresPermissions("project:create")
     public FebsResponse updateMyProjectPeople(@RequestBody LinkedHashMap<String, Object> projectPeoples, @RequestParam("pid") String pid) throws FebsException {
         try {
             List<String> pids = ProjectUtil.getPids();
@@ -104,6 +111,7 @@ public class ProjectPeopleController {
 
     //修改成员信息（权限：老师）
     @PutMapping("member_info")
+    @RequiresPermissions(value = {"project:all","project:create"},logical = Logical.OR)
     public FebsResponse updateProjectPeople(@RequestBody LinkedHashMap<String, Object> projectPeoples, @RequestParam(value = "pid", required = false) String pid) throws FebsException {
         try {
             this.projectPeopleService.updateProjectPeoples(projectPeoples, pid);
