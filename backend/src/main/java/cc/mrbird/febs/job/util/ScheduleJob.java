@@ -59,7 +59,7 @@ public class ScheduleJob extends QuartzJobBean {
             jobLog.setStatus(JobLog.JOB_FAIL);
             jobLog.setError(StringUtils.substring(e.toString(), 0, 2000));
         } finally {
-            scheduleJobLogService.saveJobLog(jobLog);
+//            scheduleJobLogService.saveJobLog(jobLog);
         }
     }
 }

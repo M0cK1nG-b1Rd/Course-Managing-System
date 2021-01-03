@@ -264,7 +264,7 @@ import {
   getMax,
   flattenDeepParents,
   regDeepParents
-} from "@/util/array.js"; // 导入数组操作函数
+} from "@/utils/array.js"; // 导入数组操作函数
 
 export default {
   name: "wlGantt",
@@ -342,7 +342,7 @@ export default {
     // 是否使用内置前置任务列
     usePreColumn: {
       type: Boolean,
-      default: false
+      default: true
     },
     // 是否使用复选框列
     useCheckColumn: {
@@ -387,7 +387,7 @@ export default {
     // ---------------------------------------------以下为el-table Attributes--------------------------------------------
     defaultExpandAll: {
       type: Boolean,
-      default: false
+      default: true
     }, // 是否全部展开
     rowKey: {
       type: String,
@@ -401,7 +401,7 @@ export default {
     }, // 是否为斑马纹
     highlightCurrentRow: {
       type: Boolean,
-      default: false
+      default: true
     }, // 是否要高亮当前行
     border: {
       type: Boolean,
