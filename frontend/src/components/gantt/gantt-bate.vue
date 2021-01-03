@@ -282,7 +282,7 @@ import dayjs from "dayjs"; // 导入日期js
 const uuidv4 = require("uuid/v4"); // 导入uuid生成插件
 import isBetween from "dayjs/plugin/isBetween";
 dayjs.extend(isBetween);
-import { deepClone, flattenDeep, getMin, getMax } from "@/assets/array.js";
+import { deepClone, flattenDeep, getMin, getMax } from "@/utils/array.js";
 export default {
   name: "wlGantt",
   data() {

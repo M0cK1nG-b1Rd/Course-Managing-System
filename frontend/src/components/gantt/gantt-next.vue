@@ -273,7 +273,7 @@ import dayjs from "dayjs"; // 导入日期js
 const uuidv4 = require("uuid/v4"); // 导入uuid生成插件
 import isBetween from "dayjs/plugin/isBetween";
 dayjs.extend(isBetween);
-import { flattenDeep, getMax, flattenDeepParents, regDeepParents } from "wl-core"; // 导入数组操作函数
+import { flattenDeep, getMax, flattenDeepParents, regDeepParents } from "@/utils/array.js"; // 导入数组操作函数
 import ContextMenu from "@/pages/wl-gantt/components/wl-contextmenu";
 
 export default {
