@@ -203,7 +203,7 @@ export default {
       that.myRank.greaterThanClass = r.data.data.greaterThanInClass
       that.myRank.greaterThanProject = r.data.data.greaterThanInProject
       that.greaterThanClassConfig.data[0] = r.data.data.greaterThanInClass*100
-      that.greaterThanClassConfig.data[0] = r.data.data.greaterThanInProject*100
+      that.greaterThanProjectConfig.data[0] = r.data.data.greaterThanInProject*100
       that.stasticsConfig.data[0].value = r.data.data.classStatistics.maxScore
       that.stasticsConfig.data[1].value = r.data.data.classStatistics.minScore
       that.stasticsConfig.data[2].value = r.data.data.classStatistics.avgScore

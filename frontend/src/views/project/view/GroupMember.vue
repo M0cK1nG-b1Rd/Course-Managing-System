@@ -5,18 +5,22 @@
     style="width: 100%"
     :row-class-name="tableRowClassName">
     <el-table-column
-      prop="date"
-      label="日期"
-      width="180">
-    </el-table-column>
-    <el-table-column
       prop="name"
       label="姓名"
       width="180">
     </el-table-column>
     <el-table-column
-      prop="address"
-      label="地址">
+      prop="class"
+      label="班级"
+      width="180">
+    </el-table-column>
+    <el-table-column
+      prop="sid"
+      label="学号">
+    </el-table-column>
+    <el-table-column
+      prop="position"
+      label="岗位">
     </el-table-column>
   </el-table>
 </template>
@@ -47,21 +51,25 @@ export default {
   data() {
     return {
       tableData: [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄',
-      }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-      }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄',
-      }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
+        name: '马冬梅',
+        class: '软件81',
+        sid: '2187654321',
+        position: '项目经理'
+      },{
+        name: '马秋梅',
+        class: '软件82',
+        sid: '2177654321',
+        position: '前端工程师'
+      },{
+        name: '马夏梅',
+        class: '软件83',
+        sid: '2167654321',
+        position: '后端工程师'
+      },{
+        name: '马春梅',
+        class: '软件84',
+        sid: '2157654321',
+        position: '测试工程师'
       }]
     }
   }
