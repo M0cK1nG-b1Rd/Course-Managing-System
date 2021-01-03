@@ -296,7 +296,6 @@ export default {
       console.log(result)
       // 1. this.markResult.sid是不带tuserInfo的
       // 2. result是带tuserInfo的
-      // 3. 打死你hls
       this.$post('project/score', result).then(r=>{
         this.$message.success('打分提交成功！')
       })
