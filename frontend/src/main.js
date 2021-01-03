@@ -19,6 +19,7 @@ import uploader from 'vue-simple-uploader'
 import dataV from '@jiaminghi/data-view'
 import wlGantt from 'wl-gantt'
 import "wl-gantt/lib/wl-gantt.css"
+import VCharts from 'v-charts'
 
 
 Vue.use(wlGantt)
@@ -30,6 +31,7 @@ Vue.use(db)
 Vue.use(VueMeta)
 Vue.use(ElementUI)
 Vue.use(dataV)
+Vue.use(VCharts)
 Vue.use({
   install (Vue) {
     Vue.prototype.$db = db
