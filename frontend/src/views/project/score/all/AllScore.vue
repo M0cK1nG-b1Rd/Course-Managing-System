@@ -39,7 +39,7 @@
     </el-table-column>
     <el-table-column
       sortable
-      prop="completeScore"
+      prop="completionScore"
       label="完成度"
       width="120">
     </el-table-column>
@@ -81,7 +81,7 @@ export default {
 
   mounted() {
     let that = this
-    this.$get('project/stu_score').then(r=>{
+    this.$get('project/all_score').then(r=>{
       that.tableData = r.data.data.stuScore
     })
   },
