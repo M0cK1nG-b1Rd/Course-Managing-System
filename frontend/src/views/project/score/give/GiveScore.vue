@@ -4,31 +4,34 @@
 <!--    设置打分规则-->
     <el-divider content-position="center" ></el-divider>
     <el-header id="setRuleHeader" height="34px">设置打分规则</el-header>
-    <el-main id="setRuleMain">
-      <el-form  class="demo-form-inline" label-width="15%" label-position="left">
-        <el-form-item label="过程考核">
-          <el-col :span="22">
-            <el-slider v-model="markRule.process" :step="5" show-stops show-input input-size="mini"></el-slider>
-          </el-col>
-        </el-form-item>
-        <el-form-item label="文档及报告">
-          <el-col :span="22">
-            <el-slider v-model="markRule.docs" :step="5" show-stops show-input input-size="mini"></el-slider>
-          </el-col>
-        </el-form-item>
-        <el-form-item label="完成情况">
-          <el-col :span="22">
-            <el-slider v-model="markRule.completion" :step="5" show-stops show-input input-size="mini"></el-slider>
-          </el-col>
-        </el-form-item>
-        <el-form-item label="答辩表现">
-          <el-col :span="22">
-            <el-slider v-model="markRule.presentation" :step="5" show-stops show-input input-size="mini"></el-slider>
-          </el-col>
-        </el-form-item>
-        <el-form-item><el-button type="primary" size="medium " @click="setMarkRule">完成打分规则设置</el-button></el-form-item>
-      </el-form>
-    </el-main>
+    <div style="margin: 30px 0 0 0">
+      <el-main id="setRuleMain">
+        <el-form  class="demo-form-inline" label-width="15%" label-position="left">
+          <el-form-item label="过程考核">
+            <el-col :span="22">
+              <el-slider v-model="markRule.process" :step="5" show-stops show-input input-size="mini"></el-slider>
+            </el-col>
+          </el-form-item>
+          <el-form-item label="文档及报告">
+            <el-col :span="22">
+              <el-slider v-model="markRule.docs" :step="5" show-stops show-input input-size="mini"></el-slider>
+            </el-col>
+          </el-form-item>
+          <el-form-item label="完成情况">
+            <el-col :span="22">
+              <el-slider v-model="markRule.completion" :step="5" show-stops show-input input-size="mini"></el-slider>
+            </el-col>
+          </el-form-item>
+          <el-form-item label="答辩表现">
+            <el-col :span="22">
+              <el-slider v-model="markRule.presentation" :step="5" show-stops show-input input-size="mini"></el-slider>
+            </el-col>
+          </el-form-item>
+          <el-form-item><el-button type="primary" size="medium " @click="setMarkRule">完成打分规则设置</el-button></el-form-item>
+        </el-form>
+      </el-main>
+    </div>
+
 
 <!--    选择打分对象-->
     <el-divider content-position="center"></el-divider>
