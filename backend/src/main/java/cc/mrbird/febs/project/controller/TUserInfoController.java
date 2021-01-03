@@ -6,6 +6,8 @@ import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.project.domain.TUserInfo;
 import cc.mrbird.febs.project.service.TUserInfoService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,8 +29,9 @@ public class TUserInfoController {
 
 
 
-    //查看全部班级信息（权限：老师）
+    //查看全部班级信息（权限：老师、项目经理）
     @GetMapping("all_class")
+    @RequiresPermissions(value = {"project:all","project:create"},logical = Logical.OR)
     public FebsResponse getAllClass() throws FebsException {
         try {
             List<TUserInfo> data= this.tUserInfoService.getAllClass();
@@ -40,8 +43,9 @@ public class TUserInfoController {
         }
     }
 
-    //查看全部学生信息（权限：老师）
+    //查看全部学生信息（权限：老师、项目经理）
     @GetMapping("all_stu")
+    @RequiresPermissions(value = {"project:all","project:create"},logical = Logical.OR)
     public FebsResponse getAllStu() throws FebsException {
         try {
             List<TUserInfo> data= this.tUserInfoService.getAllStu();

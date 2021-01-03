@@ -45,7 +45,7 @@
     <!--    </update>-->
 
     <select id="getGreaterThanInProject" resultType="java.lang.Float">
-        select greater_than.count / all_in_project.all_member as greater_in_project
+        select IFNULL( greater_than.count / all_in_project.all_member ,0) as greater_in_project
         from (SELECT count(*) as count
               from project_score
               where sid in
