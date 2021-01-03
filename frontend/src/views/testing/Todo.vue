@@ -1,27 +1,27 @@
 <template>
   <section class="todolist">
     <header class="todolist__header">
-      <input type="text" placeholder="add a new todo" v-model="newTodo" @keyup.enter="addTodo">
+      <input type="text" placeholder="添加新任务" v-model="newTodo" @keyup.enter="addTodo">
     </header>
     <article class="todolist__main">
       <div>
-        <label>all as done <input type="checkbox" v-model="allDone"></label>
+        <label>完成全部任务<input type="checkbox" v-model="allDone"></label>
       </div>
       <ul>
         <li v-for="todo in filteredTodolist" :key="todo.id" :class="{completed: todo.completed, editing: todo === editing}">
           <label @dblclick="editTodo(todo)"><input type="checkbox" v-model="todo.completed"> {{ todo.name }}</label>
-          <button @click.prevent="deleteTodo(todo)">delete</button>
-          <input type="text" v-model="todo.name" @keyup.enter="doneEditTodo(todo)" @blur="doneEditTodo(todo)" @keyup.esc="cancelEditTodo" v-focus="todo === editing">
+          <button @click.prevent="deleteTodo(todo)">删除</button>
+          <input type="text" v-model="todo.name" @keyup.esc="cancelEditTodo" v-focus="todo === editing">
         </li>
       </ul>
     </article>
     <footer class="todolist__footer" v-show="hasTodo">
-      <span>{{ remaining }} todolist</span>
-      <button v-show="completedTodo" @click.prevent="deleteCompletedTodo">delete all todolist</button>
+      <span>总共{{ remaining }}个任务</span>
+      <button v-show="completedTodo" @click.prevent="deleteCompletedTodo">删除所有待办任务</button>
       <ul>
-        <li><a href="#" :class="{active: filter === 'all'}" @click.prevent="filter = 'all'">all</a></li>
-        <li><a href="#" :class="{active: filter === 'todo'}" @click.prevent="filter = 'todo'">to do</a></li>
-        <li><a href="#" :class="{active: filter === 'done'}" @click.prevent="filter = 'done'">done</a></li>
+        <li><a href="#" :class="{active: filter === 'all'}" @click.prevent="filter = 'all'">所有</a></li>
+        <li><a href="#" :class="{active: filter === 'todo'}" @click.prevent="filter = 'todo'">待办</a></li>
+        <li><a href="#" :class="{active: filter === 'done'}" @click.prevent="filter = 'done'">完成</a></li>
       </ul>
     </footer>
   </section>
@@ -101,7 +101,9 @@
 
 <style>
   :root{
-    font: 14px/1.4 -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font: 14px/1.4 -apple-system, BlinkMacSystemFont,
+    Segoe UI, Helvetica, Arial, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   }
   .todolist {
     display: inline-block;
