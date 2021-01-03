@@ -34,7 +34,7 @@ public class ProjectScore implements Serializable {
 
     private Integer docsScore;
 
-    private Integer completeScore;
+    private Integer completionScore;
 
     private Integer presentationScore;
 

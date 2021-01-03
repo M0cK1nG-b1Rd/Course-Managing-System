@@ -45,7 +45,7 @@ public class ProjectScoreController {
         }
     }
 
-    //提交打分信息（权限：老师）
+    //修改打分信息（权限：老师）
     @PutMapping("score")
     public FebsResponse updateProjectScore(@RequestBody ProjectScore projectScore) throws FebsException {
         try {
