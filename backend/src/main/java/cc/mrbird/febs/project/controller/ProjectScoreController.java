@@ -78,7 +78,7 @@ public class ProjectScoreController {
     }
 
     //查看学生分数信息（权限：老师）
-    @GetMapping("stu_score")
+    @GetMapping("all_score")
     public FebsResponse getAllProjectScore() throws FebsException {
         try {
             LinkedHashMap<String, Object> map = new LinkedHashMap<>();
