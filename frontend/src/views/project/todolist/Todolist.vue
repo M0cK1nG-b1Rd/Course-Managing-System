@@ -1,7 +1,7 @@
 <template>
   <div style="width: 100%;height: 100%;text-align: center">
     <el-row style="font-weight: bold;font-size: 25px; color: #000c17">
-      任务看板-TodoList
+      <dv-decoration-7>任务看板-TodoList</dv-decoration-7>
     </el-row>
     <el-row style="margin-top: 40px">
       <el-col :span="8">

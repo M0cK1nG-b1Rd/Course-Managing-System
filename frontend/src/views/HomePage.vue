@@ -11,7 +11,7 @@
               {{welcomeMessage}}
             </div>
             <div class="head-info-desc">
-              <p>{{user.deptName ? user.deptName : '暂无部门'}} | {{user.roleName ? user.roleName : '暂无角色'}}</p>
+              <p>{{user.roleName ? user.roleName : '暂无角色'}}</p>
             </div>
             <div class="head-info-time">上次登录时间：{{user.lastLoginTime ? user.lastLoginTime : '第一次访问系统'}}</div>
           </div>
@@ -43,10 +43,8 @@
         </a-card>
       </a-col>
       <a-col :span="12" class="project-wrapper">
-        <a-card title="进行中的项目" class="project-card" v-if="loadRepo === 1">
-          <a href="https://github.com/wuyouzhuguli?tab=repositories" target="_blank" slot="extra">所有项目</a>
-          <running-task :projects="projects">
-          </running-task>
+        <a-card title="进行中的任务" class="project-card" v-if="loadRepo === 1">
+          <dv-scroll-board :config="lunboConfig" style="width:100%;height:320px" />
         </a-card>
       </a-col>
     </a-row>
@@ -75,7 +73,34 @@ export default {
       loadRepo: 0,
       htmlspan: '<span style="display:inline-block;margin-right: 5px;border-radius: 10px;width: 10px;height: 10px;background-color: ',
       legends: ['总数', '您'],
-      myChart: {}
+      myChart: {},
+      // 轮播板的数据
+      lunboConfig: {
+        header: ['任务名', '责任单位', '历时估计'],
+        data: [
+          ['<span style="color:#000000;">撰写项目章程</span>', '<span style="color:#000000;">项目经理</span>', '<span style="color:#000000;">10天</span>'],
+          ['<span style="color:#000000;">确定前端框架</span>', '<span style="color:#000000;">前端工程组</span>', '<span style="color:#000000;">5天</span>'],
+          ['<span style="color:#000000;">确定后端框架</span>', '<span style="color:#000000;">后端工程组</span>', '<span style="color:#000000;">5天</span>'],
+          ['<span style="color:#000000;">需求分析</span>', '<span style="color:#000000;">需求分析办公室</span>', '<span style="color:#000000;">30天</span>'],
+          ['<span style="color:#000000;">软件架构设计</span>', '<span style="color:#000000;">软件架构师</span>', '<span style="color:#000000;">20天</span>'],
+          ['<span style="color:#000000;">数据库设计</span>', '<span style="color:#000000;">数据库工作室</span>', '<span style="color:#000000;">10天</span>'],
+          ['<span style="color:#000000;">开发及编码</span>', '<span style="color:#000000;">所有开发部门</span>', '<span style="color:#000000;">60天</span>'],
+          ['<span style="color:#000000;">测试软件及修复</span>', '<span style="color:#000000;">测试部门</span>', '<span style="color:#000000;">20天</span>'],
+          ['<span style="color:#000000;">进行验收测试</span>', '<span style="color:#000000;">开发部门及市场部门</span>', '<span style="color:#000000;">5天</span>'],
+          ['<span style="color:#000000;">整理项目文档</span>', '<span style="color:#000000;">文档管理员</span>', '<span style="color:#000000;">3天</span>'],
+
+        ],
+        index: true,
+        columnWidth: [50],
+        align: ['center'],
+        // headerBGC: '#74a3e1',
+        oddRowBGC: '#ffffff',
+        evenRowBGC: '#d1dcf0',
+        rowNum: 8
+
+      }
+
+
     }
   },
   computed: {

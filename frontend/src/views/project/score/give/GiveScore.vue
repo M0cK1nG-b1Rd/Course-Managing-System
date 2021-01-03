@@ -3,7 +3,9 @@
   <el-container>
 <!--    设置打分规则-->
     <el-divider content-position="center" ></el-divider>
-    <el-header id="setRuleHeader" height="34px">设置打分规则</el-header>
+    <el-header id="setRuleHeader" height="34px">
+      <dv-decoration-7>设置打分规则</dv-decoration-7>
+    </el-header>
     <div style="margin: 30px 0 0 0">
       <el-main id="setRuleMain">
         <el-form  class="demo-form-inline" label-width="15%" label-position="left">
@@ -35,7 +37,9 @@
 
 <!--    选择打分对象-->
     <el-divider content-position="center"></el-divider>
-    <el-header id="selectStuHeader" height="34px">选择打分对象</el-header>
+    <el-header id="selectStuHeader" height="34px">
+      <dv-decoration-7>选择打分对象</dv-decoration-7>
+    </el-header>
     <el-main id="selectStuMain">
       <!--选择项目-->
         <el-select v-model="markingObj.pid"
@@ -64,7 +68,9 @@
 
 <!--   打分区-->
     <el-divider content-position="center" ></el-divider>
-    <el-header id="markHeader" height="34px">开始打分</el-header>
+    <el-header id="markHeader" height="34px">
+      <dv-decoration-7>开始打分</dv-decoration-7>
+    </el-header>
     <el-main id="markMain">
       <el-form  class="demo-form-inline" label-width="15%" label-position="left">
         <el-form-item label="过程考核">
@@ -112,7 +118,9 @@
 
 <!--   点评区-->
     <el-divider content-position="center" ></el-divider>
-    <el-header id="commentHeader" height="34px">点评及反馈</el-header>
+    <el-header id="commentHeader" height="34px">
+      <dv-decoration-7>点评及反馈</dv-decoration-7>
+    </el-header>
     <el-main id="commentMain">
       <el-input
         type="textarea"

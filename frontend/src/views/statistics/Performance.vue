@@ -1,6 +1,8 @@
 <template>
-  <div style="width: 100%;height: 100%;text-align: center">
-    <el-row style="font-size: 25px;font-weight: bold">统计报表</el-row>
+  <div style="width: 100%;height: 100%;text-align: center;margin-left: 50px;margin-right: 50px">
+    <el-row style="font-size: 25px;font-weight: bold">
+      <dv-decoration-7>绩效考核</dv-decoration-7>
+    </el-row>
     <el-row><div style="height: 40px">&nbsp</div></el-row>
 <!--    第一行-->
     <el-row>
