@@ -191,7 +191,7 @@ export default {
     this.$get('project/my_score').then((r) => {
       console.log(r)
       that.myScore.total = r.data.data.stuScore.totalScore
-      that.myScore.completion = r.data.data.stuScore.completeScore
+      that.myScore.completion = r.data.data.stuScore.completionScore
       that.myScore.process = r.data.data.stuScore.processScore
       that.myScore.presentation = r.data.data.stuScore.presentationScore
       that.myScore.docs = r.data.data.stuScore.docsScore

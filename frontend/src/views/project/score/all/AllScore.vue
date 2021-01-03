@@ -55,6 +55,7 @@
       <el-table-column
         prop="feedback"
         label="评价及反馈"
+        show-overflow-tooltip
         width="120">
       </el-table-column>
       <el-table-column
@@ -74,6 +75,7 @@
     <!--  编辑成绩的对话框-->
     <el-dialog
       title="修改学生成绩"
+      :before-close="quitEdit"
       :visible.sync="editDialogVisible"
       width="55%"
       center>
@@ -231,6 +233,7 @@ export default {
     },
     // 放弃成绩修改
     quitEdit() {
+      // 恢复原来的成绩
       this.editingRow = this.oldRow
       this.$message.info('成绩修改已取消！')
       this.editDialogVisible = false
