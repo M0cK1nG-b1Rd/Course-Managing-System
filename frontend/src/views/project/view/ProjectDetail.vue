@@ -1,32 +1,33 @@
 <template>
-  <div>
-    <a-descriptions title= 我的项目 layout="horizontal " bordered >
+  <div style="width: 100%">
+    <div style="font-size: 25px;font-weight: bold;text-align: center">我的项目</div>
+    <a-descriptions  layout="horizontal " bordered >
       <a-descriptions-item label="项目名称" span = "3">
-        {{ this.data.project_name }}
+        软件项目管理综合实训项目管理系统
       </a-descriptions-item>
       <a-descriptions-item label="项目经理" :span="2">
-        {{ this.data.group_leader }}
+        马冬梅
       </a-descriptions-item>
       <a-descriptions-item label="项目ID" :span="2">
-        {{this.data.pid}}
+        4
       </a-descriptions-item>
       <a-descriptions-item label="项目开始时间" :span="3">
-        {{ this.data.start_time }}
+        2020年11月1日
       </a-descriptions-item>
       <a-descriptions-item label="预计完成时间" :span="3">
-        {{ this.data.end_time }}
+        2021年1月4日
       </a-descriptions-item>
       <a-descriptions-item label="项目状态" :span="3">
         <a-badge status="processing" text="进行中" />
       </a-descriptions-item>
       <a-descriptions-item label="项目总人数">
-        {{ this.data.group_info.length }}
+        4人
       </a-descriptions-item>
       <a-descriptions-item label="项目预算">
         $0.0
       </a-descriptions-item>
       <a-descriptions-item label="指导人">
-        <a href="http://gr.xjtu.edu.cn/web/songyh" text-decoration="none" target="_blank">宋永红</a>
+        <a href="http://gr.xjtu.edu.cn/web/songyh" text-decoration="none" target="_blank">宋永红老师</a>
       </a-descriptions-item>
     </a-descriptions>
     <GroupMember></GroupMember>

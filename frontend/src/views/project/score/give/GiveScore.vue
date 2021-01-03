@@ -124,7 +124,7 @@
     <el-main style="{align-content: center;}">
       <el-form>
         <el-form-item>
-          <el-col :span="1">&nbsp</el-col>
+          <el-col :span="3">&nbsp</el-col>
           <el-col :span="6">
             <el-popover
               placement="top-start"

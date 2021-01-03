@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width:100%">
     <!--    页面头部信息-->
     <el-row>
       <el-col :span="24">
@@ -40,7 +40,7 @@
         </el-col>
         <el-col class="line" :span="2"><span> </span></el-col>
         <el-col :span="12">
-          <el-date-picker type="date" placeholder="选择日期"
+          <el-date-picker type="date" placeholder="结束时间"
                           v-model="formData.endTime"
                           style="width: 100%;"
                           format="yyyy 年 MM 月 dd 日"
