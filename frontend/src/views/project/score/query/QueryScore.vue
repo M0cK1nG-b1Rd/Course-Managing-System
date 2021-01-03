@@ -188,7 +188,7 @@ export default {
   created () {
     let that = this
     // 从后台获得个人成绩信息及统计数据
-    this.$get('project/score').then((r) => {
+    this.$get('project/my_score').then((r) => {
       console.log(r)
       that.myScore.total = r.data.data.stuScore.totalScore
       that.myScore.completion = r.data.data.stuScore.completeScore
