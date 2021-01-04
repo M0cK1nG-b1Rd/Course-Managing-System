@@ -25,4 +25,5 @@ public interface TFileInfoMapper {
 	
 	List<TFileInfo> selectFileList(TFileInfo fileInfo, @Param("pid") String pid);
 
+    List<TFileInfo> selectList();
 }

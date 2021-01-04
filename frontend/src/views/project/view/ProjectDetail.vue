@@ -38,28 +38,42 @@
 
 import GroupMember from './GroupMember'
 
-const data = []
+let projectInfoData = []
+let projectMemberData = []
 
 export default {
   name: 'ProjectDetail',
   components: {GroupMember},
   data () {
     return {
-      data
+      typeDicts:{
+         "web":"web应用开发",
+         "desktop":"桌面应用开发",
+        "wechat":"微信小程序开发",
+         "ai":"AI算法应用"
+      },
+      projectInfoData,
+      projectMemberData
     }
   },
   mounted () {
-    // this.$get('project/details?pid=1').then((r) => {
-    //   console.log('Hello I am Tester!')
-    //   console.log(r.data.data)
-    //   this.data = r.data.data
-    // })
-    let that = this
-    this.axios.get('../../static/testData/projectDetail.json').then(function (response) {
-      console.log(response.data.data)
-      that.data = response.data.data
+    this.$get('project/my_member_info').then((r) => {
+      console.log('Hello I am Tester1!')
+      console.log(r.data.data)
+      this.projectMemberData = r.data.data
     })
-    console.log(this.data)
+
+    this.$get('project/my').then((r) => {
+      console.log('Hello I am Tester2!')
+      console.log(r.data.data)
+      this.projectInfoData = r.data.data
+    })
+    // let that = this
+    // this.axios.get('../../static/testData/projectDetail.json').then(function (response) {
+    //   console.log(response.data.data)
+    //   that.data = response.data.data
+    // })
+    // console.log(this.data)
   }
 }
 </script>
