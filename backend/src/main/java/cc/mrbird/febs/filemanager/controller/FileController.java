@@ -59,14 +59,6 @@ public class FileController {
         return username;
     }
 
-    String getRole() {
-        String role = "";
-        String token = (String) SecurityUtils.getSubject().getPrincipal();
-        if (StringUtils.isNotBlank(token)) {
-//            role = JWTUtil.get(token);
-        }
-        return role;
-    }
 
     /**
      * 上传文件块
@@ -138,17 +130,25 @@ public class FileController {
         fileInfo.setTotalSize(fileInfoVO.getSize());
         fileInfo.setUploadBy(this.getUsername());
 
-        String userSid = this.tUserInfoService.findByUsername(this.getUsername()).getSid();
-        String pid;
+        String role = ProjectUtil.getUserRole();
+        if (role.equals("学生") || role.equals("项目经理")) {
+            String userSid = this.tUserInfoService.findByUsername(this.getUsername()).getSid();
+            String pid;
 
-        List<ProjectPeople> projectPeople = this.projectPeopleService.findBySid(userSid);
-        //防止一个用户对应多个项目（这个后续需要可以更改）
-        if (projectPeople.size() == 1) {
-            pid = projectPeople.get(0).getPid();
-            fileInfo.setRefProjectId(pid);
-        } else {
-            throw new FebsException("一个用户对应多个项目");
+            List<ProjectPeople> projectPeople = this.projectPeopleService.findBySid(userSid);
+            //防止一个用户对应多个项目（这个后续需要可以更改）
+            if (projectPeople.size() == 1) {
+                pid = projectPeople.get(0).getPid();
+                fileInfo.setRefProjectId(pid);
+            } else {
+                throw new FebsException("一个用户对应多个项目");
+            }
+        } else if (role.equals("老师" )|| role.equals("管理员")) {
+            fileInfo.setRefProjectId(role);
+        }else{
+            throw new FebsException("您不是项目干系人，无法上传文件");
         }
+
 
 
         //进行文件的合并操作
@@ -194,9 +194,9 @@ public class FileController {
             if (projectPeople.size() == 1) {
                 pid = projectPeople.get(0).getPid();
             } else if (projectPeople.size() == 0) {
-                return new FebsResponse().code("500").message("请求失败，用户暂未加入项目").status("error");
+                throw new FebsException("用户暂未加入项目");
             } else {
-                return new FebsResponse().code("500").message("请求失败，一个用户对应多个项目").status("error");
+                throw new FebsException("一个用户对应多个项目");
             }
             List<TFileInfo> list = fileInfoService.selectFileList(file, pid);
             return new FebsResponse().code("200").message("请求成功").status("success").data(list);
@@ -204,7 +204,7 @@ public class FileController {
             List<TFileInfo> list = fileInfoService.findAll();
             return new FebsResponse().code("200").message("请求成功").status("success").data(list);
         } else {
-            return new FebsResponse().code("500").message("你不是项目干系人，无法查看").status("success");
+            throw new FebsException("您不是项目干系人，无法查看文件");
         }
 
     }
