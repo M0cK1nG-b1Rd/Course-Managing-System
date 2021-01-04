@@ -30,23 +30,32 @@
               icon="el-icon-download"
               class="blue"
               @click="downloadHandle(scope.$index, scope.row)" size="small">下载</el-button>
-          <el-button
+          <el-popconfirm
+            title="确定删除该文件吗？"
+            @confirm="deleteHandle(scope.$index, scope.row)"
+          >
+            <el-button
               type="text"
               icon="el-icon-delete"
               class="red"
-              @click="deleteDialogVisible = true" size="small">删除</el-button>
+              slot="reference"
+              size="small">删除</el-button>
+
+          </el-popconfirm>
+
 <!--              删除文件时弹出的警告对话框-->
-          <el-dialog
-            title="提示"
-            :visible.sync="deleteDialogVisible"
-            :before-close="handleDialogClose"
-            width="30%">
-            <span>文件删除后不可恢复，您确定需要删除吗？</span>
-            <span slot="footer" class="dialog-footer">
-              <el-button @click="deleteDialogVisible = false">取 消</el-button>
-              <el-button type="primary" @click="deleteHandle(scope.$index, scope.row)">确 定</el-button>
-            </span>
-          </el-dialog>
+<!--          <el-dialog-->
+<!--            title="提示"-->
+<!--            :visible.sync="deleteDialogVisible"-->
+<!--            :before-close="handleDialogClose"-->
+<!--            width="30%">-->
+<!--            <span>文件删除后不可恢复，您确定需要删除吗？</span>-->
+<!--            <span slot="footer" class="dialog-footer">-->
+<!--              <el-button @click="deleteDialogVisible = false">取 消</el-button>-->
+<!--              <el-button type="primary" @click="deleteHandle(scope.$index, scope.row)">确 定</el-button>-->
+<!--            </span>-->
+<!--          </el-dialog>-->
+
         </template>
       </el-table-column>
     </el-table>

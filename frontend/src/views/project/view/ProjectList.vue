@@ -14,6 +14,7 @@
       </el-table-column>
       <el-table-column
         prop="projectName"
+        show-overflow-tooltip
         label="项目名称"
         width="160">
       </el-table-column>
@@ -41,11 +42,13 @@
       <el-table-column
         prop="startTime"
         label="开始时间"
+        show-overflow-tooltip
         width="160">
       </el-table-column>
       <el-table-column
         prop="endTime"
         label="结束时间"
+        show-overflow-tooltip
         width="160">
       </el-table-column>
       <el-table-column
@@ -321,7 +324,6 @@ export default {
       this.$get(`project/all?pid=${pid}`).then(r=>{
         that.projectInfo = r.data.data[0]
       })
-      console.log(this.projectInfo)
       // 获取当前项目成员信息
       this.$get(`project/all_member_info?pid=${pid}`).then(r=>{
         this.memberInfo = r.data.data
@@ -363,8 +365,6 @@ export default {
         memberInfo[i].sid = this.memberInfo[i].sid
         memberInfo[i].position = this.memberInfo[i].position
       }
-      console.log('BUG')
-      console.log(memberInfo)
       let data={"pid":pid, member:memberInfo}
       this.$put(`project/member_info?pid=${pid}`,data).then((r)=>{
         this.$message.success('项目成员信息修改成功！')
@@ -405,10 +405,21 @@ export default {
     },
     // 点击按钮，添加新用户
     addMemberCommit (info) {
-      // 向memberInfo中添加新创建的成员信息
-      this.memberInfo.push(info)
-      // 通知添加成功
-      this.$message.success('添加新成员成功！')
+      // 校验该学生是否已经参加过项目
+      let alreadyInaProject = false
+      for(let i=0;i<this.studentInProject.length;i++){
+        if(this.studentInProject[i].sid==info.sid){
+          alreadyInaProject = true
+        }
+      }
+      if(alreadyInaProject){
+        this.$message.error('该学生已加入一个项目，请勿重复添加！')
+      }else{
+        // 向memberInfo中添加新创建的成员信息
+        this.memberInfo.push(info)
+        // 通知添加成功
+        this.$message.success('添加新成员成功！')
+      }
       // 隐藏添加用户的对话框
       this.addDialogVisible = false
     },
@@ -444,6 +455,8 @@ export default {
           class: ''
         }
       },
+      // 已加入项目的成员信息，包括sid
+      studentInProject: [],
       //新的后端传回的Pid
       createdPid:'',
       // 岗位选择器的选项
@@ -495,6 +508,11 @@ export default {
     // 获取学生信息
     this.$get('project/all_stu').then((r)=>{
       that.selectorInfo = r.data.data
+    })
+    // 从数据库获得所有已参加项目成员的信息，包括sid，sname和pid, 用于校验是否重复参加项目
+    this.$get('project/all_member_info').then((r)=>{
+      // 初始化studentOptions
+      that.studentInProject = r.data.data
     })
   },
   // updated() {

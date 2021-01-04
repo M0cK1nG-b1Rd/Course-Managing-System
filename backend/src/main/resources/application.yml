@@ -44,10 +44,10 @@ spring:
       primary: primary
       datasource:
         primary:
-         username: root7
-         password: root7
-         driver-class-name: com.mysql.cj.jdbc.Driver
-         url: jdbc:mysql://192.168.12.173:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+          username: root8
+          password: root8
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://192.168.12.173:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
 
 
     aop:

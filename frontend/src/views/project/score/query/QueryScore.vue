@@ -1,8 +1,12 @@
 <template>
-  <div id="components-layout-demo-basic">
+  <div id="components-layout-demo-basic" style="margin-left: 30px;margin-right: 30px">
 <!--    成绩已发布时显示的页面-->
     <a-layout v-if="isReleased==1">
-      <a-layout-header>查看项目评分</a-layout-header>
+      <a-layout-header>
+        <dv-decoration-7>
+          查看项目评分
+        </dv-decoration-7>
+      </a-layout-header>
       <a-layout-content>
 <!--         第一行，个人成绩及反馈-->
         <a-row>
@@ -59,6 +63,20 @@
                   from: '#fad900',
                   to: '#e5772c',}"
                     :percent="myScore.completion"
+                    :format="percent => `${percent} 分`"
+                    status="active"
+                  />
+                </a-col>
+              </a-row>
+              <!--              答辩表现-->
+              <a-row>
+                <a-col :span="4">答辩表现</a-col>
+                <a-col :span="20">
+                  <a-progress
+                    :stroke-color="{
+                  from: '#03aeff',
+                  to: '#87d068',}"
+                    :percent="myScore.presentation"
                     :format="percent => `${percent} 分`"
                     status="active"
                   />
