@@ -3,7 +3,9 @@
     <!--    页面头部信息-->
     <el-row>
       <el-col :span="24">
-        <div class="grid-content bg-purple-light header">创建项目</div>
+        <div class="grid-content bg-purple-light header" style="margin-bottom: 40px">
+          <dv-decoration-7>创建项目</dv-decoration-7>
+        </div>
       </el-col>
     </el-row>
     <!--    项目基本信息表单-->
@@ -349,7 +351,7 @@ export default {
 
 <style>
 .bg-purple-light {
-  background: #bdd8f0;
+  background: #ffffff;
 }
 
 .grid-content {
@@ -359,7 +361,7 @@ export default {
 
 /*header样式*/
 .header {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   text-align: center;
 }

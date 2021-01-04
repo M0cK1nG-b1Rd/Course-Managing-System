@@ -1,6 +1,8 @@
 <template>
-  <div style="width: 100%">
-    <div style="font-size: 25px;font-weight: bold;text-align: center">我的项目</div>
+  <div style="width: 100%; padding-left: 90px; padding-right: 90px; font-size: 25px">
+    <div style="font-size: 25px;font-weight: bold;text-align: center; margin-bottom: 40px">
+      <dv-decoration-7>我的项目</dv-decoration-7>
+    </div>
     <a-descriptions  layout="horizontal " bordered >
       <a-descriptions-item label="项目名称" span = "3">
         软件项目管理综合实训项目管理系统
