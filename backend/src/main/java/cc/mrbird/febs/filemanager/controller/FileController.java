@@ -194,7 +194,8 @@ public class FileController {
             if (projectPeople.size() == 1) {
                 pid = projectPeople.get(0).getPid();
             } else if (projectPeople.size() == 0) {
-                throw new FebsException("用户暂未加入项目");
+                //SQL语句中做了更改，可以直接查看老师或管理员发布的文件
+                pid = "";
             } else {
                 throw new FebsException("一个用户对应多个项目");
             }

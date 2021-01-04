@@ -67,7 +67,7 @@ public class ProjectPeopleController {
             List<ProjectPeople> data = this.projectPeopleService.getMyProjectPeople(sid, pid);
             return new FebsResponse().code("200").message("请求成功").status("success").data(data);
         } catch (Exception e) {
-            message = "请求成功";
+            message = "请求失败";
             log.error(message, e);
             throw new FebsException(message);
         }

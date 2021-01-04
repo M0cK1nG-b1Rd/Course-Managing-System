@@ -170,7 +170,7 @@
 			# upload_time
 		    date_format(upload_time,'%Y-%m-%d %T') AS uploadTimeString
 		FROM T_FILE_INFO
-	    WHERE del_flag = '0' AND ref_project_id=#{pid}
+	    WHERE del_flag = '0' AND (ref_project_id=#{pid} OR ref_project_id ="管理员" OR ref_project_id ="老师")
 		ORDER BY UPLOAD_TIME
 	</select>
   <select id="selectList" resultType="cc.mrbird.febs.filemanager.model.TFileInfo">
