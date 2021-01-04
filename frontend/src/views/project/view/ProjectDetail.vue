@@ -5,25 +5,25 @@
     </div>
     <a-descriptions  layout="horizontal " bordered >
       <a-descriptions-item label="项目名称" span = "3">
-        软件项目管理综合实训项目管理系统
+        {{this.projectInfoData[0].projectName}}
       </a-descriptions-item>
       <a-descriptions-item label="项目经理" :span="2">
-        马冬梅
+        {{this.projectInfoData[0].managerName}}
       </a-descriptions-item>
       <a-descriptions-item label="项目ID" :span="2">
-        4
+        {{this.projectInfoData[0].pid}}
       </a-descriptions-item>
       <a-descriptions-item label="项目开始时间" :span="3">
-        2020年11月1日
+        {{this.projectInfoData[0].startTime}}
       </a-descriptions-item>
       <a-descriptions-item label="预计完成时间" :span="3">
-        2021年1月4日
+        {{this.projectInfoData[0].endTime}}
       </a-descriptions-item>
       <a-descriptions-item label="项目状态" :span="3">
         <a-badge status="processing" text="进行中" />
       </a-descriptions-item>
       <a-descriptions-item label="项目总人数">
-        4人
+        {{this.projectMemberData.length}}人
       </a-descriptions-item>
       <a-descriptions-item label="项目预算">
         $0.0

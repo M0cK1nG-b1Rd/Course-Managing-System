@@ -72,6 +72,17 @@ export default {
         position: '测试工程师'
       }]
     }
+  },
+  mounted () {
+    this.$get('project/my_member_info').then((r) => {
+      console.log('Hello I am Tester1!')
+      console.log(r.data.data)
+      this.tableData = r.data.data
+      this.tableData.forEach(function(value, index, array){
+        value.class=value.tuserInfo.class;
+        value.name=value.tuserInfo.name;
+      })
+    })
   }
 }
 </script>
