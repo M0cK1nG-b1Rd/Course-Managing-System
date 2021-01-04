@@ -14,6 +14,7 @@
       </el-table-column>
       <el-table-column
         prop="projectName"
+        show-overflow-tooltip
         label="项目名称"
         width="160">
       </el-table-column>
@@ -41,11 +42,13 @@
       <el-table-column
         prop="startTime"
         label="开始时间"
+        show-overflow-tooltip
         width="160">
       </el-table-column>
       <el-table-column
         prop="endTime"
         label="结束时间"
+        show-overflow-tooltip
         width="160">
       </el-table-column>
       <el-table-column

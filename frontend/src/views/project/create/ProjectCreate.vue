@@ -296,7 +296,7 @@ export default {
       // 校验该学生是否已经参加过项目
       let alreadyInaProject = false
       for(let i=0;i<this.studentInProject.length;i++){
-        if(this.studentInProject[i].sid==info.sid){
+        if(this.studentInProject[i].sid==info.sno){
           alreadyInaProject = true
         }
       }
@@ -311,7 +311,6 @@ export default {
       // 隐藏添加用户的对话框
       this.addDialogVisible = false
     },
-  },
 
     // 点击取消按钮，清空表单内容
     resetForm (form) {
