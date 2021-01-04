@@ -1,5 +1,5 @@
 <template>
-  <div style="width:100%">
+  <div style="width:100%;padding-left:100px;padding-right:100px">
     <!--    页面头部信息-->
     <el-row>
       <el-col :span="24">
@@ -246,7 +246,9 @@ export default {
       // 所有班级列表,升序排序,每个班级包括value和label两个字段
       classList: [],
       // 新成员姓名、班级、学号选择器选项
-      selectorInfo: []
+      selectorInfo: [],
+      // 已加入项目的成员信息，包括sid
+      studentInProject: [],
     }
   },
 
@@ -260,6 +262,11 @@ export default {
     // 获取学生信息
     this.$get('project/all_stu').then((r) => {
       that.selectorInfo = r.data.data
+    })
+    // 从数据库获得所有已参加项目成员的信息，包括sid，sname和pid, 用于校验是否重复参加项目
+    this.$get('project/all_member_info').then((r)=>{
+      // 初始化studentOptions
+      that.studentInProject = r.data.data
     })
   },
 
@@ -286,13 +293,25 @@ export default {
 
     // 点击按钮，添加新用户
     addMemberCommit (info) {
-      // 向memberList中添加新创建的成员信息
-      this.memberList.push(info)
-      // 通知添加成功
-      this.$message.success('添加新成员成功！')
+      // 校验该学生是否已经参加过项目
+      let alreadyInaProject = false
+      for(let i=0;i<this.studentInProject.length;i++){
+        if(this.studentInProject[i].sid==info.sid){
+          alreadyInaProject = true
+        }
+      }
+      if(alreadyInaProject){
+        this.$message.error('该学生已加入一个项目，请勿重复添加！')
+      }else{
+        // 向memberInfo中添加新创建的成员信息
+        this.memberInfo.push(info)
+        // 通知添加成功
+        this.$message.success('添加新成员成功！')
+      }
       // 隐藏添加用户的对话框
       this.addDialogVisible = false
     },
+  },
 
     // 点击取消按钮，清空表单内容
     resetForm (form) {
