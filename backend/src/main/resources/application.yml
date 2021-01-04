@@ -44,11 +44,13 @@ spring:
       primary: primary
       datasource:
         primary:
-          username: root
-          password: a709046532
+          username: root8
+          password: root8
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://localhost:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
-  aop:
+          url: jdbc:mysql://192.168.12.173:3306/project?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+
+
+    aop:
     proxy-target-class: true
 
   messages:
@@ -128,4 +130,4 @@ export:
 
 # 上传文件存储路径
 prop:
-  upload-folder: /home/project/upload_files
+  upload-folder: D:/files
