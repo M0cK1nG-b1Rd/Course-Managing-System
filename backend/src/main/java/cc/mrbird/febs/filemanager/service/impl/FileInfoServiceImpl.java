@@ -4,9 +4,11 @@ import cc.mrbird.febs.filemanager.dao.TFileInfoMapper;
 import cc.mrbird.febs.filemanager.model.TFileInfo;
 import cc.mrbird.febs.filemanager.service.FileInfoService;
 import cc.mrbird.febs.filemanager.util.SnowflakeIdWorker;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -43,4 +45,10 @@ public class FileInfoServiceImpl implements FileInfoService {
 		t.setDelFlag("1");
 		return tFileInfoMapper.updateByPrimaryKeySelective(t);
 	}
+
+	@Override
+	public List<TFileInfo> findAll() {
+		return this.tFileInfoMapper.selectList();
+	}
+
 }

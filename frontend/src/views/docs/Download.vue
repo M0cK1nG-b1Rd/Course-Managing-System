@@ -11,6 +11,8 @@
     <el-table :data="mySlice(this.tableData)" style="width: 100%">
       <el-table-column  prop="id" label="ID" width="120" align="center" v-if="isShow">
       </el-table-column>
+      <el-table-column  prop="refProjectId" label="项目ID" width="80" align="center">
+      </el-table-column>
       <el-table-column prop="filename" label="文件名" width="200" show-overflow-tooltip><!--tooltip表格列内容过长时显示提示-->
       </el-table-column>
       <el-table-column prop="totalSizeName" label="文件大小" width="200">

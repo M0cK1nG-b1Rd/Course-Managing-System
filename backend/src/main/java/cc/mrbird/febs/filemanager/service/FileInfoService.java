@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface FileInfoService {
 	
-	public int addFileInfo(TFileInfo fileInfo);
+	 int addFileInfo(TFileInfo fileInfo);
 	
-	public List<TFileInfo> selectFileByParams(TFileInfo fileInfo);
+	 List<TFileInfo> selectFileByParams(TFileInfo fileInfo);
 	
 	 /**
      * 查询
@@ -25,4 +25,6 @@ public interface FileInfoService {
      * @return
      */
     int deleteFile(TFileInfo tFileInfo);
+
+    List<TFileInfo> findAll();
 }
