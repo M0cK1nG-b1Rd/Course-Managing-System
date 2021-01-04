@@ -74,9 +74,9 @@ public class ProjectPeopleController {
     }
 
 
-    //查看全部成员信息（权限：老师）
+    //查看全部成员信息（权限：老师、项目经理）
     @GetMapping("all_member_info")
-    @RequiresPermissions("project:all")
+    @RequiresPermissions(value = {"project:all","project:create"},logical = Logical.OR)
     public FebsResponse getProjectPeople(@RequestParam(value = "pid", required = false) String pid) throws FebsException {
         try {
             List<TUserInfo> data = this.tUserInfoService.getProjectPeoples(pid);

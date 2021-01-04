@@ -1,6 +1,7 @@
 package cc.mrbird.febs.filemanager.controller;
 
 import cc.mrbird.febs.common.authentication.JWTUtil;
+import cc.mrbird.febs.common.domain.FebsResponse;
 import cc.mrbird.febs.common.exception.FebsException;
 import cc.mrbird.febs.common.utils.ProjectUtil;
 import cc.mrbird.febs.filemanager.model.*;
@@ -182,7 +183,7 @@ public class FileController {
      * @return ApiResult
      */
     @RequestMapping(value = "/selectFileList", method = RequestMethod.GET)
-    public ApiResult selectFileList(TFileInfo file) throws FebsException {
+    public FebsResponse selectFileList(TFileInfo file) throws FebsException {
         String role = ProjectUtil.getUserRole();
         if (role.equals("学生") || role.equals("项目经理")) {
             String userSid = this.tUserInfoService.findByUsername(this.getUsername()).getSid();
@@ -193,17 +194,17 @@ public class FileController {
             if (projectPeople.size() == 1) {
                 pid = projectPeople.get(0).getPid();
             } else if (projectPeople.size() == 0) {
-                throw new FebsException("用户暂未加入项目");
+                return new FebsResponse().code("500").message("请求失败，用户暂未加入项目").status("error");
             } else {
-                throw new FebsException("一个用户对应多个项目");
+                return new FebsResponse().code("500").message("请求失败，一个用户对应多个项目").status("error");
             }
             List<TFileInfo> list = fileInfoService.selectFileList(file, pid);
-            return ApiResult.success(list);
+            return new FebsResponse().code("200").message("请求成功").status("success").data(list);
         } else if (role.equals("老师") || role.equals("管理员")) {
             List<TFileInfo> list = fileInfoService.findAll();
-            return ApiResult.success(list);
+            return new FebsResponse().code("200").message("请求成功").status("success").data(list);
         } else {
-            return ApiResult.error("你不是管理员，老师，学生或项目经理");
+            return new FebsResponse().code("500").message("你不是项目干系人，无法查看").status("success");
         }
 
     }
