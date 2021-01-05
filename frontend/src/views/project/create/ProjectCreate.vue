@@ -304,7 +304,7 @@ export default {
         this.$message.error('该学生已加入一个项目，请勿重复添加！')
       }else{
         // 向memberInfo中添加新创建的成员信息
-        this.memberInfo.push(info)
+        this.memberList.push(info)
         // 通知添加成功
         this.$message.success('添加新成员成功！')
       }
