@@ -2,6 +2,7 @@
 
 
 
+
 Course-Managing-System为前后端分离开发的项目管理综合实训管理系统，前端使用Vue全家桶，组件库采用[Ant-Design-Vue](https://vuecomponent.github.io/ant-design-vue/docs/vue/introduce-cn/)和[Element-UI](https://element.eleme.cn/#/zh-CN/guide/design)。
 
 
@@ -113,3 +114,7 @@ IDEA选择backend：
 浏览器访问[http://localhost:8081](http://localhost:8081/)：
 
 ![image-20210105111110223](.\images\image-20210105111110223.png)
+=======
+
+
+本项目于2021年1月5日通过验收
